@@ -17,8 +17,15 @@ tags:
 > The location should be the folder which contain's the `bin` folder.
 
 4. Run the following command to add the executable's to Path so that Manim Detect it.
-```bash
-sh hi.sh
+```cmd
+bin\win32\tlmgr.bat path add
 ```
-
-
+5. After that you can proceed with other installation steps [here](https://manimce.readthedocs.io/en/latest/installation/win.html) and finally run the example scene below.
+```py
+from manim import *
+class Test(Scene):
+  def construct(self):
+    self.play(Write(TexMobject(r"Hello \alpha")))
+    self.play(Write(TexMobject(r"\mathbb{Manim is Great}")))
+```
+6. If it works properly, you have done your LaTeX installation.
