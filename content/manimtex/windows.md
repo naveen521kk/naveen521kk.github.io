@@ -2,13 +2,14 @@
 title: "Install Manim-Tex on Windows"
 date: 2020-09-15T12:01:41+05:30
 authors: ["naveen"]
+description = "Installing LaTeX for Manim On Windows. Lightweight."
 tags:
-  - config
-  - widgetss
+  - LaTex
+  - Manim
 ---
 # Installing LaTeX For Manim On Windows
 
-1. First, download `ManimTex.windows.zip` from the Release Section.
+1. First, download `ManimTex.windows-latest.zip` from the [Release Section](https://github.com/naveen521kk/manim-tex/releases).
 
 2. Extract the `zip` file using [WinRAR](https://www.rarlab.com/download.htm) or [7z](https://www.7-zip.org/) or even Windows Explorer.
 
