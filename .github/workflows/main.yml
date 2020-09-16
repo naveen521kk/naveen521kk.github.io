@@ -12,12 +12,12 @@ jobs:
       - name: Install Hugo and lunr
         run: |
           choco install hugo -confirm
-
-      - name: Build Site
-        shell: cmd
+      - name: Install lunr
         run: |
           npm install -g lunr glob
-          node ./themes/minimo/scripts/generate-search-index-lunr.js
+          node "./themes/minimo/scripts/generate-search-index-lunr.js"
+      - name: Build Site
+        run: |
           hugo --gc --minify --cleanDestinationDir
       - name: Deploy to GitHub Pages
         if: success()
