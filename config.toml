@@ -76,7 +76,7 @@ enable = false
 
 
 [params.search]
-client = "fuse" # algolia / fuse / lunr
+client = "lunr" # algolia / fuse / lunr
 
 [params.search.algolia]
 appId = ""
