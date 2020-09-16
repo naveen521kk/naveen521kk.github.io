@@ -9,12 +9,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Hugo
+      - name: Install Hugo and lunr
         run: |
           choco install hugo -confirm
+          npm install -g lunr glob
       - name: Build Site
         shell: cmd
         run: |
+          node ./themes/minimo/scripts/generate-search-index-lunr.js
           hugo --gc --minify --cleanDestinationDir
       - name: Deploy to GitHub Pages
         if: success()
