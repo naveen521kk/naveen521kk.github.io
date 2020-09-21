@@ -9,13 +9,22 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
       - name: Install Hugo and lunr
         run: |
-          choco install hugo -confirm
+          curl -L https://github.com//gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Windows-64bit.zip -o hugo.zip
+          7z x hugo.zip -oD:\hugo
+          echo "::add-path::D:\hugo\bin"
+          
       - name: Install lunr
         run: |
-          npm install -g lunr glob
-          node "./themes/minimo/scripts/generate-search-index-lunr.js"
+          npm init -y
+          npm install lunr
+          npm install glob
+          echo "installed"
+          node "themes\minimo\scripts\generate-search-index-lunr.js"
       - name: Build Site
         run: |
           hugo --gc --minify --cleanDestinationDir
