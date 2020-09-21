@@ -15,8 +15,9 @@ jobs:
       - name: Install Hugo and lunr
         run: |
           curl -L https://github.com//gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Windows-64bit.zip -o hugo.zip
-          7z x hugo.zip -oD:\hugo
-          echo "::add-path::D:\hugo\bin"
+          7z x hugo.zip -ohugo
+          $env:PATH="$PWD\hugo\;$env:PATH"
+          echo "::set-env name=PATH::$env:PATH"
           
       - name: Install lunr
         run: |
