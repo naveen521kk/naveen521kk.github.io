@@ -1,0 +1,4 @@
+[submodule "theme"]
+	path = themes/minimo
+	url = https://github.com/MunifTanjim/minimo.git
+	branch = master
