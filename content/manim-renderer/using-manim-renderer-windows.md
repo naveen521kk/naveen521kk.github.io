@@ -1,6 +1,6 @@
 ---
 title: "Using Manim-Renderer on Windows"
-date: 2020-09-20T17:01:41+05:30
+date: 2020-09-20T17:01:41
 authors: ["naveen"]
 description: "How to use Manim Renderer On Windows?"
 tags:

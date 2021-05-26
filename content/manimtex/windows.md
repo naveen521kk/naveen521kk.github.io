@@ -1,6 +1,6 @@
 ---
 title: "Install Manim-Tex on Windows"
-date: 2020-09-15T12:01:41+05:30
+date: 2020-09-15T16:01:41+05:30
 authors: ["naveen"]
 description: "Installing LaTeX for Manim On Windows. Lightweight."
 tags:
