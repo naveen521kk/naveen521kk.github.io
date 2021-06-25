@@ -1,0 +1,2 @@
+(self.webpackChunksite=self.webpackChunksite||[]).push([[230],{199:function(e,t,a){"use strict";a.r(t);var n=a(294);t.default=function(){return n.createElement("main",{className:"maindiv"},n.createElement("div",{className:"aboutmediv"},n.createElement("div",{className:"titlediv"},n.createElement("h1",null,"Hi, I'm Naveen"),n.createElement("img",{src:"images/syrusdark.png",alt:"syrusdark"}),n.createElement("h2",null,"You can find me in lot of places on the Internet."))))}}}]);
+//# sourceMappingURL=component---src-pages-index-jsx-0384865817de645460a4.js.map
