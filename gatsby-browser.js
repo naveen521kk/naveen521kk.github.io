@@ -1,2 +1,1 @@
-import "@fontsource/open-sans"
-
+import "@fontsource/open-sans";

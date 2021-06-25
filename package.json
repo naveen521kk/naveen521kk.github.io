@@ -12,7 +12,9 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
+    "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
   },
   "dependencies": {
     "@fontsource/open-sans": "^4.4.5",
@@ -21,9 +23,13 @@
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-transformer-remark": "^4.5.0",
     "postcss": "^8.2.15",
+    "prettier": "^2.3.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-headroom": "^3.1.1",
     "sass": "^1.35.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.1"
   }
 }
