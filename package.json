@@ -1,0 +1,28 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Naveen",
+  "author": "Syrus Dark",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.6.2",
+    "gatsby-plugin-sass": "^4.8.0",
+    "gatsby-source-filesystem": "^3.8.0",
+    "gatsby-transformer-remark": "^4.5.0",
+    "postcss": "^8.2.15",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-headroom": "^3.1.1",
+    "sass": "^1.35.1"
+  }
+}
