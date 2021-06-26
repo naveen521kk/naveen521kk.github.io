@@ -1,32 +1,32 @@
 .nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: calc(var(--nav-width) + var(--gap) * 2);
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  line-height: var(--header-height);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    line-height: var(--header-height);
 }
 
 .nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #000;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
 }
 
 .nav li {
-  float: left;
+    float: left;
 }
 
 .nav a {
-  display: block;
-  padding: 8px;
-  background-color: #dddddd;
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
 }
 
 /* Change the link color to #111 (black) on hover */
 .nav li a:hover {
-  background-color: #fff;
+    background-color: #fff;
 }
