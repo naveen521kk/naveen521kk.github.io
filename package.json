@@ -17,6 +17,7 @@
         "check-format": "prettier -c \"./**/*.{js,css,json,scss,jsx}\""
     },
     "dependencies": {
+        "@fontsource/ibm-plex-sans": "^4.4.5",
         "@fontsource/open-sans": "^4.4.5",
         "autoprefixer": "^10.2.6",
         "gatsby": "^3.6.2",
