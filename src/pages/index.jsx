@@ -10,7 +10,7 @@ const IndexPage = () => {
             <div className="titlediv">
                 <h1>Hi, I'm Naveen</h1>
                 <img src="images/syrusdark.png" alt="syrusdark"/> 
-                <h2>You can find me in lot of places on the Internet.</h2>
+                <h2>This is a WIP page.</h2>
             </div>
         </div>
     </main>
