@@ -1,9 +1,11 @@
-import * as React from "react"
+import * as React from "react";
 import "../styles/index.scss";
+import NavBar from "../components/header.jsx"
 
 const IndexPage = () => {
   return (
     <main className="maindiv">
+      {//<NavBar />}
         <div className="aboutmediv">
             <div className="titlediv">
                 <h1>Hi, I'm Naveen</h1>
