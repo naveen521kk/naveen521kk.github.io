@@ -5,6 +5,7 @@ module.exports = {
     pathPrefix: "/site",
     plugins: [
         `gatsby-plugin-sass`,
+        `gatsby-plugin-postcss`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {

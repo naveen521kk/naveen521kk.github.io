@@ -18,16 +18,19 @@
     },
     "dependencies": {
         "@fontsource/open-sans": "^4.4.5",
+        "autoprefixer": "^10.2.6",
         "gatsby": "^3.6.2",
+        "gatsby-plugin-postcss": "^4.8.0",
         "gatsby-plugin-sass": "^4.8.0",
         "gatsby-source-filesystem": "^3.8.0",
         "gatsby-transformer-remark": "^4.5.0",
-        "postcss": "^8.2.15",
+        "postcss": "^8.3.5",
         "prettier": "^2.3.1",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-headroom": "^3.1.1",
-        "sass": "^1.35.1"
+        "sass": "^1.35.1",
+        "tailwindcss": "^2.2.4"
     },
     "devDependencies": {
         "prettier": "^2.3.1"
