@@ -6,8 +6,8 @@ import "../styles/header.scss";
 const NavBar = () => {
     return (
         <Headroom>
-            <header>
-                <nav className="nav">
+            <header className="block">
+                <nav className="flex flex-wrap justify-between leading-12">
                     <ul className="list-none">
                         <li>
                             <Link to="/">Home</Link>
