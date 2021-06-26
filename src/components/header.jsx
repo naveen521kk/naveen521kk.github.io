@@ -8,9 +8,10 @@ const NavBar = () => {
         <Headroom>
             <header>
                 <nav className="nav">
-                    <ul>
+                    <ul className="list-none">
                         <li>
                             <Link to="/">Home</Link>
+                            <Link to="/posts">Posts</Link>
                         </li>
                     </ul>
                 </nav>

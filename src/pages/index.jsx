@@ -4,11 +4,12 @@ import NavBar from "../components/header.jsx";
 
 const IndexPage = () => {
     return (
-        <main className="maindiv">
+        <main className="container mx-auto px-2">
+            <NavBar />
             <div className="aboutmediv">
                 <div className="titlediv">
-                    <h1>Hi, I'm Naveen</h1>
-                    <img src="images/syrusdark.png" alt="syrusdark" />
+                    {/* <h1>Hi, I'm Naveen</h1> */}
+                    {/* <img src="images/syrusdark.png" alt="syrusdark" /> */}
                     <h2>This is a WIP page.</h2>
                 </div>
             </div>
