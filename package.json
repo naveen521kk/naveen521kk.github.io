@@ -13,8 +13,8 @@
         "build": "gatsby build",
         "serve": "gatsby serve",
         "clean": "gatsby clean",
-        "format": "prettier --write \"./**/*.{js,css,json,scss}\"",
-        "check-format": "prettier -c \"./**/*.{js,css,json,scss}\""
+        "format": "prettier --write \"./**/*.{js,css,json,scss,jsx}\"",
+        "check-format": "prettier -c \"./**/*.{js,css,json,scss,jsx}\""
     },
     "dependencies": {
         "@fontsource/open-sans": "^4.4.5",
