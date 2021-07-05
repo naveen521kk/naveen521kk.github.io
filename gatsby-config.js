@@ -1,8 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: "Naveen"
+        title: "Naveen M K (about_me)"
     },
-    pathPrefix: "/site",
     plugins: [
         `gatsby-plugin-sass`,
         `gatsby-plugin-postcss`,
