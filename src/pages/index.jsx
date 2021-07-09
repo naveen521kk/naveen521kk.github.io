@@ -1,10 +1,12 @@
 import * as React from "react";
 import "../styles/index.scss";
 import NavBar from "../components/header.jsx";
+import SEO from "../components/seo.jsx";
 
 const IndexPage = () => {
     return (
-        <main className="container mx-auto px-2">
+        <main className="container mx-auto">
+            <SEO title="Naveen M K (about_me)" />
             <NavBar />
             <div className="aboutmediv">
                 <div className="titlediv">

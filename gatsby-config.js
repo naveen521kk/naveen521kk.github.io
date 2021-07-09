@@ -1,6 +1,12 @@
 module.exports = {
     siteMetadata: {
-        title: "Naveen M K (about_me)"
+        title: "Naveen M K",
+        titleTemplate: "%s",
+        description:
+          "Naveen M K: A student, Open Source Person.",
+        url: "https://naveen521kk.github.io",
+        image: "/images/syrusdark.jpg",
+        siteUrl: "https://naveen521kk.github.io"
     },
     plugins: [
         `gatsby-plugin-sass`,
@@ -15,13 +21,14 @@ module.exports = {
         },
         `gatsby-transformer-remark`,
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
                 name: `Naveen's Site`,
                 short_name: `naveen`,
                 description: `Random things`,
-                start_url: `/site`,
+                start_url: `/`,
                 background_color: `#fff`,
                 theme_color: `#6B46C1`,
                 display: `standalone`,
