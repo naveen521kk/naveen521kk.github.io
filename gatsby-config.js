@@ -4,7 +4,7 @@ module.exports = {
         titleTemplate: "%s",
         description: "Naveen M K: A student, Open Source Person.",
         url: "https://naveen521kk.github.io",
-        image: "/images/syrusdark.png",
+        image: "/images/logo.png",
         siteUrl: "https://naveen521kk.github.io"
     },
     plugins: [
