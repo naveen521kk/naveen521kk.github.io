@@ -1,5 +1,3 @@
-# Docs
-The documentation of sites I maintain.
-https://naveen521kk.github.io/site/
+My personal website.
 
-
+https://naveen521kk.github.io
