@@ -51,6 +51,8 @@ module.exports = {
                 trackingIds: ["G-695MYTZSVL"]
             }
         },
-        `gatsby-plugin-offline`
+        `gatsby-plugin-offline`,
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
     ]
 };
