@@ -54,5 +54,6 @@ module.exports = {
         `gatsby-plugin-offline`,
         `gatsby-plugin-image`,
         `gatsby-plugin-sharp`,
+        `gatsby-plugin-mdx`
     ]
 };
