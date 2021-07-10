@@ -2,8 +2,7 @@ module.exports = {
     siteMetadata: {
         title: "Naveen M K",
         titleTemplate: "%s",
-        description:
-          "Naveen M K: A student, Open Source Person.",
+        description: "Naveen M K: A student, Open Source Person.",
         url: "https://naveen521kk.github.io",
         image: "/images/syrusdark.png",
         siteUrl: "https://naveen521kk.github.io"
@@ -49,10 +48,9 @@ module.exports = {
         {
             resolve: `gatsby-plugin-google-gtag`,
             options: {
-              trackingIds: [
-                "G-695MYTZSVL",
-              ],
-            },
-          },
+                trackingIds: ["G-695MYTZSVL"]
+            }
+        },
+        `gatsby-plugin-offline`
     ]
 };
