@@ -3,7 +3,7 @@ slug: "/blog/how-did-i-create-my-logo"
 title: "How I created my Logo?"
 date: 2021-07-11T00:56:01+05:30
 draft: false
-description: "I created my Logo using beizer curves and PyCairo."
+description: "I created my Logo using Beizer curves with the help of PyCairo."
 image: "/images/banner.png"
 ---
 
@@ -18,14 +18,14 @@ Initially, I was using a **rocket** gif (or rather a static one) as a logo for m
   <source src="/assets/logo-post/videos/rocket.mp4" type="video/mp4">  
 </video>
 
-This was nice and I loved it(was in my profile for ~6 months), but it was time for a change I was searching for a new one or trying to create one today.
+This was nice and I loved it (was in my profile for ~6 months), but it was time for a change I was searching for a new one or trying to create one today.
 
 
-### The story
+### The Story
 
 First, I opened [Inkscape](https://inkscape.org/) and had no plans about the logo, so it's an unplanned art. I am no artist and new to Inkscape UI; I was going to each of the tools avaiable there. Something which intersted me was **Pen Tools**, which would be able to draw [Beizer Curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve). I was playing with that and then that gave me an idea 💡.
 
-I decided that my logo is going to contain a [Quadratic Beizer Curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_B%C3%A9zier_curves) with the starting point as `(0, 0)`; second control point `(0.5, 1)`; and the end point as `(1, 0)`. Similaryly there would be a curve around all the other sides. I tried to do that Inkscape and I didn't get any sucess 😢. 
+I decided that my logo is going to contain some [Quadratic Beizer Curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_B%C3%A9zier_curves) with the starting point as `(0, 0)`; second control point `(0.5, 1)`; and the end point as `(1, 0)`. Similary there would be a curve around all the other sides. I tried to do that Inkscape and I didn't get any sucess 😢. 
 
 Annoyed with Inkscape, I though it would be better to create things programmically. I wanted some tool which could give me an SVG and a API which is easy to understand. I have previously used [PyCairo(Python Bindings for Cairo Graphics Library)](https://pycairo.readthedocs.io) for [Manim](https://manim.community) and understand it's API a bit; I decided to use it. 
 
@@ -76,6 +76,146 @@ which gave me an SVG like
 ![beizer curve cairo](/assets/logo-post/beizer-curve.svg)
 
 
-Next, it's about drawing similar Beizer Curve from the other sides of the Image. So, I starting
+Next, it's about drawing similar Beizer Curve from the other sides of the Image. So, I started by drawing a curve `(0, 1)`, `(0.5, 0)`, `(1, 1)`, which when translated to Python would be
 
-TBD.
+```py
+    context.move_to(0, 1)
+    context.curve_to(0, 1, 0.5, 0, 1, 1)
+    context.set_source_rgba(0, 0, 0, 1)
+    context.stroke()
+```
+
+![two beizer curve cairo](/assets/logo-post/beizer-curve-1.svg)
+
+And then another two curve `(0, 0)`, `(1, 0.5)`, `(0, 1)`.
+
+```py
+    context.move_to(0, 0)
+    context.curve_to(0, 0, 1, 0.5, 0, 1)
+    context.set_source_rgba(0, 0, 0, 1)
+    context.stroke()
+```
+
+![three beizer curve cairo](/assets/logo-post/beizer-curve-2.svg)
+
+and another one `(1, 0)`, `(0, 0.5)`, `(1, 1)`.
+
+```py
+    context.move_to(1, 0)
+    context.curve_to(1, 0, 0, 0.5, 1, 1)
+    context.set_source_rgba(0, 0, 0, 1)
+    context.stroke()
+```
+
+![four beizer curve cairo](/assets/logo-post/beizer-curve-3.svg)
+
+The logo is getting it's shape. Now, I draw two line from each corners using [`Context.line_to()`](https://pycairo.readthedocs.io/en/latest/reference/context.html#cairo.Context.line_to). But this time with a different color RGBA `.5, .3, 6, 1` (Just a random one 😉).
+
+```py
+    context.move_to(0, 0)
+    context.line_to(1, 1)
+    context.set_source_rgba(.5, .3, 6)
+    context.stroke()
+
+    context.move_to(1, 0)
+    context.line_to(0, 1)
+    context.set_source_rgba(.5, .3, 6, 1)
+    context.stroke()
+```
+
+![four beizer curve two line cairo](/assets/logo-post/beizer-curve-line.svg)
+
+Now, the logo has come in a good shape, and I want more Beizer curves so, I decided to draw another four. These curves had same color as that of the line and is exactly half of the previously drawn one.
+
+First, I draw a curve with the coordinates `(0, 0,)`, `(0.5, 0.5)`, `(0, 1)`.
+
+```py
+    context.move_to(0, 0)
+    context.curve_to(0, 0, 0.5, 0.5, 0, 1)
+    context.set_source_rgba(.5, .3, 6, 1)
+    context.stroke()
+```
+
+![five beizer curve two line cairo](/assets/logo-post/beizer-curve-line-1.svg)
+
+Then one with `(1, 1)`, `(0.5, 0.5)`, `(1, 0)`
+
+```py
+    context.move_to(1, 1)
+    context.curve_to(1, 1, 0.5, 0.5, 1, 0)
+    context.set_source_rgba(.5, .3, 6, 1)
+    context.stroke()
+```
+
+![six beizer curve two line cairo](/assets/logo-post/beizer-curve-line-2.svg)
+
+Next with `(0, 0)`, `(0.5, 0.5)`, `(1, 0)`
+
+```py
+    context.move_to(0, 0)
+    context.curve_to(0, 0, 0.5, 0.5, 1, 0)
+    context.set_source_rgba(.5, .3, 6, 1)
+    context.stroke()
+```
+
+![seven beizer curves two line cairo](/assets/logo-post/beizer-curve-line-3.svg)
+
+and, finally another one `(0, 1)`, `(0.5, 0.5)`, `(1, 1)` 🎉.
+
+```py
+    context.move_to(0, 1)
+    context.curve_to(0, 1, 0.5, 0.5, 1, 1)
+    context.set_source_rgba(.5, .3, 6, 1)
+    context.stroke()
+```
+
+![eight beizer curves two line cairo](/assets/logo-post/beizer-curve-line-4.svg)
+
+This got my base of my Logo. Now it's time to pick the colours. I wanted the first four curves to have a seperate colour 🦄.
+
+So, I went to http://colormind.io/ (a *random* website which I got from a Google Search). Selected the color `#5FA172` as the color for outer Beizer Curves and the Line and `#2F3954` as the color for the inner Curves. I spend atleast half an hour for selecting them 🤦‍♂️.
+
+
+Finally, I edited the script which I got so that I can change the colors by just changing two variables `outer_color` and `inner_color`.
+
+And, here is the final result.
+
+![Naveen naveen521kk logo](/assets/logo-post/final-logo.svg)
+
+You could have seen that already I had been using it around in this site and the final script is over [here](https://github.com/naveen521kk/naveen521kk.github.io/blob/3a5e5abde14ba95c65ebd13d38f9ffe06ae57d76/logo/logo.py).
+
+### Creating Favicon
+
+After creating the new logo, I wanted to change the favicon of this site. I didn't want to upload it anywhere and I want to programically generate those Favicons. Doing a random search got me to this [article](https://nedbatchelder.com/blog/202012/favicons_with_imagemagick.html) and use [librsvg](https://wiki.gnome.org/Projects/LibRsvg/) for converting a `.svg` which I generated previously to `.png`. So, I install both [librsvg](https://packages.msys2.org/package/mingw-w64-x86_64-librsvg?repo=mingw64)  (`rsvg-convert.exe`) and [imagemagick](https://packages.msys2.org/package/mingw-w64-x86_64-imagemagick?repo=mingw64) from [MSYS2](https://msys2.org).
+
+What I did first was to create 6 png file with various size from the SVG using `rsvg-convert` tool. Each png was of different size.
+```shell
+cp logo.svg temp-logo.svg
+rsvg-convert temp-logo.svg  -w 16 -h 16 --output temp-16.png
+rsvg-convert temp-logo.svg -w 32 -h 32 --output temp-32.png
+rsvg-convert temp-logo.svg -w 48 -h 48 --output temp-48.png
+rsvg-convert temp-logo.svg -w 64 -h 64 --output temp-64.png
+rsvg-convert temp-logo.svg -w 96  -h 96 --output temp-96.png
+rsvg-convert temp-logo.svg -w 256 -h 256 --output temp-256.png
+```
+
+And then, used ImageMagick to convert them to favicon.
+```shell
+convert temp-16.png temp-32.png temp-48.png temp-64.png temp-96.png temp-256.png +dither -colors 255 "favicon.ico"
+```
+
+Finally, I deleted the previous generated `temp-*` files.
+
+```shell
+rm temp-*.png temp-*.svg
+```
+
+You can get the whole shell script from [here](https://github.com/naveen521kk/naveen521kk.github.io/blob/main/logo/build-favicon.sh). I ran it under of MSYS2 on my Windows machine.
+
+### Aftermath
+
+Then I opened Inkscape to get a white background on that logo. I could used cairo by well...
+
+Finally, uploaded my new logo to Discord, Github and Gravator. Though this didn't fix perfectly in a circle I could edit them slightly to make things work. 
+
+If you’ve read and followed the post this far, THANK YOU! 😃
