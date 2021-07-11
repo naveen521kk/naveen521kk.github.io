@@ -1,5 +1,10 @@
-// import "@fontsource/open-sans";
-// import "@fontsource/ibm-plex-sans";
+//import "@fontsource/open-sans";
+import "@fontsource/open-sans/300.css";
+import "@fontsource/open-sans";
+import "@fontsource/open-sans/600-italic.css";
+import "@fontsource/open-sans/700.css";
+//import "@fontsource/ibm-plex-sans";
+//import "@fontsource/mulish";
 import "./src/styles/global.css";
 import "prismjs/themes/prism-solarizedlight.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";

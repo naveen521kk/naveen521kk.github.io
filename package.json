@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "@fontsource/ibm-plex-sans": "^4.4.5",
+        "@fontsource/mulish": "^4.5.0",
         "@fontsource/open-sans": "^4.4.5",
         "@mdx-js/mdx": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
