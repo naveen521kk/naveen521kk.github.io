@@ -6,7 +6,7 @@ import {MoonIcon} from "./icons";
 const NavBar = () => {
     return (
         <Headroom>
-            <header className="block bg-red-600">
+            <header className="block bg-gradient-to-r from-red-400 via-yellow-500 to-pink-500">
                 <nav className="text-xl flex flex-wrap justify-between leading-12">
                     <div className="flex m-2">
                         <Link to="/" title="Naveen M K (Alt+H)">
