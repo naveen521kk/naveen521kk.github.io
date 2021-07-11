@@ -13,9 +13,11 @@ const IndexPage = ({
         .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
 
     return (
-        <div className="container mx-auto">
+        <div>
             <NavBar />
-            {Posts}
+            <div className="md:grid md:gap-4 md:grid-cols-2 md:grid-rows-5 p-10">
+                {Posts}
+            </div>
         </div>
     );
 };

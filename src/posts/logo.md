@@ -14,8 +14,8 @@ I created a *new logo* today, it was some Python and other things I learned whil
 Initially, I was using a **rocket** gif (or rather a static one) as a logo for my online profiles.
 
 <video autoplay loop muted playsinline>  
-  <source src="/images/logo-post/rocket.webm" type="video/webm">  
-  <source src="/images/logo-post/rocket.mp4" type="video/mp4">  
+  <source src="/assets/logo-post/videos/rocket.webm" type="video/webm">  
+  <source src="/assets/logo-post/videos/rocket.mp4" type="video/mp4">  
 </video>
 
 This was nice and I loved it(was in my profile for ~6 months), but it was time for a change I was searching for a new one or trying to create one today.
@@ -73,8 +73,9 @@ with cairo.SVGSurface("logo.svg", width, height) as surface:
 ```
 which gave me an SVG like
 
-![beizer curve cairo](/images/logo-post/beizer-curve.svg)
+![beizer curve cairo](/assets/logo-post/beizer-curve.svg)
 
+
+Next, it's about drawing similar Beizer Curve from the other sides of the Image. So, I starting
 
 TBD.
-
