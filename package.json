@@ -48,7 +48,8 @@
         "react-headroom": "^3.1.1",
         "react-helmet": "^6.1.0",
         "sass": "^1.35.1",
-        "tailwindcss": "^2.2.4"
+        "tailwindcss": "^2.2.4",
+        "twemoji": "^13.1.0"
     },
     "devDependencies": {
         "prettier": "^2.3.1"
