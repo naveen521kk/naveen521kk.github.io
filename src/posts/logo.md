@@ -1,6 +1,6 @@
 ---
 slug: "/blog/how-did-i-create-my-logo"
-title: "How did I create my Logo?"
+title: "How I created my Logo?"
 date: 2021-07-11T00:56:01+05:30
 draft: false
 description: "I created my Logo using beizer curves and PyCairo."
@@ -73,3 +73,4 @@ which gave me an SVG like
 ![beizer curve cairo](/images/logo-post/beizer-curve.svg)
 
 TBD.
+
