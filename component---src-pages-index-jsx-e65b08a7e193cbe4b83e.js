@@ -1,2 +1,0 @@
-(self.webpackChunksite=self.webpackChunksite||[]).push([[230],{4199:function(e,t,a){"use strict";a.r(t);var n=a(7294),l=a(6955),c=a(1277);t.default=function(){return n.createElement("main",{className:"container mx-auto"},n.createElement(c.Z,{title:"Naveen M K (about_me)"}),n.createElement(l.Z,null),n.createElement("div",{className:"aboutmediv"},n.createElement("div",{className:"titlediv"},n.createElement("h2",null,"This is a WIP page."))))}}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-e65b08a7e193cbe4b83e.js.map
