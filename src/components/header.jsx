@@ -8,7 +8,8 @@ const NavBar = () => {
         <Headroom>
             <header className="block bg-gradient-to-r from-red-400 via-yellow-500 to-pink-500">
                 <nav className="text-xl flex flex-wrap justify-between leading-12">
-                    <div className="flex m-2">
+                    <div className="flex m-2 items-center">
+                        <img src="/logo.svg" width="40" height="40" className="mr-2"/>
                         <Link to="/" title="Naveen M K (Alt+H)">
                             Naveen M K
                         </Link>

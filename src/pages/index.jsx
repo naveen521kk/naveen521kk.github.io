@@ -2,18 +2,16 @@ import * as React from "react";
 import "../styles/index.scss";
 import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
+import { StaticImage } from "gatsby-plugin-image"
 
 const IndexPage = () => {
     return (
-        <main className="container mx-auto">
+        <main>
             <SEO title="Naveen M K (about_me)" />
             <NavBar />
-            <div className="aboutmediv">
-                <div className="titlediv">
-                    {/* <h1>Hi, I'm Naveen</h1> */}
-                    {/* <img src="images/syrusdark.png" alt="syrusdark" /> */}
-                    <h2>This is a WIP page.</h2>
-                </div>
+            <div className="container mx-auto px-5">
+            <h2 className="text-3xl font-bold text-center">This is a WIP page.</h2>
+            <StaticImage src="../assets/images/banner.png" alt="Naveen M K (naveen521kk)" className="block max-w-auto"/>
             </div>
         </main>
     );
