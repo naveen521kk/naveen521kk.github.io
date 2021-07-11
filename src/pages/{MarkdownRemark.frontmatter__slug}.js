@@ -18,7 +18,7 @@ export default function Template({
             />
             <NavBar />
             {frontmatter.image ? <BgPhoto img_loc={frontmatter.image} /> : <div />}
-            <div className="relative mx-auto -m-80 bg-white sm:container">
+            <div className="relative mx-auto -m-80 bg-white max-w-3xl rounded-3xl">
                 <div className="blog-post p-9">
                     <h1 className="text-3xl py-2">{frontmatter.title}</h1>
                     <small>{frontmatter.date}</small>
