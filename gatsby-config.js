@@ -47,6 +47,7 @@ module.exports = {
                 ]
             }
         },
+        `gatsby-transformer-json`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         {
