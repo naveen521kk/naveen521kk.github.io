@@ -2,7 +2,7 @@ import React from "react";
 import {graphql} from "gatsby";
 import PostLink from "../components/post-link";
 import NavBar from "../components/header.jsx";
-
+import SEO from "../components/seo.jsx";
 const IndexPage = ({
     data: {
         allMarkdownRemark: {edges}
@@ -14,6 +14,10 @@ const IndexPage = ({
 
     return (
         <div>
+            <SEO
+                title="Blog Posts"
+                description="This blog contains useful things(sometimes not) which are written by Naveen during his free time."
+            />
             <NavBar />
             <div className="md:grid md:gap-4 md:grid-cols-2 md:grid-rows-5 p-10">
                 {Posts}
