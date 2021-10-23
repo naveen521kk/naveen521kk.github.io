@@ -4,19 +4,12 @@ import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import "../styles/posts.scss";
-import twemoji from "twemoji";
 
 export default function Template({
     data // this prop will be injected by the GraphQL query below.
 }) {
     const {markdownRemark} = data; // data.markdownRemark holds your post data
     const {frontmatter, html} = markdownRemark;
-    let html_emoji = twemoji.parse(html, {
-        ext: '.svg',
-        callback: function (iconId, options) {
-            return "https://cdn.jsdelivr.net/gh/twitter/twemoji@gh-pages/v/13.1.0/svg/" + iconId + options.ext;
-        }
-    });
     return (
         <article>
             <SEO
@@ -35,7 +28,8 @@ export default function Template({
                     <small>{frontmatter.date}</small>
                     <div
                         className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
-                        dangerouslySetInnerHTML={{__html: html_emoji}}
+                        dangerouslySetInnerHTML={{__html: html}}
+                        id="blog-start"
                     />
                 </div>
             </div>

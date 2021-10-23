@@ -15,13 +15,18 @@
     padding-top: 8px;
     padding-bottom: 8px;
 }
-.blog-post-content h1, h2, h3, h4, h5, img{
+.blog-post-content h1,
+h2,
+h3,
+h4,
+h5,
+img {
     padding-top: 8px;
     padding-bottom: 8px;
 }
-.blog-post-content a{
+.blog-post-content a {
     text-decoration: wavy;
-    color:blueviolet;
+    color: blueviolet;
 }
 // .blog-post-content pre{
 //     text-decoration: none;
@@ -33,11 +38,18 @@
     // height: 25px;
     width: 1.6rem;
     vertical-align: -0.7em;
-    margin: 0px 0.05em 0px 0.1em; 
+    margin: 0px 0.05em 0px 0.1em;
 }
 
-.blog-post-content img{
+.blog-post-content img {
     display: block;
-    max-width: 100%;
-    height: auto;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.blog-post-content video{
+    display: block;
+    max-height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
