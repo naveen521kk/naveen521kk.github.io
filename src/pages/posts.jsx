@@ -3,6 +3,8 @@ import {graphql} from "gatsby";
 import PostLink from "../components/post-link";
 import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
+import * as PostsList from "../styles/posts-list.module.css"
+
 const IndexPage = ({
     data: {
         allMarkdownRemark: {edges}
@@ -19,7 +21,7 @@ const IndexPage = ({
                 description="This blog contains useful things(sometimes not) which are written by Naveen during his free time."
             />
             <NavBar />
-            <div className="md:grid md:gap-4 md:grid-cols-2 md:grid-rows-5 p-10">
+            <div className={PostsList.container}>
                 {Posts}
             </div>
         </div>

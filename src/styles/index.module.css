@@ -39,7 +39,7 @@
 .temp_h2 {
     font-size: 30px;
     line-height: 36px;
-    font-weight: bold;
+    font-weight: var(--font-weigth-bold);
     text-align: center;
 }
 .temp_img {

@@ -1,8 +1,9 @@
 import React from "react";
 import {Link} from "gatsby";
+import * as PostsList from "../styles/posts-list.module.css";
 const PostLink = ({post}) => (
-    <div className="text-lg rounded-3xl border-8 border-red-200 p-3 xl:my-6 mb-4 xl:mx-3">
-        <Link to={post.frontmatter.slug} className="p-3">
+    <div className={PostsList.image_container}>
+        <Link to={post.frontmatter.slug} className={PostsList.link_to}>
             {post.frontmatter.image ? (
                 <img
                     src={post.frontmatter.image}

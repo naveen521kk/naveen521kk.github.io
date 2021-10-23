@@ -7,10 +7,11 @@
 .heading {
     margin-top: 0rem;
     margin-bottom: 2rem;
-    font-size: xxx-large;
+    font-size: var(--font-size-xxxlarge);
 }
 .paragraph {
-    font-size: large;
+    font-size: var(--font-size-large);
+    line-height: var(--font-size-large-line-height);
     padding-bottom: 4rem;
 }
 .home_button {
