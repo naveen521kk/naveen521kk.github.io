@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "description": "Naveen",
-    "author": "Syrus Dark",
+    "author": "Naveen M K",
     "keywords": [
         "gatsby"
     ],
@@ -17,9 +17,7 @@
         "check-format": "prettier -c \"./**/*.{js,css,json,scss,jsx}\""
     },
     "dependencies": {
-        "@fontsource/ibm-plex-sans": "^4.4.5",
-        "@fontsource/mulish": "^4.5.0",
-        "@fontsource/open-sans": "^4.4.5",
+        "@fontsource/plus-jakarta-sans": "^4.5.0",
         "@mdx-js/mdx": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
         "autoprefixer": "^10.2.6",

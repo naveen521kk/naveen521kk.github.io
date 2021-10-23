@@ -1,0 +1,12 @@
+.menu_item li + li {
+    margin-inline-start: 24px;
+}
+
+.header {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+        "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
+    display: block;
+    background-image: linear-gradient(to right, #f87171, #f59e0b, #ec4899);
+}

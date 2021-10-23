@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/index.scss";
+import "../styles/index.css";
 import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
 import { StaticImage } from "gatsby-plugin-image"

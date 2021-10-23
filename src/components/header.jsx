@@ -1,12 +1,13 @@
 import * as React from "react";
 import {Link} from "gatsby";
 import Headroom from "react-headroom";
-import "../styles/header.scss";
 import {SunIcon} from "./icons";
+import * as header from "../styles/header.module.css"
+
 const NavBar = () => {
     return (
         <Headroom>
-            <header className="block bg-gradient-to-r from-red-400 via-yellow-500 to-pink-500">
+            <header className={header.header}>
                 <nav className="text-xl flex flex-wrap justify-between leading-12">
                     <div className="flex m-2 items-center">
                         <img src="/logo.svg" width="40" height="40" className="mr-2" alt="Naveen M K"/>
@@ -22,7 +23,7 @@ const NavBar = () => {
 
                     <ul
                         id="menu"
-                        className="flex list-none overflow-x-auto whitespace-nowrap mx-6 my-2 p-0"
+                        className={"flex list-none overflow-x-auto whitespace-nowrap mx-6 my-2 p-0 " +  header.menu_item}
                     >
                         <li>
                             <Link to="/posts">Blog</Link>
