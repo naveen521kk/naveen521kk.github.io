@@ -1,6 +1,17 @@
 .menu_item li + li {
     margin-inline-start: 24px;
 }
+.menu_item{
+    display: flex;
+    list-style-type: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding:0px;
+}
 
 .header {
     font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
@@ -9,4 +20,26 @@
         "Segoe UI Symbol", "Noto Color Emoji";
     display: block;
     background-image: linear-gradient(to right, #f87171, #f59e0b, #ec4899);
+}
+
+.main_nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: var(--font-size-xlarge);
+    line-height: 3rem;
+}
+
+.nav_inner_div{
+    display: flex;
+    margin: 0.5rem;
+    align-items: center;
+}
+.nav_logo{
+    margin-right: 0.5rem;
+}
+.theme_toggler_container{
+    display: inline-flex;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
 }

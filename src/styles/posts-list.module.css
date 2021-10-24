@@ -39,8 +39,8 @@
 .post_title{
     padding-top: 1rem;
     padding: 0px;
-    font-size: var(--font-size-xlarge);
-    line-height: var(--font-size-xlarge-line-height);
+    font-size: var(--font-size-xxlarge);
+    line-height: var(--font-size-xxlarge-line-height);
     text-align: center;
 }
 

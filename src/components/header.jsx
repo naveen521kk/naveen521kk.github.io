@@ -8,13 +8,13 @@ const NavBar = () => {
     return (
         <Headroom>
             <header className={header.header}>
-                <nav className="text-xl flex flex-wrap justify-between leading-12">
-                    <div className="flex m-2 items-center">
-                        <img src="/logo.svg" width="40" height="40" className="mr-2" alt="Naveen M K"/>
+                <nav className={header.main_nav}>
+                    <div className={header.nav_inner_div}>
+                        <img src="/logo.svg" width="40" height="40" className={header.nav_logo} alt="Naveen M K"/>
                         <Link to="/" title="Naveen M K (Alt+H)">
                             Naveen M K
                         </Link>
-                        <span className="inline-flex mx-5">
+                        <span className={header.theme_toggler_container}>
                             <button id="theme-toggle" aria-label="toggle-theme">
                                 <SunIcon />
                             </button>
@@ -23,7 +23,7 @@ const NavBar = () => {
 
                     <ul
                         id="menu"
-                        className={"flex list-none overflow-x-auto whitespace-nowrap mx-6 my-2 p-0 " +  header.menu_item}
+                        className={header.menu_item}
                     >
                         <li>
                             <Link to="/posts">Blog</Link>

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import '../../node_modules/modern-normalize/modern-normalize.css'; */
 
 
 body {
@@ -13,8 +14,10 @@ body {
     --font-size-normal: 16px;
     --font-size-large: 18px;
     --font-size-large-line-height: 28px;
-    --font-size-xlarge: 24px;
-    --font-size-xlarge-line-height: 32px;
+    --font-size-xlarge: 20px;
+    --font-size-xlarge-line-height: 28px
+    --font-size-xxlarge: 24px;
+    --font-size-xxlarge-line-height: 32px;
     --font-size-xxxlarge: 50px;
     --font-weigth-bold: 600;
     --boder-color-light: rgba(254, 202, 202, 1);
