@@ -30,3 +30,22 @@
 .link_to{
     padding: 0.75rem;
 }
+
+.images{
+    display: block;
+}
+
+
+.post_title{
+    padding-top: 1rem;
+    padding: 0px;
+    font-size: var(--font-size-xlarge);
+    line-height: var(--font-size-xlarge-line-height);
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .post_title {
+        padding-top: 1.5rem;
+    }
+}
