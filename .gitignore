@@ -5,3 +5,6 @@ public
 *.swp
 *.zip
 *.xml
+.venv/
+media/
+__py*

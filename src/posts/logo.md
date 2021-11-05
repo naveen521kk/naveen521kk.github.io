@@ -212,6 +212,66 @@ rm temp-*.png temp-*.svg
 
 You can get the whole shell script from [here](https://github.com/naveen521kk/naveen521kk.github.io/blob/main/logo/build-favicon.sh). I ran it under MSYS2 on my Windows machine.
 
+
+### Creating the logo with Manim
+
+Update 5 November 2021: someone from Discord called `ad_chaos#5354` recreated the same with Manim. See [here](https://discord.com/channels/581738731934056449/780234936980078602/906063960082636830). Thanks ❤️.
+
+Here's the code to create it:
+```py
+class SyrusDarkLogo(Scene):
+    def construct(self):
+
+        # colours and constants
+        green = "#5FA172"
+        blue = "#2F3954"
+        radii = 1.45
+        x_center = 2.05
+
+        # config
+        self.camera.background_color = WHITE
+
+        # arcs
+        p1 = Arc(
+            angle=2 * np.arctan(1 / (x_center - 1)), radius=radii
+        ).move_arc_center_to(np.array([-x_center, 0, 0]))
+        p1.rotate(-np.arctan(1 / (x_center - 1)), about_point=p1.get_arc_center())
+        pn = VGroup()
+        pn.add(
+            *[
+                p1.copy().rotate(n * PI / 2, about_point=([0, 0, 0]))
+                for n in range(1, 4)
+            ],
+            p1
+        ).set_color(green)
+
+        # lines
+        ln = VGroup()
+        ln.add(Line([1, 1, 0], [-1, -1, 0]), Line([-1, 1, 0], [1, -1, 0])).set_color(
+            green
+        )
+
+        # parabolas
+        curve = ParametricFunction(
+            lambda v: np.array([v, 0.9 * v ** 2 + 0.1, 0]), t_range=np.array([-1, 1])
+        ).set_color(blue)
+        curves = VGroup()
+        curves.add(
+            *[
+                curve.copy().rotate(n * PI / 2, about_point=([0, 0, 0]))
+                for n in range(4)
+            ]
+        )
+
+        # final assembly
+        avatar = VGroup()
+        avatar.add(pn, ln, curves)
+        self.add(avatar.scale(3))
+```
+
+It is also available [here](https://github.com/naveen521kk/naveen521kk.github.io/blob/main/logo/logo-manim.py).
+
+
 ### Aftermath
 
 Then I opened Inkscape to get a white background on that logo. I could use Cairo but well...
