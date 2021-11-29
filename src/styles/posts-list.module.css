@@ -9,7 +9,7 @@
         grid-template-rows: repeat(5, minmax(0, 1fr));
     }
 }
-.image_container{
+.image_container {
     font-size: var(--font-size-large);
     line-height: var(--font-size-large-line-height);
     border-radius: 1.5rem;
@@ -17,26 +17,24 @@
     border-color: var(--boder-color-light);
     padding: 0.75rem;
     margin-bottom: 1rem;
-
 }
 @media (min-width: 1280px) {
     .image_container {
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
         margin-left: 0.75rem;
-        margin-right: 0.75rem
+        margin-right: 0.75rem;
     }
 }
-.link_to{
+.link_to {
     padding: 0.75rem;
 }
 
-.images{
+.images {
     display: block;
 }
 
-
-.post_title{
+.post_title {
     padding-top: 1rem;
     padding: 0px;
     font-size: var(--font-size-xxlarge);

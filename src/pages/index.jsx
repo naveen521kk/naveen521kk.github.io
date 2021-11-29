@@ -10,9 +10,7 @@ const IndexPage = () => {
             <SEO title="Naveen M K (about_me)" />
             <NavBar />
             <div className={index_css.container}>
-                <h2 className={index_css.temp_h2}>
-                    This is a WIP page.
-                </h2>
+                <h2 className={index_css.temp_h2}>This is a WIP page.</h2>
                 <StaticImage
                     src="../assets/images/banner.png"
                     alt="Naveen M K (naveen521kk)"
