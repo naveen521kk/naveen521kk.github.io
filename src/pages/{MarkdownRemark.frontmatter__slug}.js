@@ -15,6 +15,7 @@ export default function Template({
             <SEO
                 title={frontmatter.title}
                 description={frontmatter.description}
+                image={frontmatter.image}
             />
             <NavBar />
             {frontmatter.image ? (
