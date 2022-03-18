@@ -3,7 +3,7 @@ slug: "/manim/manim-configuration-for-vscode"
 title: "Configuring Visual Studio Code for using with Manim"
 date: 2022-03-18T10:55:01+05:30
 draft: false
-description: "The article explains how to install Manim (the community edition) and configuring with VSCode."
+description: "The article explains how to install Manim (the community edition) and configuring with Visual Studio Code."
 image: "/assets/manim-vscode/banner.png"
 ---
 
