@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1024"
+   height="512"
+   viewBox="0 0 270.93339 135.46667"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="banner.svg"
+   inkscape:export-filename="C:\dev\naveen521kk.github.io\static\assets\manim-vscode\banner.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="0.68595679"
+     inkscape:cx="117.35433"
+     inkscape:cy="151.61305"
+     inkscape:window-width="1920"
+     inkscape:window-height="974"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g14463" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#e9c6af;stroke:#000000;stroke-width:0.105833"
+       id="rect14579"
+       width="270.93332"
+       height="135.46666"
+       x="0.38571429"
+       y="0" />
+    <g
+       id="g14463">
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:24.6944px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
+         x="28.542856"
+         y="42.814285"
+         id="text3561"><tspan
+           sodipodi:role="line"
+           id="tspan3559"
+           style="stroke-width:0.264583"
+           x="28.542856"
+           y="42.814285">Visual Studio Code</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:42.0318px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.262699"
+         x="120.05135"
+         y="82.415558"
+         id="text5119"
+         transform="scale(1.0005131,0.99948718)"><tspan
+           sodipodi:role="line"
+           id="tspan5117"
+           style="font-size:42.0318px;stroke-width:0.262699"
+           x="120.05135"
+           y="82.415558">+</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:24.6944px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
+         x="96.042862"
+         y="113.01429"
+         id="text8443"><tspan
+           sodipodi:role="line"
+           id="tspan8441"
+           style="stroke-width:0.264583"
+           x="96.042862"
+           y="113.01429">Manim</tspan></text>
+      <image
+         preserveAspectRatio="none"
+         inkscape:svg-dpi="96"
+         width="30"
+         height="30"
+         xlink:href="../../../../../Users/naveen/Desktop/vscode.svg"
+         id="image9169"
+         x="85"
+         y="55" />
+      <image
+         preserveAspectRatio="none"
+         inkscape:svg-dpi="96"
+         width="38.069084"
+         height="25.323195"
+         xlink:href="../../../../../Users/naveen/Desktop/transparent_background.svg"
+         id="image9431"
+         x="155"
+         y="60" />
+    </g>
+  </g>
+</svg>
