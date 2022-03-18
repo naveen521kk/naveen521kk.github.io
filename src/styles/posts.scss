@@ -47,7 +47,7 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
-.blog-post-content video{
+.blog-post-content video {
     display: block;
     max-height: 300px;
     margin-left: auto;
@@ -55,12 +55,13 @@ img {
 }
 
 .blog-post-content ol {
-    list-style: decimal
+    list-style: decimal;
 }
 .blog-post-content ul {
-    list-style: decimal
+    list-style: decimal;
 }
-.blog-post-content ol, ul {
+.blog-post-content ol,
+ul {
     padding-left: 25px;
     margin-bottom: 20px;
 }
