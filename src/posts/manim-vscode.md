@@ -69,7 +69,7 @@ This should create 2 files `main.py` and `manim.cfg`.
     - [Manim Sideview](https://marketplace.visualstudio.com/items?itemName=Rickaym.manim-sideview) (optional, if you don't want live preview of code video you generate)
     
 4. Select the Python interpreter by clicking <kbd>F1</kbd> and searching for `Python: Select Interpreter`. Select the virtual environment previously created.
-    ![vscode select python interpreter manim](/assets/manim-vscode/code_choose_python)
+    ![vscode select python interpreter manim](/assets/manim-vscode/code_choose_python.png)
     
 5. If everything is configured correctly pressing <kbd>Ctrl</kbd> + <kbd>Click</kbd> should get to the corresponding definition of that class. Also, there would no yellow swiggly lines.
     ![vscode manim show definition hover](/assets/manim-vscode/vscode_manim_defn.png)
