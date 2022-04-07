@@ -11,7 +11,7 @@ In this post, I'm sharing my experience to set up a C development environment on
 
 ## Install MSYS2
 
-MSYS2 is a project which provides a collection of tools for building native Windows software. [See this documentation for learning more about it.](https://www.msys2.org/docs/what-is-msys2/) I just installed MSYS2 as explained on [the installation page](https://www.msys2.org/#installation) using the installer.
+MSYS2 is a project which provides a collection of tools for building native Windows software. [See this documentation for learning more about it.](https://www.msys2.org/docs/what-is-msys2/) I have installed MSYS2 as explained on [the installation page](https://www.msys2.org/#installation) using the installer in the default location.
 
 ### Installing Toolchain
 
@@ -95,7 +95,7 @@ After installing the base MSYS2 installation, I installed the toolchain for the 
 	![gcc test compilation msys2](/assets/c-install/gcc-test-compilation.png)
 	
 
-If everything works as expected then follow next steps. If something seems broken and doesn't work, please ask in `#help` at [MSYS2 discord server](https://discord.gg/jPQdRdDcT9).
+If everything works as expected then follow next steps. If something seems broken and doesn't work, please ask in `#help` at [MSYS2's discord server](https://discord.gg/jPQdRdDcT9).
 
 ## Configuring Visual Studio Code
 
@@ -220,3 +220,5 @@ The `launch.json` looks like this in the end
 ```
 
 After this, you can have a look at [Visual Studio Code's docs](https://code.visualstudio.com/docs/cpp/config-mingw#_debug-helloworldcpp) on how to debug.
+
+Hope this helps you in configuring Visual Studio Code for setting up a development environment for C. If you have an error, or found something to difficult to  understand, jump over to `#help` on [MSYS2's Discord server](https://discord.gg/jPQdRdDcT9).
