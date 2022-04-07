@@ -45,7 +45,7 @@ export default function Template({
             )}
             <div className="relative mx-auto -m-80 bg-white max-w-3xl rounded-3xl">
                 <div className="blog-post md:p-9 p-3">
-                    <h1 className="text-5xl py-2">{frontmatter.title}</h1>
+                    <h1 className="py-2">{frontmatter.title}</h1>
                     <small>{frontmatter.date}</small>
                     <div
                         className="flex flex-col blog-post-content pt-3 mx-auto justify-center"

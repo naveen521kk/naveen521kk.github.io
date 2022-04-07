@@ -46,6 +46,7 @@
         "react-dom": "^17.0.2",
         "react-headroom": "^3.1.1",
         "react-helmet": "^6.1.0",
+        "rfs": "^9.0.6",
         "sass": "^1.35.1",
         "tailwindcss": "^2.2.4"
     },

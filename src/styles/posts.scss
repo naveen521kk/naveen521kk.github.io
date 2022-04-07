@@ -1,20 +1,27 @@
+@import "./variables";
+
+.blog-post h1{
+    @include font-size($h1-font-size);
+}
+
 .blog-post-content h1 {
-    font-size: 40px;
+    @include font-size($h1-font-size);
 }
 .blog-post-content h2 {
-    font-size: 32px;
+    @include font-size($h2-font-size);
 }
 .blog-post-content h3 {
-    font-size: 24px;
+    @include font-size($h3-font-size);
 }
 .blog-post-content h4 {
-    font-size: 20px;
+    @include font-size($h4-font-size);
 }
 .blog-post-content {
-    font-size: 18px;
+    @include font-size($font-size-base);
     padding-top: 8px;
     padding-bottom: 8px;
 }
+
 .blog-post-content h1,
 h2,
 h3,
