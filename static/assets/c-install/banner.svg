@@ -7,8 +7,11 @@
    viewBox="0 0 270.93333 135.46667"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    sodipodi:docname="banner.svg"
+   inkscape:export-filename="C:\dev\naveen521kk.github.io\static\assets\c-install\banner.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -31,9 +34,9 @@
      showgrid="false"
      scale-x="1"
      units="px"
-     inkscape:zoom="1.0396203"
-     inkscape:cx="608.39522"
-     inkscape:cy="265.48155"
+     inkscape:zoom="0.51981013"
+     inkscape:cx="805.10166"
+     inkscape:cy="340.50895"
      inkscape:window-width="1920"
      inkscape:window-height="974"
      inkscape:window-x="-11"
@@ -52,35 +55,39 @@
        width="270.93332"
        height="135.46666"
        x="0.052916501"
-       y="0.052916501" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
-       x="16.200001"
-       y="30.857141"
-       id="text895"><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
-         x="16.200001"
-         y="30.857141"
-         id="tspan3703">Setup a C Dev Environment</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
-       x="94.059044"
-       y="58.216812"
-       id="text11517"><tspan
-         sodipodi:role="line"
-         id="tspan11515"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+       y="0.052916501"
+       rx="13.229167"
+       ry="13.229167" />
+    <g
+       id="g25808">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+         x="14.940145"
+         y="28.298038"
+         id="text895"><tspan
+           sodipodi:role="line"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+           x="14.940145"
+           y="28.298038"
+           id="tspan3703">Setup a C Dev Environment</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
          x="94.059044"
-         y="58.216812">Windows</tspan></text>
-    <image
-       preserveAspectRatio="none"
-       inkscape:svg-dpi="96"
-       width="26.458334"
-       height="26.458334"
-       xlink:href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9
+         y="58.216812"
+         id="text11517"><tspan
+           sodipodi:role="line"
+           id="tspan11515"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+           x="94.059044"
+           y="58.216812">Windows</tspan></text>
+      <image
+         preserveAspectRatio="none"
+         inkscape:svg-dpi="96"
+         width="26.458334"
+         height="26.458334"
+         xlink:href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9
 Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxtYXNrIGlkPSJtYXNr
 MCIgbWFzay10eXBlPSJhbHBoYSIgbWFza1VuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeD0iMCIgeT0i
 MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNs
@@ -160,15 +167,15 @@ ZSI+CjxzdG9wIHN0b3AtY29sb3I9IndoaXRlIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xv
 cj0id2hpdGUiIHN0b3Atb3BhY2l0eT0iMCIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwv
 c3ZnPgo=
 "
-       id="image14035"
-       x="10.583333"
-       y="79.375" />
-    <image
-       preserveAspectRatio="none"
-       inkscape:svg-dpi="96"
-       width="29.142086"
-       height="29.142086"
-       xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxz
+         id="image14035"
+         x="10.583333"
+         y="79.375" />
+      <image
+         preserveAspectRatio="none"
+         inkscape:svg-dpi="96"
+         width="29.142086"
+         height="29.142086"
+         xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxz
 dmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxu
 czpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6
 Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0
@@ -306,26 +313,26 @@ LjA4NTA1IC0xLjU4MDc5OSwtMS43Nzk5NCAtMi43NjUwNzMsLTEuNzAyNTMgLTAuMjI4NDczLC0w
 LjAyIC0wLjQ1NjIxNiwwLjAwNCAtMC42ODQ2MjYsMC4wMTIzIHoiIC8+CiAgICA8L2c+CiAgPC9n
 Pgo8L3N2Zz4K
 "
-       id="image15385"
-       x="231.24583"
-       y="79.375" />
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
-       x="66.678986"
-       y="87.039009"
-       id="text18301"><tspan
-         sodipodi:role="line"
-         id="tspan18299"
-         style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+         id="image15385"
+         x="231.24583"
+         y="79.375" />
+      <text
+         xml:space="preserve"
+         style="font-weight:bold;font-size:21.1667px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Bold';stroke-width:0.264583"
          x="66.678986"
-         y="87.039009">GCC + VSCode</tspan></text>
-    <image
-       preserveAspectRatio="none"
-       inkscape:svg-dpi="96"
-       width="26.458334"
-       height="26.458334"
-       xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTMxLjg0
+         y="87.039009"
+         id="text18301"><tspan
+           sodipodi:role="line"
+           id="tspan18299"
+           style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:21.1667px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light';stroke-width:0.264583"
+           x="66.678986"
+           y="87.039009">GCC + VSCode</tspan></text>
+      <image
+         preserveAspectRatio="none"
+         inkscape:svg-dpi="96"
+         width="26.458334"
+         height="26.458334"
+         xlink:href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTMxLjg0
 bW0iIGhlaWdodD0iMTMxLjg0bW0iIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEzMS44NCAx
 MzEuODQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6
 Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9l
@@ -350,9 +357,10 @@ IGhlaWdodD0iMzIuNTI5IiBmaWxsPSIjNzFiMjFmIi8+CiAgPHJlY3QgdHJhbnNmb3JtPSJyb3Rh
 dGUoLTQ1KSIgeD0iOC40NDIzIiB5PSIxNDUuOTkiIHdpZHRoPSIzMi41MjkiIGhlaWdodD0iMzIu
 NTI5Ii8+CiA8L2c+Cjwvc3ZnPgo=
 "
-       id="image25571"
-       x="108.74375"
-       y="105.10397" />
+         id="image25571"
+         x="108.74375"
+         y="103.1875" />
+    </g>
   </g>
   <metadata
      id="metadata9">
