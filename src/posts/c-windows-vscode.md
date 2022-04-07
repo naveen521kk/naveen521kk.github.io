@@ -103,9 +103,7 @@ Open Visual Studio Code (VSCode). Typing <kbd>Win + R</kbd> and typing entering 
 
 ### Install Extensions
 
-[Install the following extensions.](https://code.visualstudio.com/docs/editor/extension-marketplace)
-
-   - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+[Install](https://code.visualstudio.com/docs/editor/extension-marketplace) the [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) extension for Visual Studio Code.
 
 You can install the C/C++ extension by searching for 'c++' in the Extensions view <kbd>Ctrl+Shift+X</kbd>.
 
