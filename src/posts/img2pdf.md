@@ -1,5 +1,5 @@
 ---
-slug: "/docs/img2pdf"
+slug: "/docs/img2pdf/"
 title: "What is Img2pdf?"
 date: 2020-09-16T16:59:01+05:30
 draft: false

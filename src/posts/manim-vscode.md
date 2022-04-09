@@ -1,5 +1,5 @@
 ---
-slug: "/manim/manim-configuration-for-vscode"
+slug: "/manim/manim-configuration-for-vscode/"
 title: "Configuring Visual Studio Code for using with Manim"
 date: 2022-03-18T10:55:01+05:30
 draft: false

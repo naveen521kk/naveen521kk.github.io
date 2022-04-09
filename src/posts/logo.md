@@ -1,5 +1,5 @@
 ---
-slug: "/blog/how-did-i-create-my-logo"
+slug: "/blog/how-did-i-create-my-logo/"
 title: "How I created my Logo?"
 date: 2021-07-11T00:56:01+05:30
 draft: false

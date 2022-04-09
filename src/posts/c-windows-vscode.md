@@ -1,5 +1,5 @@
 ---
-slug: "/blog/setup-c-dev-environment-windows"
+slug: "/blog/setup-c-dev-environment-windows/"
 title: "Setup a C development environment on Windows"
 date: 2022-04-07T10:55:01+05:30
 draft: false

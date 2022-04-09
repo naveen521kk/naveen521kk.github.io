@@ -1,5 +1,5 @@
 ---
-slug: "/blog/check-palindrome-for-numbers-algorithm-flowchart"
+slug: "/blog/check-palindrome-for-numbers-algorithm-flowchart/"
 title: "Check Palindrome (for numbers) - Algorithm, flowchart, Pseudocode, Implementation
 "
 date: 2021-12-25T16:59:01+05:30
