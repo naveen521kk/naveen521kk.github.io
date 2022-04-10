@@ -4,7 +4,7 @@ import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import "../styles/posts.scss";
-import {Helmet} from "react-helmet";
+import {JsonLd} from "../components/json_ld.jsx";
 
 export default function Template({
     data // this prop will be injected by the GraphQL query below.
@@ -14,7 +14,13 @@ export default function Template({
     const json_ld_data = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        author: "Naveen M K",
+        headline: frontmatter.title,
+        author: {
+            "@type": "Person",
+            name: "Naveen M K",
+            url: "http://naveen521kk.github.io",
+            image: "https://avatars.githubusercontent.com/u/49693820"
+        },
         name: frontmatter.title,
         abstract: frontmatter.description,
         image: frontmatter.image,
@@ -24,19 +30,13 @@ export default function Template({
     };
     return (
         <article>
-            <Helmet>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(json_ld_data)
-                    }}
-                />
-            </Helmet>
             <SEO
                 title={frontmatter.title}
                 description={frontmatter.description}
                 image={frontmatter.image}
+                article={true}
             />
+            <JsonLd data={json_ld_data} />
             <NavBar />
             {frontmatter.image ? (
                 <BgPhoto img_loc={frontmatter.image} />
