@@ -1,0 +1,4 @@
+Sitemap: https://naveen521kk.github.io/sitemap/sitemap-index.xml
+
+User-agent: *
+Disallow:
