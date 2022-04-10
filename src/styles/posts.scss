@@ -1,6 +1,6 @@
 @import "./variables";
 
-.blog-post h1{
+.blog-post h1 {
     @include font-size($h1-font-size);
 }
 
