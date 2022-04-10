@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
+import {Helmet} from "react-helmet";
+import {useLocation} from "@reach/router";
+import {useStaticQuery, graphql} from "gatsby";
 
-const SEO = ({ title, description, image, article, canonical }) => {
-    const { pathname } = useLocation();
-    const { site } = useStaticQuery(query);
+const SEO = ({title, description, image, article, canonical}) => {
+    const {pathname} = useLocation();
+    const {site} = useStaticQuery(query);
 
     const {
         defaultTitle,
@@ -21,7 +21,7 @@ const SEO = ({ title, description, image, article, canonical }) => {
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
         url: `${siteUrl}${pathname}`,
-        canonical: canonical || `${siteUrl}${pathname}`,
+        canonical: canonical || `${siteUrl}${pathname}`
     };
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
@@ -63,7 +63,7 @@ SEO.propTypes = {
     description: PropTypes.string,
     image: PropTypes.string,
     article: PropTypes.bool,
-    canonical: PropTypes.string,
+    canonical: PropTypes.string
 };
 
 SEO.defaultProps = {
@@ -71,7 +71,7 @@ SEO.defaultProps = {
     description: null,
     image: null,
     article: false,
-    canonical: null,
+    canonical: null
 };
 
 const query = graphql`
