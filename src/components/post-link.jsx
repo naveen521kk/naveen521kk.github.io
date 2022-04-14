@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import * as PostsList from "../styles/posts-list.module.css";
+import * as PostsList from "../styles/posts-list.module.scss";
 
 const PostLink = ({post}) => (
     <div className={PostsList.image_container}>
@@ -18,9 +18,9 @@ const PostLink = ({post}) => (
                     className={PostsList.images}
                 />
             )}
-            <h3 className={PostsList.post_title}>
+            <h4 className={PostsList.post_title}>
                 {post.frontmatter.title} ({post.frontmatter.date})
-            </h3>
+            </h4>
         </Link>
     </div>
 );

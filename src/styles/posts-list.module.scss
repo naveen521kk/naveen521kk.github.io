@@ -1,5 +1,11 @@
+@import "variables";
+
 .container {
     padding: 2.5rem;
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 @media (min-width: 768px) {
     .container {
@@ -10,11 +16,9 @@
     }
 }
 .image_container {
-    font-size: var(--font-size-large);
-    line-height: var(--font-size-large-line-height);
     border-radius: 1.5rem;
     border-width: 8px;
-    border-color: var(--boder-color-light);
+    border-color: $boder-color-light;
     padding: 0.75rem;
     margin-bottom: 1rem;
 }
@@ -37,8 +41,7 @@
 .post_title {
     padding-top: 1rem;
     padding: 0px;
-    font-size: var(--font-size-xxlarge);
-    line-height: var(--font-size-xxlarge-line-height);
+    line-height: 1.5;
     text-align: center;
 }
 

@@ -1,3 +1,6 @@
+@import "../../node_modules/rfs/scss";
+@import "variables";
+
 .menu_item li + li {
     margin-inline-start: 24px;
 }
@@ -20,14 +23,19 @@
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     display: block;
     background-image: linear-gradient(to right, #f87171, #f59e0b, #ec4899);
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 
 .main_nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: var(--font-size-xlarge);
     line-height: 3rem;
+    @include font-size($h5-font-size);
 }
 
 .nav_inner_div {

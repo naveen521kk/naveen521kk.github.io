@@ -3,7 +3,7 @@ import {graphql} from "gatsby";
 import PostLink from "../components/post-link";
 import NavBar from "../components/header.jsx";
 import SEO from "../components/seo.jsx";
-import * as PostsList from "../styles/posts-list.module.css";
+import * as PostsList from "../styles/posts-list.module.scss";
 
 const IndexPage = ({
     data: {
@@ -18,7 +18,7 @@ const IndexPage = ({
         <div>
             <SEO
                 title="Blog Posts"
-                description="This blog contains useful things(sometimes not) which are written by Naveen during his free time."
+                description="This blog contains useful things (sometimes not) which are written by Naveen during his free time."
             />
             <NavBar />
             <div className={PostsList.container}>{Posts}</div>
