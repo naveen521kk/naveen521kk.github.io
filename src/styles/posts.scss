@@ -1,23 +1,8 @@
 @import "./variables";
+@import "./typography";
 
-.blog-post h1 {
-    @include font-size($h1-font-size);
-}
-
-.blog-post-content h1 {
-    @include font-size($h1-font-size);
-}
-.blog-post-content h2 {
-    @include font-size($h2-font-size);
-}
-.blog-post-content h3 {
-    @include font-size($h3-font-size);
-}
-.blog-post-content h4 {
-    @include font-size($h4-font-size);
-}
 .blog-post-content {
-    @include font-size($font-size-base);
+    @include font-size(var(--font-size-base));
     padding-top: 8px;
     padding-bottom: 8px;
 }

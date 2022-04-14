@@ -3,7 +3,6 @@
 @tailwind utilities;
 /* @import '../../node_modules/modern-normalize/modern-normalize.css'; */
 
-
 :root {
     --font-size-normal: 16px;
     --font-size-large: 18px;
