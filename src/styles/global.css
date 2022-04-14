@@ -3,11 +3,7 @@
 @tailwind utilities;
 /* @import '../../node_modules/modern-normalize/modern-normalize.css'; */
 
-body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-        Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+
 :root {
     --font-size-normal: 16px;
     --font-size-large: 18px;
