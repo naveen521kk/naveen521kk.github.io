@@ -73,7 +73,7 @@ After installing the base MSYS2 installation, I installed the toolchain for the 
    This is free software; see the source for copying conditions.  There is NO
    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    ```
-   ![gcc version test](/assets/c-install/gcc-version-test.png)
+   ![gcc version test](./gcc-version-test.png)
    
 3. Compile a test program:
 	```c
@@ -92,7 +92,7 @@ After installing the base MSYS2 installation, I installed the toolchain for the 
 	❯ ./a.exe
 	Hello World
 	```
-	![gcc test compilation msys2](/assets/c-install/gcc-test-compilation.png)
+	![gcc test compilation msys2](./gcc-test-compilation.png)
 	
 
 If everything works as expected then follow next steps. If something seems broken and doesn't work, please ask in `#help` at [MSYS2's discord server](https://discord.gg/jPQdRdDcT9).
@@ -119,7 +119,7 @@ code .
 ```
 The "code ." command opens VS Code in the current working folder, which becomes your "workspace". Accept the [Workspace Trust dialog](https://code.visualstudio.com/docs/editor/workspace-trust) by selecting "Yes", I trust the authors since this is a folder you created.
 
-![vscode workspace trust](/assets/c-install/vscode-workspace-trust.png)
+![vscode workspace trust](./vscode-workspace-trust.png)
 
 Also, create a file `helloworld.c` with the following "Hello World" code:
 
@@ -167,7 +167,7 @@ This file is used to tell VS Code how to build (compile) the program. This task 
 
 From the main menu, choose `Terminal > Configure Default Build Task`. In the dropdown, which will display a tasks dropdown listing various predefined build tasks for C compilers. Choose `gcc.exe` build active file, which will build the file that is currently displayed (active) in the editor.
 
-![vscode default gcc task](/assets/c-install/vscode-default-task.png)
+![vscode default gcc task](./vscode-default-task.png)
 
 This will create a `tasks.json` file in a `.vscode` folder and open it in the editor, modify the file as required.
 
