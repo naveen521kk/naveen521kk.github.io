@@ -2,7 +2,7 @@ import * as React from "react";
 import {Link} from "gatsby";
 import Headroom from "react-headroom";
 import {SunIcon} from "./icons";
-import * as header from "../styles/header.module.css";
+import * as header from "../styles/header.module.scss";
 
 const NavBar = () => {
     return (
