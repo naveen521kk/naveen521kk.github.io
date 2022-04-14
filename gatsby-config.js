@@ -8,6 +8,7 @@ module.exports = {
         siteUrl: "https://naveen521kk.github.io"
     },
     plugins: [
+        `gatsby-plugin-image`,
         `gatsby-plugin-sass`,
         `gatsby-plugin-postcss`,
         `gatsby-plugin-react-helmet`,
@@ -22,12 +23,18 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 800
+                        }
+                    },
                     `gatsby-remark-autolink-headers`,
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             classPrefix: "language-",
-                            aliases: { sh: "bash" },
+                            aliases: {sh: "bash"},
                             inlineCodeMarker: null,
                             aliases: {},
                             showLineNumbers: false,
@@ -40,12 +47,8 @@ module.exports = {
                             escapeEntities: {}
                         }
                     },
-                    {
-                        resolve: `gatsby-remark-images`,
-                        options: {
-                            maxWidth: 800
-                        }
-                    }
+                    `gatsby-remark-copy-linked-files`,
+                    `gatsby-remark-smartypants`
                 ]
             }
         },
@@ -83,9 +86,66 @@ module.exports = {
             }
         },
         //         `gatsby-plugin-offline`,
-        `gatsby-plugin-image`,
-        `gatsby-plugin-sharp`,
+
         `gatsby-transformer-sharp`,
-        `gatsby-plugin-mdx`
+        `gatsby-plugin-sharp`,
+        `gatsby-plugin-mdx`,
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                {
+                  site {
+                    siteMetadata {
+                      title
+                      description
+                      siteUrl
+                      site_url: siteUrl
+                    }
+                  }
+                }
+              `,
+                feeds: [
+                    {
+                        serialize: ({query: {site, allMarkdownRemark}}) => {
+                            return allMarkdownRemark.nodes.map(node => {
+                                return Object.assign({}, node.frontmatter, {
+                                    description: node.excerpt,
+                                    date: node.frontmatter.date,
+                                    url:
+                                        site.siteMetadata.siteUrl +
+                                        node.frontmatter.slug,
+                                    guid:
+                                        site.siteMetadata.siteUrl +
+                                        node.frontmatter.slug,
+                                    custom_elements: [
+                                        {"content:encoded": node.html}
+                                    ]
+                                });
+                            });
+                        },
+                        query: `
+                    {
+                      allMarkdownRemark(
+                        sort: { order: DESC, fields: [frontmatter___date] },
+                      ) {
+                        nodes {
+                          excerpt
+                          html
+                          frontmatter {
+                            title
+                            date
+                            slug
+                          }
+                        }
+                      }
+                    }
+                  `,
+                        output: "/rss.xml",
+                        title: "Naveen M K's website RSS Feed"
+                    }
+                ]
+            }
+        }
     ]
 };
