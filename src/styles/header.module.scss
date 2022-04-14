@@ -1,3 +1,6 @@
+@import "../../node_modules/rfs/scss";
+@import "variables";
+
 .menu_item li + li {
     margin-inline-start: 24px;
 }
@@ -31,8 +34,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: var(--font-size-xlarge);
     line-height: 3rem;
+    @include font-size($h5-font-size);
 }
 
 .nav_inner_div {

@@ -14,8 +14,6 @@
     }
 }
 .image_container {
-    font-size: var(--font-size-large);
-    line-height: var(--font-size-large-line-height);
     border-radius: 1.5rem;
     border-width: 8px;
     border-color: var(--boder-color-light);
@@ -41,8 +39,7 @@
 .post_title {
     padding-top: 1rem;
     padding: 0px;
-    font-size: var(--font-size-xxlarge);
-    line-height: var(--font-size-xxlarge-line-height);
+    line-height: 1.8;
     text-align: center;
 }
 

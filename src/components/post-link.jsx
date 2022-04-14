@@ -18,9 +18,9 @@ const PostLink = ({post}) => (
                     className={PostsList.images}
                 />
             )}
-            <h3 className={PostsList.post_title}>
+            <h4 className={PostsList.post_title}>
                 {post.frontmatter.title} ({post.frontmatter.date})
-            </h3>
+            </h4>
         </Link>
     </div>
 );

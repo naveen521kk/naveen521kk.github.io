@@ -2,7 +2,6 @@
 
 
 .blog-post-content {
-    @include font-size(var(--font-size-base));
     padding-top: 8px;
     padding-bottom: 8px;
 }
