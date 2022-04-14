@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./typography";
+@import "../../node_modules/rfs/scss";
+
 
 .blog-post-content {
     @include font-size(var(--font-size-base));
