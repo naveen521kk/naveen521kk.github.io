@@ -1,5 +1,9 @@
 .container {
     padding: 2.5rem;
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
 @media (min-width: 768px) {
     .container {
