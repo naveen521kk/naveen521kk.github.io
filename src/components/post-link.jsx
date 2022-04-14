@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
-import * as PostsList from "../styles/posts-list.module.css";
+import * as PostsList from "../styles/posts-list.module.scss";
 
 const PostLink = ({post}) => (
     <div className={PostsList.image_container}>
