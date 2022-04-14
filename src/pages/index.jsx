@@ -13,8 +13,8 @@ const IndexPage = () => {
                 <h2 className={index_css.temp_h2}>This is a WIP page.</h2>
                 <h3>
                     Hi I'm Naveen, you can find me on{" "}
-                    <a href="https://github.com/naveen521kk">Github</a>.
-                    I'll update with my projects here later.
+                    <a href="https://github.com/naveen521kk">Github</a>. I'll
+                    update with my projects here later.
                 </h3>
                 <StaticImage
                     src="../assets/images/banner.png"
