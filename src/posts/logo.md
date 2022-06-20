@@ -27,7 +27,7 @@ First, I opened [Inkscape](https://inkscape.org/) and had no plans about the log
 
 I decided that my logo is going to contain some [Quadratic Beizer Curve](https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Quadratic_B%C3%A9zier_curves) with the starting point as `(0, 0)`; second control point `(0.5, 1)`; and the endpoint as `(1, 0)`. Similarly, there would be a curve around all the other sides. I tried to do that Inkscape and I didn't get any success 😢. 
 
-Annoyed with Inkscape, I thought it would be better to create things programmatically. I wanted some tool that could give me an SVG and an API that is easy to understand. I have previously used [PyCairo(Python Bindings for Cairo Graphics Library)](https://pycairo.readthedocs.io) for [Manim](https://manim.community) and understand its API a bit; I decided to use it. 
+Annoyed with Inkscape, I thought it would be better to create things programmatically. I wanted some tool that could give me an SVG and an API that is easy to understand. I have previously used [PyCairo (Python Bindings for Cairo Graphics Library)](https://pycairo.readthedocs.io) for [Manim](https://manim.community) and understand its API a bit; I decided to use it. 
 
 I started to write a script that will create the SVG. So, I started with creating a [`cairo.Surface`](https://pycairo.readthedocs.io/en/latest/reference/surfaces.html) and a [`cairo.Context`](https://pycairo.readthedocs.io/en/latest/reference/context.html) from that. I decided to get a 500x500 SVG file.
 
