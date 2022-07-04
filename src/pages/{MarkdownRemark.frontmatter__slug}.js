@@ -5,6 +5,7 @@ import SEO from "../components/seo.jsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import "../styles/posts.scss";
 import {JsonLd} from "../components/json_ld.jsx";
+import * as Posts from "../styles/posts-style.module.scss";
 
 export default function Template({
     data // this prop will be injected by the GraphQL query below.
@@ -43,8 +44,8 @@ export default function Template({
             ) : (
                 <div />
             )}
-            <div className="relative mx-auto -m-80 bg-white max-w-3xl rounded-3xl">
-                <div className="blog-post md:p-9 p-3">
+            <div className={Posts.outer_class}>
+                <div className={Posts.core_blog_post + " blog-post"}>
                     <h1 className="py-2">{frontmatter.title}</h1>
                     <small>{frontmatter.date}</small>
                     <div

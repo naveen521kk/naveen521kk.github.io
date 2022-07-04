@@ -6,6 +6,11 @@
         color: inherit;
         text-decoration: inherit;
     }
+    *,
+    ::after,
+    ::before {
+        border: 0 solid;
+    }
 }
 @media (min-width: 768px) {
     .container {
