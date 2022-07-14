@@ -1,5 +1,6 @@
 import * as React from "react";
 import {graphql} from "gatsby";
+import {MDXRenderer} from "gatsby-plugin-mdx";
 
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld.jsx";
@@ -11,8 +12,8 @@ import "../styles/posts.scss";
 const BlogPostTemplate = ({data, location}) => {
     // const {previous, next} = data;
 
-    const {markdownRemark} = data;
-    const {frontmatter, html} = markdownRemark;
+    const {mdx} = data;
+    const {frontmatter, body} = mdx;
     const json_ld_data = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -61,10 +62,11 @@ const BlogPostTemplate = ({data, location}) => {
                         </header>
                         <section
                             className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
-                            dangerouslySetInnerHTML={{__html: html}}
                             id="blog-start"
                             itemProp="articleBody"
-                        />
+                        >
+                            <MDXRenderer>{body}</MDXRenderer>
+                        </section>
                     </div>
                 </div>
             </article>
@@ -102,8 +104,8 @@ export default BlogPostTemplate;
 
 export const pageQuery = graphql`
     query ($id: String!) {
-        markdownRemark(id: {eq: $id}) {
-            html
+        mdx(id: {eq: $id}) {
+            body
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 slug
