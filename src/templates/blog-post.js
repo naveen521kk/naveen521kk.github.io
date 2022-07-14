@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql} from "gatsby";
+import {graphql} from "gatsby";
 
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld.jsx";

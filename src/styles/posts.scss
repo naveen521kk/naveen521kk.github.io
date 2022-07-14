@@ -60,6 +60,8 @@ ul {
     transform: translateX(-100%) translateY(150%) !important;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
     border: 0 solid;
 }
