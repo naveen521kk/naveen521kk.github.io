@@ -159,26 +159,76 @@ export default function ColorChangeText({defaultColor}) {
                     <tbody>
                         <tr>
                             <th scope="row">Red</th>
-                            <td><code>{"0x" + mainColor.slice(1, 3)}</code></td>
-                            <td><code>{parseInt(mainColor.slice(1, 3), 16)}</code></td>
-                            <td><code>{"0b"+parseInt(mainColor.slice(1, 3), 16).toString(2)}</code></td>
+                            <td>
+                                <code>{"0x" + mainColor.slice(1, 3)}</code>
+                            </td>
+                            <td>
+                                <code>
+                                    {parseInt(mainColor.slice(1, 3), 16)}
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    {"0b" +
+                                        parseInt(
+                                            mainColor.slice(1, 3),
+                                            16
+                                        ).toString(2)}
+                                </code>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">Green</th>
-                            <td><code>{"0x" + mainColor.slice(3, 5)}</code></td>
-                            <td><code>{parseInt(mainColor.slice(3, 5), 16)}</code></td>
-                            <td><code>{"0b"+parseInt(mainColor.slice(3, 5), 16).toString(2)}</code></td>
+                            <td>
+                                <code>{"0x" + mainColor.slice(3, 5)}</code>
+                            </td>
+                            <td>
+                                <code>
+                                    {parseInt(mainColor.slice(3, 5), 16)}
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    {"0b" +
+                                        parseInt(
+                                            mainColor.slice(3, 5),
+                                            16
+                                        ).toString(2)}
+                                </code>
+                            </td>
                         </tr>
                         <tr>
                             <th scope="row">Blue</th>
-                            <td><code>{"0x" + mainColor.slice(5, 7)}</code></td>
-                            <td><code>{parseInt(mainColor.slice(5, 7), 16)}</code></td>
-                            <td><code>{"0b"+parseInt(mainColor.slice(5, 7), 16).toString(2)}</code></td>
+                            <td>
+                                <code>{"0x" + mainColor.slice(5, 7)}</code>
+                            </td>
+                            <td>
+                                <code>
+                                    {parseInt(mainColor.slice(5, 7), 16)}
+                                </code>
+                            </td>
+                            <td>
+                                <code>
+                                    {"0b" +
+                                        parseInt(
+                                            mainColor.slice(5, 7),
+                                            16
+                                        ).toString(2)}
+                                </code>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            In binary form, {"0b"+parseInt(mainColor, 16).toString(2)}
+            <p>
+                In short, the first 8 bits of the color represents the RED
+                component, and the next 8 bits represent the GREEN component,
+                and the last 8 bits represents BLUE component.
+            </p>
+            <p>
+                Now that we learnt how color is stored, we can look into how to
+                get these stored values using Bitwise operators.
+            </p>
         </>
     );
 }
