@@ -2,6 +2,7 @@
 @import "variables";
 @import "root";
 @import "reboot";
+@import "../../node_modules/tippy.js/dist/tippy.css";
 
 // @import '../../node_modules/modern-normalize/modern-normalize.css';
 body {
@@ -25,4 +26,14 @@ object,
 svg,
 video {
     display: block;
+}
+:root {
+    @each $comp, $value in $light-theme {
+        --#{$prefix}#{$comp}: #{$value};
+    }
+}
+.dark {
+    @each $comp, $value in $dark-theme {
+        --#{$prefix}#{$comp}: #{$value};
+    }
 }

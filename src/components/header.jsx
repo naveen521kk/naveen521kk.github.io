@@ -1,8 +1,8 @@
 import * as React from "react";
 import {Link} from "gatsby";
 import Headroom from "react-headroom";
-import {SunIcon} from "./icons";
 import * as header from "../styles/header.module.scss";
+import {DarkModeToggler} from "./ThemeToggler.jsx";
 
 const NavBar = () => {
     return (
@@ -22,7 +22,7 @@ const NavBar = () => {
                         </Link>
                         <span className={header.theme_toggler_container}>
                             <button id="theme-toggle" aria-label="toggle-theme">
-                                <SunIcon />
+                                <DarkModeToggler />
                             </button>
                         </span>
                     </div>
