@@ -211,6 +211,7 @@ $light-theme: map-merge(
     (
         "theme-toggler-border": #3b2c25,
         "border-color": rgba(#f87171, 0.5),
+        "code-background-color": #fdf6e3,
     ),
     $header-gradient-light
 );
@@ -221,7 +222,8 @@ $dark-theme: map-merge(
         "body-bg": #171c28,
         "body-color": $gray-100,
         "theme-toggler-border": rgb(2, 39, 78),
-        "border-color": rgba($white, 0.5)
+        "border-color": rgba($white, 0.5),
+        "code-background-color": #002b36
     ),
     $header-gradient-dark
 );
