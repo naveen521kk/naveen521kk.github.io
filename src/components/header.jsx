@@ -34,9 +34,7 @@ const NavBar = () => {
                             Naveen M K
                         </Link>
                         <span className={header.theme_toggler_container}>
-                            <button id="theme-toggle" aria-label="toggle-theme">
                                 <DarkModeToggler />
-                            </button>
                         </span>
                     </div>
 
