@@ -1,0 +1,23 @@
+---
+slug: "/blog/converting-color-hex-to-rgb-using-bitwise-operators/"
+title: "Converting Hex color to RGB array using bitwise operators"
+date: 2022-07-15T00:01:00+05:30
+draft: false
+description: "This article explains how to convert hex representation of color to RGBA (red, green, blue, alpha) array using bitwise operators."
+image: "/assets/rgb-post/banner.png"
+---
+import { useState } from 'react';
+import ColoredText from "../components/coloredText.jsx";
+import NoteBlock from "../components/note-block.jsx";
+import ColorChangeText from "./hex-rgb-color-change.jsx";
+
+export const DefaultMainColor = "#c111fc";
+
+A color is usually represented by a hexadecimal number. For example,
+the color <ColoredText color="#FF0000">#FF0000</ColoredText> is red.
+The hexadecimal number is made up of six digits. The first two digits
+represent the red component, the next two digits represent the green
+component, and the last two digits represent the blue component.
+[See this wikipedia article for more information](https://en.wikipedia.org/w/index.php?title=Hex_color).
+
+<ColorChangeText defaultColor={DefaultMainColor}/>

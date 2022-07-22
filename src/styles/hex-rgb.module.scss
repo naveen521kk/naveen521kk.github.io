@@ -1,0 +1,91 @@
+@import "variables";
+
+.hex_input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-family: var(--#{$prefix}font-monospace);
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #ccc;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.tooltip {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: none;
+
+    .arrow,
+    .arrow::before {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: inherit;
+    }
+
+    .arrow {
+        visibility: hidden;
+    }
+
+    .arrow::before {
+        visibility: visible;
+        content: "";
+        transform: rotate(45deg);
+    }
+}
+.tooltip[data-show] {
+    display: block;
+}
+
+.tooltip[data-popper-placement^="top"] > .arrow {
+    bottom: -4px;
+}
+
+.tooltip[data-popper-placement^="bottom"] > .arrow {
+    top: -4px;
+}
+
+.tooltip[data-popper-placement^="left"] > .arrow {
+    right: -4px;
+}
+
+.tooltip[data-popper-placement^="right"] > .arrow {
+    left: -4px;
+}
+
+.table {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 0.75rem;
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+        table-layout: auto;
+        thead{
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        td, th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+        th{
+            text-align: center;
+            font-weight: 600;
+        }
+        td {
+            text-align: center;
+        }
+    }
+}
