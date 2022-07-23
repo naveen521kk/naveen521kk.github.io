@@ -212,7 +212,9 @@ $light-theme: map-merge(
         "theme-toggler-border": #3b2c25,
         "border-color": rgba(#f87171, 0.5),
         "code-background-color": #fdf6e3,
-        "code-text-color":#657b83
+        "code-text-color":#657b83,
+        "link-color": #8a2be2,
+        "link-hover-color":shift-color(#8a2be2, $link-shade-percentage)
     ),
     $header-gradient-light
 );
@@ -225,7 +227,9 @@ $dark-theme: map-merge(
         "theme-toggler-border": rgb(2, 39, 78),
         "border-color": rgba($white, 0.5),
         "code-background-color": #002b36,
-        "code-text-color": #fdf6e3
+        "code-text-color": #fdf6e3,
+        "link-color": #3abef0,
+        "link-hover-color":shift-color(#3abef0, $link-shade-percentage)
     ),
     $header-gradient-dark
 );
