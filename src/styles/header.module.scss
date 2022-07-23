@@ -22,7 +22,13 @@
         "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
         "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     display: block;
-    background-image: linear-gradient(to right, #f87171, #f59e0b, #ec4899);
+    background-image: linear-gradient(
+        var(--#{$prefix}header-gradient-dir),
+        var(--#{$prefix}header-gradient-1),
+        var(--#{$prefix}header-gradient-2),
+        var(--#{$prefix}header-gradient-3),
+        var(--#{$prefix}header-gradient-4)
+    );
     a {
         color: inherit;
         text-decoration: inherit;
@@ -33,12 +39,12 @@
     select,
     textarea {
         color: inherit;
-        padding: 0;
+        // padding: 0;
     }
     button {
         background-color: transparent;
         background-image: none;
-        border: 0;
+        // border: 0;
     }
 }
 
@@ -53,6 +59,7 @@
 .nav_inner_div {
     display: flex;
     margin: 0.5rem;
+    margin-left: 1rem;
     align-items: center;
 }
 .nav_logo {

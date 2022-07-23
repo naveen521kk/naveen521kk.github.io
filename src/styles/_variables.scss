@@ -82,8 +82,6 @@ $border-radius-pill: 50rem;
 $border-style: solid;
 $border-color: rgba($black, 0.15);
 
-$boder-color-light: rgba(254, 202, 202, 1);
-
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
@@ -190,3 +188,48 @@ $kbd-bg: var(--#{$prefix}body-color);
 $nested-kbd-font-weight: null; // Deprecated in v5.2.0, removing in v6
 
 $pre-color: null;
+
+// Header Gradient
+$header-gradient-light: (
+    "header-gradient-dir": 90deg,
+    "header-gradient-1": #f87171 0%,
+    "header-gradient-2": #f59e0b 33.333%,
+    "header-gradient-3": #f59e0b 66.666%,
+    "header-gradient-4": #f87171 100%
+);
+
+$header-gradient-dark: (
+    "header-gradient-dir": 0deg,
+    "header-gradient-1": #0c101b 0%,
+    "header-gradient-2": #1c202b 33.333%,
+    "header-gradient-3": #1c202b 66.666%,
+    "header-gradient-4": #0c101b 100%
+);
+
+// Light mode Colors
+$light-theme: map-merge(
+    (
+        "theme-toggler-border": #3b2c25,
+        "border-color": rgba(#f87171, 0.5),
+        "code-background-color": #fdf6e3,
+        "code-text-color":#657b83,
+        "link-color": #8a2be2,
+        "link-hover-color":shift-color(#8a2be2, $link-shade-percentage)
+    ),
+    $header-gradient-light
+);
+
+// Dark mode Colors
+$dark-theme: map-merge(
+    (
+        "body-bg": #171c28,
+        "body-color": $gray-100,
+        "theme-toggler-border": rgb(2, 39, 78),
+        "border-color": rgba($white, 0.5),
+        "code-background-color": #002b36,
+        "code-text-color": #fdf6e3,
+        "link-color": #3abef0,
+        "link-hover-color":shift-color(#3abef0, $link-shade-percentage)
+    ),
+    $header-gradient-dark
+);

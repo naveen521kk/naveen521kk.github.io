@@ -1,6 +1,8 @@
+@import "variables";
+
 .outer_class {
     position: relative;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: var(--#{$prefix}body-bg);
     border-radius: 1.5rem;
     max-width: 48rem;
     margin-left: auto;

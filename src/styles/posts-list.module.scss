@@ -23,7 +23,7 @@
 .image_container {
     border-radius: 1.5rem;
     border-width: 8px;
-    border-color: $boder-color-light;
+    border-color: var(--#{$prefix}border-color);
     padding: 0.75rem;
     margin-bottom: 1rem;
 }

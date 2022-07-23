@@ -16,11 +16,11 @@ const IndexPage = () => {
                     <a href="https://github.com/naveen521kk">Github</a>. I'll
                     update with my projects here later.
                 </h3>
-                <StaticImage
+                {/* <StaticImage
                     src="../assets/images/banner.png"
                     alt="Naveen M K (naveen521kk)"
                     className={index_css.temp_img}
-                />
+                /> */}
             </div>
         </main>
     );
