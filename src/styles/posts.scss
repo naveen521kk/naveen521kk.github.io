@@ -1,4 +1,5 @@
 @import "../../node_modules/rfs/scss";
+@import "variables";
 
 .blog-post-content {
     padding-top: 0.5rem;
@@ -54,6 +55,10 @@ img {
 ul {
     padding-left: 2rem;
     margin-bottom: 1.25rem;
+}
+
+.anchor {
+    fill: var(--#{$prefix}body-color);
 }
 
 .anchor.before {
