@@ -21,7 +21,6 @@ img {
 //     color: #8a2be2;
 // }
 
-
 // .blog-post-content pre{
 //     text-decoration: none;
 //     padding-top: 10px;
@@ -33,6 +32,12 @@ img {
     width: 1.6rem;
     vertical-align: -0.7em;
     margin: 0px 0.05em 0px 0.1em;
+}
+
+.gatsby-resp-image-wrapper {
+    img {
+        max-height: fit-content !important;
+    }
 }
 
 .blog-post-content img {
