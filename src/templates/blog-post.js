@@ -41,12 +41,12 @@ const BlogPostTemplate = ({data, location}) => {
                 article={true}
             />
             <JsonLd data={json_ld_data} />
+            <NavBar />
             <article
                 className="blog-post"
                 itemScope
                 itemType="http://schema.org/Article"
             >
-                <NavBar />
                 {frontmatter.image ? (
                     <BgPhoto img_loc={frontmatter.image} />
                 ) : (
