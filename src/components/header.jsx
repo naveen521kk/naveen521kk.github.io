@@ -80,7 +80,7 @@ const NavBar = () => {
                     <ul id="menu" className={header.menu_item_mobile}>
                         <li className={header.menu_item_inner_mobile}>
                             <HomeIcon />
-                            <Link to="/posts">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className={header.menu_item_inner_mobile}>
                             <BookmarkIcon />
