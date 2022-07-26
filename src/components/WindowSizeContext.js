@@ -1,7 +1,9 @@
 import React from "react";
 
+const defaultWindowSize = 1024.0;
+
 export const WindowSizeContext = React.createContext({
-    windowSize: null,
+    windowSize: defaultWindowSize,
     setWindowSize: function () {}
 });
 
@@ -16,7 +18,7 @@ const debounce = (func, delay) => {
 };
 
 export const WindowSizeProvider = ({children}) => {
-    const [windowSize, setWindowSize] = React.useState(1024.0);
+    const [windowSize, setWindowSize] = React.useState(defaultWindowSize);
 
     React.useEffect(() => {
         setWindowSize(window.innerWidth);
