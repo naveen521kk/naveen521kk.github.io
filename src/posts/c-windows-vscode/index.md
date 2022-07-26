@@ -181,7 +181,11 @@ This steps will configure Visual Studio Code to use GDB debugger when you press 
 2. Click on "Add Configuration" and select "C/C++: (gdb) Launch". The creates `launch.json` and opens it.
 3. Edit the file to change the key `miDebuggerPath` to the actual executable of GDB (`C:\\msys64\\mingw64\\bin\\gdb.exe`). 
 4. Edit the file to change the key `program` to `${fileDirname}\\${fileBasenameNoExtension}.exe`.
-4. Again, edit the file to add `"preLaunchTask": "C/C++: gcc.exe build active file"` to the end, so that the file you edit is actually built before running the debugger.
+4. Again, edit the file to add the below code to the end, so that the file you edit is actually built before running the debugger.
+```json
+"preLaunchTask": "C/C++: gcc.exe build active file"
+```
+
 
 The `launch.json` looks like this in the end
 
