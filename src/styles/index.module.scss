@@ -1,0 +1,101 @@
+.container {
+    width: 100%;
+    height: calc(100vh - var(--nav-height));
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.social_icons{
+    display: flex;
+    flex-direction: row;
+    padding: .75rem 0;
+    a {
+        text-decoration: none;
+        color: inherit;
+        margin-inline-end: 12px;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    20% {
+        transform: rotate(12deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(9deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.wave_emoji {
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-name: wave;
+    display: inline-block;
+    transform-origin: 70% 70%;
+    
+    wave_emoji{
+        font-size: inherit;
+
+    }
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+.temp_h2 {
+    font-weight: 700;
+    text-align: center;
+}
+.temp_img {
+    display: block;
+}
