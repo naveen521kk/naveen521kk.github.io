@@ -76,9 +76,9 @@ const MoonIcon = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentcolor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
         </svg>
@@ -95,9 +95,9 @@ const SunIcon = () => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentcolor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
         >
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
