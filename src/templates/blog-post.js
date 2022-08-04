@@ -28,7 +28,7 @@ const BlogPostTemplate = ({data, location}) => {
         abstract: frontmatter.description,
         image: frontmatter.image,
         description: frontmatter.description,
-        copyrightYear: 2022,
+        copyrightYear: new Date().getFullYear(),
         copyrightHolder: "Naveen M K"
     };
 
@@ -58,7 +58,12 @@ const BlogPostTemplate = ({data, location}) => {
                             <h1 className="py-2" itemProp="headline">
                                 {frontmatter.title}
                             </h1>
-                            <small>{frontmatter.date}</small>
+                            <small>
+                                Published on {frontmatter.date}
+                                {frontmatter.updated_date
+                                    ? " · Updated on " + frontmatter.updated_date
+                                    : ""}
+                            </small>
                         </header>
                         <section
                             className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
@@ -108,6 +113,7 @@ export const pageQuery = graphql`
             body
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
+                updated_date(formatString: "MMMM DD, YYYY")
                 slug
                 title
                 description

@@ -2,6 +2,7 @@
 slug: "/manim/manim-configuration-for-vscode/"
 title: "Configuring Visual Studio Code for using with Manim"
 date: 2022-03-18T10:55:01+05:30
+updated_date: 2022-08-04T00:55:01+05:30
 draft: false
 description: "The article explains how to install Manim (the community edition) and configuring with Visual Studio Code."
 image: "/assets/manim-vscode/banner.png"
@@ -41,16 +42,27 @@ If you followed the steps correctly you should see the version of manim when run
 ### Initializing a Manim project
 To initialize a manim project run:
 ```shell
-   manim init
+manim init project <project-name>
 ```
+
+where `<project-name>` should be replaced by the directory where you need to create a project (introduced in manim `v0.16.0`). 
+Manim asks for some questions and creates the project accordingly with configuration files.
 
 ![powershell manim init](/assets/manim-vscode/powershell_manim_init.png)
 
-This should create 2 files `main.py` and `manim.cfg`.
+This should create 2 files `main.py` and `manim.cfg` inside the `<project-name>` folder.
 
 ![file explorer manim init output](/assets/manim-vscode/file_explorer_manim_init_op.png)
 
 `manim.cfg` contains the configuration files necessary for Manim. They can be overridden by command line flags. [See the documentation for a tutorial on using them](https://docs.manim.community/en/stable/tutorials/configuration.html).
+
+You would need to `cd` into `<project-name>` directory before continuing next steps.
+
+```shell
+cd <project-name>
+```
+
+
 
 ## Configuring Visual Studio Code
 
@@ -78,7 +90,7 @@ This should create 2 files `main.py` and `manim.cfg`.
     ```shell
     python -m pip install manim[jupyterlab]
     ```
-7. You can open a terminal in VSCode <kdb>Ctrl</kdb> + <kdb>`</kdb> and run manim commands there.
+7. You can open a terminal in VSCode <kbd>Ctrl</kbd> + <kbd>`</kbd> and run manim commands there.
 
 
 
