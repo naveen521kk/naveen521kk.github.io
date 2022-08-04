@@ -2,7 +2,7 @@ import React from "react";
 import * as bgphotocss from "../styles/bgphoto.module.css";
 
 export default function BgPhoto({img_loc /* image location to be passed*/}) {
-    var style = {"background-image": `url(${img_loc})`};
+    var style = {"backgroundImage": `url(${img_loc})`};
     return (
         <div
             className={
