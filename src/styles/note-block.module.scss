@@ -1,0 +1,51 @@
+@import "variables";
+
+.admonition {
+    margin: 1rem auto;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    background: transparent;
+    border-left: 0.2rem solid var(--#{$prefix}note-block-border-left);
+    border-radius: 0.2rem;
+    box-shadow: 0 0.2rem 0.5rem var(--#{$prefix}color-admonition-box-shadow-1),
+        0 0 0.0625rem var(--#{$prefix}color-admonition-box-shadow-2);
+
+    overflow: hidden;
+    page-break-inside: avoid;
+
+    // First element should have no margin, since the title has it.
+    > :nth-child(2) {
+        margin-top: 0;
+    }
+
+    // Last item should have no margin, since we'll control that w/ padding
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.admonition_title {
+    position: relative;
+    margin: 0 -0.5rem 0.5rem;
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+
+    font-weight: 700;
+    line-height: 1;
+
+    // Pencil Icon
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+    }
+    background-color: var(--#{$prefix}color-admonition-title-background);
+    &::before {
+        background-color: var(--#{$prefix}color-admonition-title);
+        mask-image: $icon-pencil;
+        mask-repeat: no-repeat;
+    }
+}

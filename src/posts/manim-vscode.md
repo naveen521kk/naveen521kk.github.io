@@ -8,6 +8,8 @@ description: "The article explains how to install Manim (the community edition) 
 image: "/assets/manim-vscode/banner.png"
 ---
 
+import NoteBlock from "../components/note-block.jsx";
+
 ## Installing Manim
 
 Follow the instruction in the [Installation Page](https://docs.manim.community/en/stable/installation.html#installing-manim-locally) on the official documentation. After installing Manim get back here for configuring the virtual environment. In my case, I use Windows; I used chocolatey to install Manim (`choco install manimce`). 
@@ -28,6 +30,18 @@ Follow the instruction in the [Installation Page](https://docs.manim.community/e
    1. On Windows: `.venv\Scripts\activate` (should work on cmd, also)
    2. On macOS/Linux/WSL: `source .venv/bin/activate` (this will include Git Bash users on Windows also).
    ![powershell screen create venv](/assets/manim-vscode/powershell_install_and_activate_venv.png)
+
+<NoteBlock>
+    On powershell, you may see an error like below when activating the virtual environment.
+    <img src="/assets/manim-vscode/powershell_set_execution_error.png" />
+    In which case, you can run the command 
+    <pre className="language-text">
+        <code className="language-text">
+        Set-ExecutionPolicy Bypass -Scope CurrentUser
+        </code>
+    </pre>
+    Also doing so could introduce security issues, have a look at the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies">docs</a> before running this command.
+</NoteBlock>
 
 4. Install Manim using **pip**:
 
