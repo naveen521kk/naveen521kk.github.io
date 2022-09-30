@@ -97,7 +97,7 @@ cd <project-name>
 4. Select the Python interpreter by clicking <kbd>F1</kbd> and searching for `Python: Select Interpreter`. Select the virtual environment previously created.
     ![vscode select python interpreter manim](/assets/manim-vscode/code_choose_python.png)
     
-5. If everything is configured correctly pressing <kbd>Ctrl</kbd> + <kbd>Click</kbd> should get to the corresponding definition of that class. Also, there would no yellow swiggly lines.
+5. If everything is configured correctly pressing <kbd>Ctrl</kbd> + <kbd>Click</kbd> should get to the corresponding definition of that class. Also, there would be no yellow swiggly lines.
     ![vscode manim show definition hover](/assets/manim-vscode/vscode_manim_defn.png)
 
 6. If you want to use Jupyter for working with Manim, then open the same terminal and run 
@@ -109,4 +109,4 @@ cd <project-name>
 
 
 
-Hope this helps you in configuring Visual Studio Code to work with Manim. If you have an error, or found something to difficult to understand, jump over to `#manim-installation-help` on [Manim's Discord server](https://manim.community/discord).
+Hope this helps you in configuring Visual Studio Code to work with Manim. If you have an error, or found something to difficult to understand, jump over to `#help-form` on [Manim's Discord server](https://manim.community/discord).
