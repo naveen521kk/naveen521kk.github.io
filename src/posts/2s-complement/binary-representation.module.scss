@@ -1,0 +1,82 @@
+@import "../../styles/variables";
+
+:root {
+    --#{$prefix}font-size-binary-boxes: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --#{$prefix}font-size-binary-boxes: 1rem;
+    }
+}
+
+.outerDiv {
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: var(--#{$prefix}border-radius);
+    border: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+        var(--#{$prefix}border-color);
+}
+
+.mainDiv {
+    display: flex;
+    font-family: var(--#{$prefix}font-monospace);
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.binaryBoxesDiv {
+    display: flex;
+    flex-wrap: wrap;
+
+    .binaryBox {
+        width: 2.5em;
+        height: 2.5em;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: var(--#{$prefix}font-size-binary-boxes);
+        margin-top: 0.5rem;
+    }
+
+    .binaryBoxZero {
+        @extend .binaryBox;
+        color: white;
+        background-color: black;
+    }
+
+    .binaryBoxOne {
+        @extend .binaryBox;
+        color: black;
+        background-color: white;
+    }
+
+}
+
+.textDiv {
+    display: flex;
+    font-size: var(--#{$prefix}font-size-binary-boxes);
+    padding-top: 1rem;
+
+    input {
+        width: 3em;
+        // border: 1px solid black;
+        text-align: right;
+        font-size: var(--#{$prefix}font-size-binary-boxes);
+        text-decoration: underline;
+        text-decoration-color: var(--#{$prefix}code-color);
+        background-color: inherit;
+        color: inherit;
+    }
+}
+
+.errorMessage{
+    font-family: var(--#{$prefix}font-sans-serif);
+    font-size: 1rem;
+}
