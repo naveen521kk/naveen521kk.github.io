@@ -28,7 +28,7 @@ const IndexPage = () => {
     });
     return (
         <main className={index_css.main_div}>
-            <SEO title="Naveen M K (about_me)" />
+            <SEO title="Naveen M K | About Me" />
             <NavBar />
             <div className={index_css.container}>
                 {/* <h2 className={index_css.temp_h2}>This is a WIP page.</h2> */}
