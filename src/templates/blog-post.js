@@ -21,7 +21,7 @@ const BlogPostTemplate = ({data, location}) => {
         author: {
             "@type": "Person",
             name: "Naveen M K",
-            url: "http://naveen521kk.github.io",
+            url: "http://naveenmk.me",
             image: "https://avatars.githubusercontent.com/u/49693820"
         },
         name: frontmatter.title,

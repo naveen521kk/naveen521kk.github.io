@@ -3,9 +3,9 @@ module.exports = {
         title: "Naveen M K",
         titleTemplate: "%s",
         description: "Naveen M K: A student, Open Source Person.",
-        url: "https://naveen521kk.github.io",
+        url: "https://naveenmk.me",
         image: "/images/banner.png",
-        siteUrl: "https://naveen521kk.github.io"
+        siteUrl: "https://naveenmk.me"
     },
     plugins: [
         `gatsby-plugin-image`,
