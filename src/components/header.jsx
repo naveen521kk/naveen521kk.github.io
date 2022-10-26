@@ -5,7 +5,7 @@ import * as header from "../styles/header.module.scss";
 import {DarkModeToggler} from "./ThemeToggler.jsx";
 import {ThemeContext} from "./ThemeContext.js";
 import {WindowSizeContext} from "./WindowSizeContext";
-import {HomeIcon, BookmarkIcon, GitHubLogo} from "./icons.jsx";
+import {HomeIcon, BookmarkIcon, GitHubLogo, ProjectsIcon} from "./icons.jsx";
 
 const NavLogo = () => {
     const {colorMode} = React.useContext(ThemeContext);
@@ -52,7 +52,10 @@ const NavBar = () => {
                         </div>
                         <ul id="menu" className={header.menu_item}>
                             <li>
-                                <Link to="/posts">Blog</Link>
+                                <Link to="/projects" title="Projects">Projects</Link>
+                            </li>
+                            <li>
+                                <Link to="/posts" title="Blog Posts">Blog</Link>
                             </li>
                             {/* <li><Link to="/posts">About Me</Link></li> */}
                         </ul>
@@ -88,8 +91,8 @@ const NavBar = () => {
                         </li>
                         {/* <li><Link to="/about">About Me</Link></li> */}
                         <li className={header.menu_item_inner_mobile}>
-                            <GitHubLogo />
-                            <a href="https://github.com/naveen521kk">Github</a>
+                            <ProjectsIcon />
+                            <Link to="/projects">Projects</Link>
                         </li>
                     </ul>
                 </nav>

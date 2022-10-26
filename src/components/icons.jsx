@@ -112,4 +112,22 @@ const SunIcon = () => {
     );
 };
 
-export {MoonIcon, SunIcon, HomeIcon, BookmarkIcon, GitHubLogo};
+const ProjectsIcon = () => {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentcolor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <path d="M12 2L2 7l10 5 10-5-10-5zm0 22v-8l10-5v8l-10 5z"></path>
+        </svg>
+    );
+}
+
+export {MoonIcon, SunIcon, HomeIcon, BookmarkIcon, GitHubLogo, ProjectsIcon};
