@@ -1,4 +1,4 @@
 My personal website.
 
-https://naveenmk.me
+https://www.naveenmk.me
 
