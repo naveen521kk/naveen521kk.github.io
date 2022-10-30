@@ -68,7 +68,7 @@ This should create 2 files `main.py` and `manim.cfg` inside the `<project-name>`
 
 ![file explorer manim init output](/assets/manim-vscode/file_explorer_manim_init_op.png)
 
-`manim.cfg` contains the configuration files necessary for Manim. They can be overridden by command line flags. [See the documentation for a tutorial on using them](https://docs.manim.community/en/stable/tutorials/configuration.html).
+`manim.cfg` contains the configuration files necessary for Manim. They can be overridden by command line flags. [See the documentation for a tutorial on using them](https://docs.manim.community/en/stable/guides/configuration.html).
 
 You would need to `cd` into `<project-name>` directory before continuing next steps.
 
