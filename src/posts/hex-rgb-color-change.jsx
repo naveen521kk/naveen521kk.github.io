@@ -4,6 +4,8 @@ import {usePopper} from "react-popper";
 import NoteBlock from "../components/note-block.jsx";
 import ColoredText from "../components/coloredText.jsx";
 import * as HexRgbStyle from "../styles/hex-rgb.module.scss";
+import {MDXRenderer} from "gatsby-plugin-mdx";
+
 
 const defaultTooltipMessage = "Change the default color 😉";
 /*
@@ -229,6 +231,7 @@ export default function ColorChangeText({defaultColor}) {
                 Now that we learnt how color is stored, we can look into how to
                 get these stored values using Bitwise operators.
             </p>
+            <MDXRenderer>{"Hello World"}</MDXRenderer>
         </>
     );
 }
