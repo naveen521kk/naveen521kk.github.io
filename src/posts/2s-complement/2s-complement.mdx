@@ -1,0 +1,61 @@
+---
+slug: "/blog/subtraction-using-addition/"
+title: "Subtraction using Addition"
+date: 2022-10-00T00:00:00+05:30
+draft: false
+description: "This article explains about finding the difference of two numbers using addition with the help of 2's complement method."
+image: "/images/banner.png"
+---
+
+import {UnsignedBinaryRepresentation, SignedBinaryRepresentation} from './binary-representation.jsx';
+
+You've probably heard the title elsewhere. Remember someone saying that computer
+can't subtract and use "a method" to calculate the difference using addition? I'm going
+to describe that "method" in this article; it's called
+[Two's Complement](https://en.wikipedia.org/wiki/Two%27s_complement) method.
+
+
+Let's start with how numbers are stored in memory. In computers, the number are
+stored in binary (a number with just 0's and 1's) and handled differently for both
+signed and unsigned numbers.
+
+### Unsigned numbers
+
+Unsigned numbers are positive numbers including _0_. In C language, the `unsigned` keyword
+is used to represent these.
+
+Here, the number is first converted to the corresponding
+[binary number](https://en.wikipedia.org/wiki/Binary_number), and then
+directly stored. For example, the below interactive example shows how _45_ is stored:
+
+<UnsignedBinaryRepresentation value={45}/>
+
+The entire memory is used to store the number itself. For example, a `char` in C is usually
+_2 bytes_, which is _8 bits_ (4 * _num_ bits). Here, all the _8 bits_ are used to store
+the number, which means it can store till _255_ or in other words, it can store from _0_
+to _255_.
+
+
+### Signed numbers
+
+Signed numbers are positive numbers, negative numbers and _0_. In C language, defining a
+normally would mean it's a signed number. Usually, signed numbers are represented
+using [two's complement](https://en.wikipedia.org/wiki/Two%27s_complement) method.
+
+Here, the number is first converted to the corresponding binary number, ignoring the negative
+sign. Then, all the bits are inverted (0 becomes 1 and 1 becomes 0). The number at this state
+is called [One's Complement](https://en.wikipedia.org/wiki/Ones%27_complement). Finally, _1_
+is added to the number. Now, this number is called the
+[Two's Complement](https://en.wikipedia.org/wiki/Two%27s_complement). For negative numbers,
+the [MSB (Most Significant Bit)](https://en.wikipedia.org/wiki/Most_significant_bit), usually
+the leftmost bit, is set to _1_. For positive numbers and zero, it's set to _0_.
+
+
+For example, the below interactive example shows how _-45_ is stored:
+
+<SignedBinaryRepresentation value={-45}/>
+
+## Actual Subtraction
+
+The task is to find the difference between two numbers `a` and `b` using 2's
+complement method
