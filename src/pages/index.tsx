@@ -4,7 +4,7 @@ import NavBar from "../components/header";
 import SEO from "../components/seo.jsx";
 // import {StaticImage} from "gatsby-plugin-image";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
-import Mastodon from "../components/icons/Mastodon";
+import Mastodon from "../components/icon/Mastodon";
 
 const SocialLink = ({
     href,
