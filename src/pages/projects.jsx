@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from "../styles/projects.module.scss";
 
-import NavBar from "../components/header.jsx";
+import NavBar from "../components/header.tsx";
 import SEO from "../components/seo.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {

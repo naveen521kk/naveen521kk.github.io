@@ -1,11 +1,19 @@
 import * as React from "react";
 import * as index_css from "../styles/index.module.scss";
-import NavBar from "../components/header.jsx";
+import NavBar from "../components/header.tsx";
 import SEO from "../components/seo.jsx";
 // import {StaticImage} from "gatsby-plugin-image";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
 
-const SocialLink = ({href, title, children}) => {
+const SocialLink = ({
+    href,
+    title,
+    children
+}: {
+    href: string;
+    title: string;
+    children: React.ReactNode;
+}) => {
     return (
         <a
             href={href}
@@ -20,11 +28,16 @@ const SocialLink = ({href, title, children}) => {
 
 const IndexPage = () => {
     React.useEffect(() => {
-        const nav_height =
-            document.getElementsByClassName("headroom-wrapper")[0].style.height;
-        document
-            .querySelector(":root")
-            .style.setProperty("--nav-height", nav_height);
+        const nav_height = (
+            document.getElementsByClassName(
+                "headroom-wrapper"
+            )[0] as HTMLElement
+        ).style.height;
+
+        (document.querySelector(":root")! as HTMLElement).style.setProperty(
+            "--nav-height",
+            nav_height
+        );
     });
     return (
         <main className={index_css.main_div}>

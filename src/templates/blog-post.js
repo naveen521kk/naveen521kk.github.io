@@ -4,7 +4,7 @@ import {MDXRenderer} from "gatsby-plugin-mdx";
 
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld.jsx";
-import NavBar from "../components/header.jsx";
+import NavBar from "../components/header.tsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import * as Posts from "../styles/posts-style.module.scss";
 import "../styles/posts.scss";

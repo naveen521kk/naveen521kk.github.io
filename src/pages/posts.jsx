@@ -1,7 +1,7 @@
 import React from "react";
 import {graphql} from "gatsby";
 import PostLink from "../components/post-link";
-import NavBar from "../components/header.jsx";
+import NavBar from "../components/header.tsx";
 import SEO from "../components/seo.jsx";
 import * as PostsList from "../styles/posts-list.module.scss";
 
