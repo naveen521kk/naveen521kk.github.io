@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as index_css from "../styles/index.module.scss";
-import NavBar from "../components/header.tsx";
+import NavBar from "../components/header";
 import SEO from "../components/seo.jsx";
 // import {StaticImage} from "gatsby-plugin-image";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
+import Mastodon from "../components/icons/Mastodon";
 
 const SocialLink = ({
     href,
@@ -74,6 +75,12 @@ const IndexPage = () => {
                         title="Gitlab"
                     >
                         <Gitlab />
+                    </SocialLink>
+                    <SocialLink
+                        href="https://fosstodon.org/@naveen521kk"
+                        title="Mastodon"
+                    >
+                        <Mastodon />
                     </SocialLink>
                 </div>
                 {/* <StaticImage
