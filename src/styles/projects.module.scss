@@ -71,10 +71,40 @@
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
+    transition: all 0.2s ease-in-out;
     .techStack {
         span {
             margin: 0.5rem;
         }
         font-size: 2rem;
+    }
+}
+
+.project_div:hover {
+    background-color: var(--#{$prefix}body-color);
+    color: var(--#{$prefix}body-bg);
+
+    a {
+        color: var(--#{$prefix}body-bg);
+    }
+}
+
+@media (min-width: 640px) {
+    .project_div {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.project-super-div {
+    button {
+        display: block;
+        color: inherit;
+        background-color: transparent;
+        outline: 0px;
+        border: 0px none;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
     }
 }

@@ -24,15 +24,18 @@ const IndexPage = () => {
     });
     return (
         <main className={styles.main_div}>
-            <SEO title="Projects | Naveen M K" description="A list of project that Naveen has worked on."/>
+            <SEO
+                title="Projects | Naveen M K"
+                description="A list of project that Naveen has worked on."
+            />
             <NavBar />
             <div className={styles.container}>
                 {/* <h2 className={index_css.temp_h2}>This is a WIP page.</h2> */}
                 <h1>Projects</h1>
                 <h2>Current Projects</h2>
-                <span>
+                <p>
                     Projects that I maintain or contribute that aren't archived.
-                </span>
+                </p>
                 <div className={styles.projects_div}>
                     <Project
                         links={[
@@ -44,6 +47,20 @@ const IndexPage = () => {
                         endDate={null}
                         desc="A community maintained Python library for creating mathematical animations."
                         techStack={[<FontAwesomeIcon icon={faPython} />]}
+                    />
+                    <Project
+                        links={[
+                            "https://developerfolio.js.org/",
+                            "https://github.com/saadpasta/developerFolio"
+                        ]}
+                        name="DeveloperFolio"
+                        startDate={new Date("2020")}
+                        endDate={new Date("2021")}
+                        desc="Software Developer Portfolio Template that helps you showcase your work and skills as a software developer. "
+                        techStack={[
+                            <FontAwesomeIcon icon={faSquareJs} />,
+                            <FontAwesomeIcon icon={faReact} />
+                        ]}
                     />
                     <Project
                         links={[
@@ -68,20 +85,6 @@ const IndexPage = () => {
                         startDate={new Date("2021")}
                         endDate={null}
                         desc="Manim Community's landing page."
-                        techStack={[
-                            <FontAwesomeIcon icon={faSquareJs} />,
-                            <FontAwesomeIcon icon={faReact} />
-                        ]}
-                    />
-                    <Project
-                        links={[
-                            "https://developerfolio.js.org/",
-                            "https://github.com/saadpasta/developerFolio"
-                        ]}
-                        name="DeveloperFolio"
-                        startDate={new Date("2020")}
-                        endDate={new Date("2021")}
-                        desc="Software Developer Portfolio Template that helps you showcase your work and skills as a software developer. "
                         techStack={[
                             <FontAwesomeIcon icon={faSquareJs} />,
                             <FontAwesomeIcon icon={faReact} />
