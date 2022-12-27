@@ -4,7 +4,7 @@ title: "Setting page size when printing HTML"
 date: 2022-12-27T10:55:01+05:30
 updated_date: 2022-12-27T10:55:01+05:30
 draft: false
-description: "The article explains how to set the page size when using the print from html page method."
+description: "The article explains how to set the page size when using the print from html page feature in browser."
 image: "/assets/page-size-print/banner.png"
 ---
 
