@@ -12,6 +12,8 @@ Recently, in a project I was working on, I was given the task to setup a page wh
 will print with only frontend-tools (html, javascript and css). The project was all setup on
 frontend side and doesn't have a server, that's why all this had to be done on the frontend.
 
+### About `@page` css rule
+
 Now, what I found was that there exists a [`@page` css rule](https://developer.mozilla.org/en-US/docs/Web/CSS/@page) which can be used to set the page size
 when printing a page. The rule is as follows:
 
@@ -22,8 +24,11 @@ when printing a page. The rule is as follows:
 ```
 
 The above rule will set the page size to that of a A4 sheet when printing the page. See https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size
-for the possible values. It's also possible to set the page is landscape when printing by using
-the `landscape` keyword.
+for the possible values.
+
+### Setting page orientation
+
+It's also possible to set the page to landscape when printing by using the `landscape` keyword.
 
 ```css
 @page {
@@ -32,6 +37,8 @@ the `landscape` keyword.
 ```
 
 That will set the page size to A4 and the orientation to landscape, something which you would need when printing a large table.
+
+### Using a media query - `print`
 
 Another thing is that you can use the `@page` rule to set the page size for a specific media query. For example, if you want to set the page size to A4 for the print media query, you can do the following:
 
@@ -43,14 +50,20 @@ Another thing is that you can use the `@page` rule to set the page size for a sp
 }
 ```
 
-That media query is really useful when you just want to set the page size when printing and not when the page is rendered on the screen. Or if you want to load a different stylesheet when printing, you can use the media query to load the stylesheet.
+That media query is really useful when you just want to set the page size when printing and not when the page is rendered on the screen.
+
+### Conditionally loading a stylesheet
+
+If you want to load a different stylesheet when printing, you can use the media query to load the stylesheet.
 
 ```html
 <link rel="stylesheet" href="style.css" media="screen" />
 <link rel="stylesheet" href="print.css" media="print" />
 ```
 
-Also, if you want page margins to be set, you can use the `margin` property of the `@page` rule.
+### Setting page margins
+
+If you want page margins to be set, you can use the `margin` property of the `@page` rule.
 
 ```css
 @page {
@@ -59,7 +72,9 @@ Also, if you want page margins to be set, you can use the `margin` property of t
 }
 ```
 
-Also, you can use the `@page` rule to set the page header and footer.
+### Setting page header and footer
+
+You can use the `@page` rule to set the page header and footer.
 
 ```css
 @page {
@@ -70,6 +85,8 @@ Also, you can use the `@page` rule to set the page header and footer.
     }
 }
 ```
+
+### More information
 
 More detailed explanation about various way to print a page can be found at https://developer.mozilla.org/en-US/docs/Web/Guide/Printing.
 
