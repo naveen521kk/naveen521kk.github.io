@@ -32,6 +32,7 @@ const IndexPage = () => {
             <div className={styles.container}>
                 {/* <h2 className={index_css.temp_h2}>This is a WIP page.</h2> */}
                 <h1>Projects</h1>
+                <small>This page is a Work in Progress. Not all projects I've worked on is mentioned here.</small>
                 <h2>Current Projects</h2>
                 <p>
                     Projects that I maintain or contribute that aren't archived.
