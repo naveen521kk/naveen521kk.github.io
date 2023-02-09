@@ -1,6 +1,6 @@
 import React from "react";
 
-const defaultWindowSize = 1024.0;
+const defaultWindowSize = 640.0;
 
 export const WindowSizeContext = React.createContext({
     windowSize: defaultWindowSize,
