@@ -31,5 +31,5 @@ const MagicScriptTag = () => {
 };
 export const onRenderBody = ({setPreBodyComponents, setHtmlAttributes}) => {
     setPreBodyComponents(<MagicScriptTag key="unique" />);
-    setHtmlAttributes({lang: "en"});
+    setHtmlAttributes({lang: "en-gb"});
 };
