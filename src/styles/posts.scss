@@ -4,6 +4,14 @@
 .blog-post-content {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+
+    blockquote {
+        border-left: 0.25rem solid #8a2be2;
+        padding-left: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
 }
 
 .blog-post-content h1,

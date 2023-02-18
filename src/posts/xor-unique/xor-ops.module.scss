@@ -1,0 +1,95 @@
+@import "../../styles/variables";
+@import "../../styles/tables";
+
+:root {
+    --#{$prefix}font-size-xor-input: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        --#{$prefix}font-size-xor-input: 1rem;
+    }
+}
+
+.outerDiv {
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border-radius: var(--#{$prefix}border-radius);
+    border: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+        var(--#{$prefix}border-color);
+}
+
+.mainDiv {
+    display: flex;
+    font-family: var(--#{$prefix}font-monospace);
+    justify-content: center;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textDiv {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: var(--#{$prefix}font-size-xor-input);
+    padding-top: 1rem;
+    
+    // add smooth transition
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    input {
+        width: 3em;
+        // border: 1px solid black;
+        text-align: center;
+        font-size: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--#{$prefix}code-color);
+        background-color: inherit;
+        color: inherit;
+        border: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+        var(--#{$prefix}border-color);
+        margin: 0.5rem;
+    }
+}
+
+.sumDiv {
+    @extend .textDiv;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    .innerDiv {
+        width: fit-content;
+        > div {
+            text-align: right;
+        }
+    }
+
+    // below class when added to a div shows a line
+    .line {
+        width: 4em;
+        height: 1px;
+        background-color: var(--#{$prefix}border-color);
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+}
+
+.tableDiv {
+    --#{$prefix}text-align-table: center;
+    @extend .table;
+    margin-bottom: 1rem;
+}
+
+.errorMessage{
+    font-family: var(--#{$prefix}font-sans-serif);
+    font-size: 1rem;
+}

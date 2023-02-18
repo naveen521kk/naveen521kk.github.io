@@ -1,0 +1,37 @@
+@import "variables";
+
+$table-border-width: 1px;
+.table {
+    table {
+        width: 100%;
+        border: 0;
+        border-color: var(--#{$prefix}border-color);
+        text-align: var(--#{$prefix}text-align-table);
+        vertical-align: top;
+        thead {
+            vertical-align: bottom;
+        }
+        tbody {
+            vertical-align: inherit;
+        }
+
+        th,
+        td {
+            padding: 0.5rem 0.5rem;
+            border-bottom-width: 1px;
+            text-align: inherit;
+        }
+
+        > :not(:first-child) {
+            border-top: (2 * $table-border-width) solid var(--#{$prefix}border-color);
+        }
+
+        > :not(caption) > * {
+            border-width: $table-border-width 0;
+
+            > * {
+                border-width: 0 $table-border-width;
+            }
+        }
+    }
+}

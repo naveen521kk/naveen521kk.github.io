@@ -1,0 +1,98 @@
+---
+slug: "/blog/xor-unique-number-array"
+title: "Interesting XOR property — Finding unique number in an array"
+date: 2023-02-18T10:55:01+05:30
+updated_date: 2023-02-18T10:55:01+05:30
+draft: false
+description: "The article explains an interesting property of XOR operation which can be used to find the unique number in an array. Interactive examples about XOR operation are also provided."
+image: "/assets/xor-unique/banner.png"
+---
+
+import { XOROpsDisplay, XORTruthTable } from "./xor-ops.tsx";
+
+Recently, while learning about the XOR operation, I came across an interesting property of XOR operation. The property is as follows:
+
+> XOR of a number with itself cancels out the number
+
+For example, if we take the number `5` and XOR it with itself, we get `0` as the result. That is `5 ^ 5 = 0`.
+
+
+<XOROpsDisplay defaultFirstNumber={5} defaultSecondNumber={5}/>
+
+If you are confused how the above operation works, you can check out the truth table below:
+
+<XORTruthTable />
+
+### Problem Statement
+
+If you have been given a array `arr = [1, 2, 3, 11, 1, 2, 3]` then find the unique number. Note then all the numbers are repeated twice and a unique is only available once in the given array. Note that the array is not sorted and the numbers are not in any particular order.
+
+### Solution
+
+If we XOR each element in the array with each other then the duplicates would be canceled out giving us the remaining unique number. See the below code in Python.
+
+
+```py
+>>> arr = [1, 2, 3, 11, 1, 2, 3]
+>>> unique = 0
+>>> for num in arr:
+...     unique ^= num
+...
+>>> unique
+11
+```
+
+This is the efficient solution to the problem. The time complexity of the solution is `O(n)` and the space complexity is `O(1)`.
+
+### Code
+
+I've written the code in multiple languages. You can check out the code below:
+
+##### C/C++
+```c
+#include <stdio.h>
+
+int main() {
+    int arr[] = {1, 2, 3, 11, 1, 2, 3};
+    int unique = 0;
+    for (int i = 0; i < 7; i++) {
+        unique ^= arr[i];
+    }
+    printf("%d\n", unique);
+    return 0;
+}
+```
+
+##### Java
+```java
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 11, 1, 2, 3};
+        int unique = 0;
+        for (int i = 0; i < arr.length; i++) {
+            unique ^= arr[i];
+        }
+        System.out.println(unique);
+    }
+}
+```
+
+
+##### Python
+```py
+arr = [1, 2, 3, 11, 1, 2, 3]
+unique = 0
+for num in arr:
+    unique ^= num
+print(unique)
+```
+
+##### JavaScript
+```js
+const arr = [1, 2, 3, 11, 1, 2, 3];
+let unique = 0;
+for (let i = 0; i < arr.length; i++) {
+    unique ^= arr[i];
+}
+console.log(unique);
+```
