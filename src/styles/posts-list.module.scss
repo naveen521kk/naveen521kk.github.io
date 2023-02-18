@@ -1,7 +1,13 @@
 @import "variables";
 
+.title {
+    text-align: center;
+    padding-top: 1rem;
+}
+
 .container {
     padding: 2.5rem;
+    padding-top: 1rem;
     a {
         color: inherit;
         text-decoration: inherit;

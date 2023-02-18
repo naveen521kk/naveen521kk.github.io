@@ -22,6 +22,7 @@ const IndexPage = ({
                 description="This blog contains useful things (sometimes not) which are written by Naveen during his free time."
             />
             <NavBar />
+            <h1 className={PostsList.title}>Blog Posts</h1>
             <div className={PostsList.container}>{Posts}</div>
         </div>
     );
