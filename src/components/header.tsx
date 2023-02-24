@@ -78,7 +78,7 @@ const NavBar = () => {
                     </nav>
                 </header>
             </Headroom>
-            <header className={header.header}>
+            <header className={header.header + " " + header.header_mobile}>
                 <nav className={header.main_nav_mobile}>
                     <ul id="menu" className={header.menu_item_mobile}>
                         <li className={header.menu_item_inner_mobile}>

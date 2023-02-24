@@ -114,3 +114,9 @@
     align-items: center;
     justify-content: center;
 }
+
+@media (min-width: 640px) {
+    .header_mobile {
+        display: none;
+    }
+}
