@@ -2,7 +2,9 @@ module.exports = {
     siteMetadata: {
         title: "Naveen M K",
         titleTemplate: "%s",
-        description: "Naveen M K: A student, Open Source Person.",
+        description: `Naveen M K: I'm a student currently interested in web development and \
+other cool stuff. I usually write about various projects I'm working on and \
+stuff that's interesting. I also contribute to various open source projects.`,
         url: "https://www.naveenmk.me",
         image: "/images/banner.png",
         siteUrl: "https://www.naveenmk.me"
