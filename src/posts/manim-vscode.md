@@ -36,9 +36,7 @@ Follow the instruction in the [Installation Page](https://docs.manim.community/e
     <img src="/assets/manim-vscode/powershell_set_execution_error.png" />
     In which case, you can run the command 
     <pre className="language-text">
-        <code className="language-text">
-        Set-ExecutionPolicy Bypass -Scope CurrentUser
-        </code>
+        <code className="language-text">Set-ExecutionPolicy Bypass -Scope CurrentUser</code>
     </pre>
     Also doing so could introduce security issues, have a look at the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies">docs</a> before running this command.
 </NoteBlock>

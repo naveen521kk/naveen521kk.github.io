@@ -25,6 +25,12 @@ stuff that's interesting. I also contribute to various open source projects.`,
             resolve: `gatsby-plugin-mdx`,
             options: {
                 extensions: [`.md`, `.mdx`],
+                mdxOptions: {
+                    remarkPlugins: [
+                        // Add GitHub Flavored Markdown (GFM) support
+                        require(`remark-gfm`)
+                    ]
+                },
                 gatsbyRemarkPlugins: [
                     {
                         resolve: `gatsby-remark-images`,
@@ -39,15 +45,16 @@ stuff that's interesting. I also contribute to various open source projects.`,
                             classPrefix: "language-",
                             aliases: {sh: "bash"},
                             inlineCodeMarker: null,
-                            aliases: {},
                             showLineNumbers: false,
-                            noInlineHighlight: false,
+                            // turn this on when migrating to Gatsby 5
+                            // https://github.com/gatsbyjs/gatsby/issues/37292
+                            noInlineHighlight: true,
                             prompt: {
                                 user: "root",
                                 host: "localhost",
                                 global: false
                             },
-                            escapeEntities: {}
+                            escapeEntities: {},
                         }
                     },
                     `gatsby-remark-copy-linked-files`,
