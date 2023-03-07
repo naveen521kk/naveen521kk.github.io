@@ -128,7 +128,7 @@ stuff that's interesting. I also contribute to various open source projects.`,
                                         site.siteMetadata.siteUrl +
                                         node.frontmatter.slug,
                                     custom_elements: [
-                                        {"content:encoded": node.html}
+                                        {"content:encoded": node.body}
                                     ]
                                 });
                             });
@@ -140,7 +140,7 @@ stuff that's interesting. I also contribute to various open source projects.`,
                       ) {
                         nodes {
                           excerpt
-                          html
+                          body
                           frontmatter {
                             title
                             date
