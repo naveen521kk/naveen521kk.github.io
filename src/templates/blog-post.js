@@ -7,12 +7,6 @@ import NavBar from "../components/header.tsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import * as Posts from "../styles/posts-style.module.scss";
 import "../styles/posts.scss";
-import {MDXProvider} from "@mdx-js/react";
-
-// remove this component once code highlighting is fixed (gatsby 5)
-const customCodeBlock = props => {
-    return <code className="language-text">{props.children}</code>;
-};
 
 const BlogPostTemplate = ({data, location, children}) => {
     // const {previous, next} = data;
@@ -35,10 +29,6 @@ const BlogPostTemplate = ({data, location, children}) => {
         description: frontmatter.description,
         copyrightYear: new Date().getFullYear(),
         copyrightHolder: "Naveen M K"
-    };
-
-    const components = {
-        code: customCodeBlock,
     };
 
     return (
@@ -70,7 +60,8 @@ const BlogPostTemplate = ({data, location, children}) => {
                             <small>
                                 Published on {frontmatter.date}
                                 {frontmatter.updated_date
-                                    ? " · Updated on " + frontmatter.updated_date
+                                    ? " · Updated on " +
+                                      frontmatter.updated_date
                                     : ""}
                             </small>
                         </header>
@@ -79,9 +70,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                             id="blog-start"
                             itemProp="articleBody"
                         >
-                            <MDXProvider components={components}>
-                                {children}
-                            </MDXProvider>
+                            {children}
                         </section>
                     </div>
                 </div>
