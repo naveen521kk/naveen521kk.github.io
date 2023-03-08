@@ -46,15 +46,13 @@ stuff that's interesting. I also contribute to various open source projects.`,
                             aliases: {sh: "bash"},
                             inlineCodeMarker: null,
                             showLineNumbers: false,
-                            // turn this on when migrating to Gatsby 5
-                            // https://github.com/gatsbyjs/gatsby/issues/37292
-                            noInlineHighlight: true,
+                            noInlineHighlight: false,
                             prompt: {
                                 user: "root",
                                 host: "localhost",
                                 global: false
                             },
-                            escapeEntities: {},
+                            escapeEntities: {}
                         }
                     },
                     `gatsby-remark-copy-linked-files`,
@@ -134,21 +132,19 @@ stuff that's interesting. I also contribute to various open source projects.`,
                             });
                         },
                         query: `
-                    {
-                        allMdx(
-                        sort: { order: DESC, fields: [frontmatter___date] },
-                      ) {
-                        nodes {
-                          excerpt
-                          body
-                          frontmatter {
-                            title
-                            date
-                            slug
-                          }
+                        {
+                            allMdx(sort: {frontmatter: {date: DESC}}) {
+                                nodes {
+                                    excerpt
+                                    body
+                                    frontmatter {
+                                        title
+                                        date
+                                        slug
+                                    }
+                                }
+                            }
                         }
-                      }
-                    }
                   `,
                         output: "/rss.xml",
                         title: "Naveen M K's website RSS Feed"
