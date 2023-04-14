@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Link} from "gatsby";
-import * as css404 from "../styles/404.module.css";
+import * as css404 from "../styles/404.module.scss";
 
 const NotFoundPage = () => {
     return (
