@@ -2,7 +2,7 @@ import * as React from "react";
 
 const defaultSize = "18";
 
-const BookmarkIcon = ({size}: {size: string | number}) => {
+const BookmarkIcon = ({size}: Partial<{size: string | number}>) => {
     if (!size) {
         size = defaultSize;
     }
@@ -23,7 +23,7 @@ const BookmarkIcon = ({size}: {size: string | number}) => {
     );
 };
 
-const HomeIcon = ({size}: {size: string | number}) => {
+const HomeIcon = ({size}: Partial<{size: string | number}>) => {
     if (!size) {
         size = defaultSize;
     }
@@ -45,7 +45,7 @@ const HomeIcon = ({size}: {size: string | number}) => {
     );
 };
 
-const GitHubLogo = ({size}: {size: string | number}) => {
+const GitHubLogo = ({size}: Partial<{size: string | number}>) => {
     if (!size) {
         size = defaultSize;
     }
