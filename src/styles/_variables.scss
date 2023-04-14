@@ -254,6 +254,7 @@ $dark-theme: map-merge(
         "link-color-visited": link-color-visited(#3abef0),
         "note-block-border-left": #651fff,
         "color-admonition-title-background": rgba(101, 31, 255, 0.1),
+        "color-admonition-title": var(--#{$prefix}note-block-border-left),
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
         "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1)
     ),
