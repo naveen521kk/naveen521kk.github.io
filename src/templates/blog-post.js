@@ -2,7 +2,7 @@ import * as React from "react";
 import {graphql} from "gatsby";
 
 import SEO from "../components/seo";
-import {JsonLd} from "../components/json_ld.jsx";
+import {JsonLd} from "../components/json_ld";
 import NavBar from "../components/header.tsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import * as Posts from "../styles/posts-style.module.scss";
