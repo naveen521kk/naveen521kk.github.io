@@ -1,3 +1,5 @@
+@use "sass:color";
+@import "utils";
 @import "../../node_modules/bootstrap/scss/mixins/border-radius";
 
 $prefix: "nv-";
@@ -28,15 +30,14 @@ $cyan: #0dcaf0;
 
 $yellow-100: tint-color($yellow, 80%);
 
-$primary: $blue;
-$primary: $blue;
-$secondary: $gray-600;
-$success: $green;
-$info: $cyan;
-$warning: $yellow;
-$danger: $red;
-$light: $gray-100;
-$dark: $gray-900;
+$primary: #6d2537;
+$secondary: #82586d;
+$success: #5d9130;
+$info: #c14643;
+$warning: #fcba64;
+$danger: #e41f66;
+$light: #fad0cd;
+$dark: #130724;
 $theme-colors: (
     "primary": $primary,
     "secondary": $secondary,
@@ -52,8 +53,8 @@ $theme-colors: (
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white;
-$body-color: $gray-900;
+$body-bg: $light;
+$body-color: rgb(19, 7, 36);
 $body-text-align: null;
 
 // Options
@@ -155,7 +156,7 @@ $paragraph-margin-bottom: 1rem;
 //
 // Style anchor elements.
 
-$link-color: $primary;
+$link-color: #e37f07;
 $link-decoration: underline;
 $link-shade-percentage: 20%;
 $link-hover-color: shift-color($link-color, $link-shade-percentage);
@@ -198,10 +199,11 @@ $icon-pencil: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.or
 // Header Gradient
 $header-gradient-light: (
     "header-gradient-dir": 90deg,
-    "header-gradient-1": #f87171 0%,
-    "header-gradient-2": #f59e0b 33.333%,
-    "header-gradient-3": #f59e0b 66.666%,
-    "header-gradient-4": #f87171 100%
+    "header-gradient-1": $body-bg 0%,
+    "header-gradient-2": $body-bg 33.333%,
+    "header-gradient-3": $body-bg 66.666%,
+    "header-gradient-4": $body-bg 100%,
+    "header-box-shadow": "0 0.5rem 1rem #{rgba($primary, 0.35)}, inset 0 -1px 0 rgba(255,255,255,0.15)",
 );
 
 $header-gradient-dark: (
@@ -209,21 +211,26 @@ $header-gradient-dark: (
     "header-gradient-1": #0c101b 0%,
     "header-gradient-2": #1c202b 33.333%,
     "header-gradient-3": #1c202b 66.666%,
-    "header-gradient-4": #0c101b 100%
+    "header-gradient-4": #0c101b 100%,
+    "header-box-shadow": none,
 );
 
 // Light mode Colors
 $light-theme: map-merge(
     (
         "theme-toggler-border": #3b2c25,
-        "border-color": rgba(#f87171, 0.5),
-        "code-background-color": #fdf6e3,
+        "border-color": rgba($secondary, 0.7),
+        "border-color-posts": $primary,
+        "inline-code-background-color": transparent,
+        "inline-code-text-color": #29A3A2,
+        "code-background-color": color.adjust($body-bg, $saturation: 80%, $lightness: 6%),
         "code-text-color": #657b83,
-        "link-color": #8a2be2,
-        "link-hover-color": shift-color(#8a2be2, $link-shade-percentage),
-        "note-block-border-left": #651fff,
-        "color-admonition-title-background": rgba(101, 31, 255, 0.1),
-        "color-admonition-title": var(--#{$prefix}note-block-border-left),
+        "link-color": $link-color,
+        "link-hover-color": shift-color($link-color, $link-shade-percentage),
+        "link-color-visited": link-color-visited($link-color),
+        "block-border-left": $primary,
+        "color-admonition-title-background": rgba($secondary, 0.1),
+        "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(0, 0, 0, 0.05),
         "color-admonition-box-shadow-2": rgba(0, 0, 0, 0.1)
     ),
@@ -237,10 +244,17 @@ $dark-theme: map-merge(
         "body-color": $gray-100,
         "theme-toggler-border": rgb(2, 39, 78),
         "border-color": rgba($white, 0.5),
+        "border-color-posts": rgba($white, 0.5),
+        "inline-code-background-color": #002b36,
+        "inline-code-text-color": #fdf6e3,
         "code-background-color": #002b36,
         "code-text-color": #fdf6e3,
         "link-color": #3abef0,
         "link-hover-color": shift-color(#3abef0, $link-shade-percentage),
+        "link-color-visited": link-color-visited(#3abef0),
+        "block-border-left": #651fff,
+        "color-admonition-title-background": rgba(101, 31, 255, 0.1),
+        "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
         "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1)
     ),

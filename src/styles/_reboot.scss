@@ -237,6 +237,10 @@ a {
     color: var(--#{$prefix}link-color);
     text-decoration: $link-decoration;
 
+    &:visited {
+        color: var(--#{$prefix}link-color-visited);
+    }
+
     &:hover {
         color: var(--#{$prefix}link-hover-color);
         text-decoration: $link-hover-decoration;
@@ -429,7 +433,9 @@ select {
 // Remove the dropdown arrow only from text type inputs built with datalists in Chrome.
 // See https://stackoverflow.com/a/54997118
 
-[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not(
+        [type="week"]
+    ):not([type="time"])::-webkit-calendar-picker-indicator {
     display: none !important;
 }
 
