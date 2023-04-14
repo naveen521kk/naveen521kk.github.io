@@ -2,8 +2,8 @@ import * as React from "react";
 import {Link} from "gatsby";
 import Headroom from "react-headroom";
 import * as header from "../styles/header.module.scss";
-import {DarkModeToggler} from "./ThemeToggler.jsx";
-import {ThemeContext} from "./ThemeContext.js";
+import {DarkModeToggler} from "./ThemeToggler";
+import {ThemeContext} from "./ThemeContext";
 import {WindowSizeContext} from "./WindowSizeContext";
 import {HomeIcon, BookmarkIcon, ProjectsIcon} from "./icons";
 

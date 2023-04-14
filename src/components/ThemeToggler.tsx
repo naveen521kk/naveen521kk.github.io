@@ -1,5 +1,5 @@
 import * as React from "react";
-import {ThemeContext} from "./ThemeContext.js";
+import {ThemeContext} from "./ThemeContext";
 import {MoonIcon, SunIcon} from "./icons";
 import * as DarkThemeStyle from "../styles/theme-toggler.module.scss";
 import Tippy from "@tippyjs/react";
@@ -28,21 +28,18 @@ const DarkModeToggler = () => {
                 </button>
             </Tippy>
         );
-    } else {
-        return (
-            <Tippy
-                content={<span className="tippy-text">Turn off the light</span>}
-            >
-                <button
-                    id="theme-toggle-light"
-                    aria-label="Turn off the light"
-                    className={DarkThemeStyle.theme_toggle_button}
-                    onClick={changeTheme}
-                >
-                    <MoonIcon />
-                </button>
-            </Tippy>
-        );
     }
+    return (
+        <Tippy content={<span className="tippy-text">Turn off the light</span>}>
+            <button
+                id="theme-toggle-light"
+                aria-label="Turn off the light"
+                className={DarkThemeStyle.theme_toggle_button}
+                onClick={changeTheme}
+            >
+                <MoonIcon />
+            </button>
+        </Tippy>
+    );
 };
 export {DarkModeToggler};

@@ -1,12 +1,19 @@
 import React from "react";
 
-export const ThemeContext = React.createContext({
+interface ThemeContextType {
+    colorMode: string | null;
+    setColorMode: (newValue: string) => void;
+}
+
+export const ThemeContext = React.createContext<ThemeContextType>({
     colorMode: null,
     setColorMode: function () {}
 });
 
-export const ThemeProvider = ({children}) => {
-    const [colorMode, rawSetColorMode] = React.useState(undefined);
+export const ThemeProvider = ({children}: {children: JSX.Element}) => {
+    const [colorMode, rawSetColorMode] = React.useState<string | null>(
+        null
+    );
 
     React.useEffect(() => {
         const root = window.document.documentElement;
@@ -16,7 +23,7 @@ export const ThemeProvider = ({children}) => {
         rawSetColorMode(initialColorValue);
     }, []);
     const contextValue = React.useMemo(() => {
-        function setColorMode(newValue) {
+        function setColorMode(newValue: string) {
             const root = window.document.documentElement;
             // 1. Update React color-mode state
             rawSetColorMode(newValue);
