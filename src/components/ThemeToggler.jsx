@@ -1,6 +1,6 @@
 import * as React from "react";
 import {ThemeContext} from "./ThemeContext.js";
-import {MoonIcon, SunIcon} from "./icons.jsx";
+import {MoonIcon, SunIcon} from "./icons";
 import * as DarkThemeStyle from "../styles/theme-toggler.module.scss";
 import Tippy from "@tippyjs/react";
 

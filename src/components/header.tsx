@@ -5,7 +5,7 @@ import * as header from "../styles/header.module.scss";
 import {DarkModeToggler} from "./ThemeToggler.jsx";
 import {ThemeContext} from "./ThemeContext.js";
 import {WindowSizeContext} from "./WindowSizeContext";
-import {HomeIcon, BookmarkIcon, GitHubLogo, ProjectsIcon} from "./icons.jsx";
+import {HomeIcon, BookmarkIcon, ProjectsIcon} from "./icons";
 
 const NavLogo = () => {
     const {colorMode} = React.useContext(ThemeContext);

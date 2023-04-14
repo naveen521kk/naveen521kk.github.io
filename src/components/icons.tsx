@@ -2,7 +2,7 @@ import * as React from "react";
 
 const defaultSize = "18";
 
-const BookmarkIcon = ({size}) => {
+const BookmarkIcon = ({size}: {size: string | number}) => {
     if (!size) {
         size = defaultSize;
     }
@@ -23,7 +23,7 @@ const BookmarkIcon = ({size}) => {
     );
 };
 
-const HomeIcon = ({size}) => {
+const HomeIcon = ({size}: {size: string | number}) => {
     if (!size) {
         size = defaultSize;
     }
@@ -45,7 +45,7 @@ const HomeIcon = ({size}) => {
     );
 };
 
-const GitHubLogo = ({size}) => {
+const GitHubLogo = ({size}: {size: string | number}) => {
     if (!size) {
         size = defaultSize;
     }
@@ -128,6 +128,6 @@ const ProjectsIcon = () => {
             <path d="M12 2L2 7l10 5 10-5-10-5zm0 22v-8l10-5v8l-10 5z"></path>
         </svg>
     );
-}
+};
 
 export {MoonIcon, SunIcon, HomeIcon, BookmarkIcon, GitHubLogo, ProjectsIcon};
