@@ -14,10 +14,10 @@
     text-align: center;
 }
 
-.social_icons{
+.social_icons {
     display: flex;
     flex-direction: row;
-    padding: .75rem 0;
+    padding: 0.75rem 0;
     a {
         text-decoration: none;
         color: inherit;
@@ -55,10 +55,11 @@
     animation-name: wave;
     display: inline-block;
     transform-origin: 70% 70%;
-    
-    wave_emoji{
+    wave_emoji {
         font-size: inherit;
-
+    }
+    @media (prefers-reduced-motion) {
+        animation-name: none;
     }
 }
 
