@@ -5,6 +5,9 @@
 
 @import "variables";
 
+:not(pre) > code[class*="language-"] {
+	color: var(--#{$prefix}inline-code-text-color); /* inline code color */
+}
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -47,10 +50,14 @@ pre[class*="language-"] {
 	border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > pre[class*="language-"] {
 	background-color: var(--#{$prefix}code-background-color); /* base3 */
 }
+
+:not(pre) > code[class*="language-"] {
+	background-color: var(--#{$prefix}inline-code-background-color);
+}
+
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {

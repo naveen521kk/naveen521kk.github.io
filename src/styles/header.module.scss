@@ -29,6 +29,7 @@
         var(--#{$prefix}header-gradient-3),
         var(--#{$prefix}header-gradient-4)
     );
+    box-shadow: var(--#{$prefix}header-box-shadow);
     a {
         color: inherit;
         text-decoration: inherit;
