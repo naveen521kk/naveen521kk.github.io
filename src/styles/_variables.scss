@@ -219,7 +219,8 @@ $header-gradient-dark: (
 $light-theme: map-merge(
     (
         "theme-toggler-border": #3b2c25,
-        "border-color": rgba(#f87171, 0.5),
+        "border-color": rgba($secondary, 0.7),
+        "border-color-posts": $primary,
         "inline-code-background-color": transparent,
         "inline-code-text-color": #29A3A2,
         "code-background-color": color.adjust($body-bg, $saturation: 80%, $lightness: 6%),
@@ -243,6 +244,7 @@ $dark-theme: map-merge(
         "body-color": $gray-100,
         "theme-toggler-border": rgb(2, 39, 78),
         "border-color": rgba($white, 0.5),
+        "border-color-posts": rgba($white, 0.5),
         "inline-code-background-color": #002b36,
         "inline-code-text-color": #fdf6e3,
         "code-background-color": #002b36,
