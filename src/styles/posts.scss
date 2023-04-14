@@ -6,7 +6,7 @@
     padding-bottom: 0.5rem;
 
     blockquote {
-        border-left: 0.25rem solid #8a2be2;
+        border-left: 0.25rem solid var(--#{$prefix}block-border-left);
         padding-left: 1rem;
         margin-left: 0;
         margin-right: 0;

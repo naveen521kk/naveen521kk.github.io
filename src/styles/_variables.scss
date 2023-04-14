@@ -228,9 +228,9 @@ $light-theme: map-merge(
         "link-color": $link-color,
         "link-hover-color": shift-color($link-color, $link-shade-percentage),
         "link-color-visited": link-color-visited($link-color),
-        "note-block-border-left": $primary,
+        "block-border-left": $primary,
         "color-admonition-title-background": rgba($secondary, 0.1),
-        "color-admonition-title": var(--#{$prefix}note-block-border-left),
+        "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(0, 0, 0, 0.05),
         "color-admonition-box-shadow-2": rgba(0, 0, 0, 0.1)
     ),
@@ -252,9 +252,9 @@ $dark-theme: map-merge(
         "link-color": #3abef0,
         "link-hover-color": shift-color(#3abef0, $link-shade-percentage),
         "link-color-visited": link-color-visited(#3abef0),
-        "note-block-border-left": #651fff,
+        "block-border-left": #651fff,
         "color-admonition-title-background": rgba(101, 31, 255, 0.1),
-        "color-admonition-title": var(--#{$prefix}note-block-border-left),
+        "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
         "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1)
     ),
