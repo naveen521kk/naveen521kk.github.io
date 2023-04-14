@@ -1,0 +1,5 @@
+@use "sass:color";
+
+@function link-color-visited($link-color) {
+  @return color.adjust($link-color, $saturation: -30%, $lightness: -4%);
+}

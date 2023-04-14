@@ -1,4 +1,5 @@
 @use "sass:color";
+@import "utils";
 @import "../../node_modules/bootstrap/scss/mixins/border-radius";
 
 $prefix: "nv-";
@@ -155,7 +156,7 @@ $paragraph-margin-bottom: 1rem;
 //
 // Style anchor elements.
 
-$link-color: $primary;
+$link-color: #e37f07;
 $link-decoration: underline;
 $link-shade-percentage: 20%;
 $link-hover-color: shift-color($link-color, $link-shade-percentage);
@@ -223,8 +224,9 @@ $light-theme: map-merge(
         "inline-code-text-color": #29A3A2,
         "code-background-color": color.adjust($body-bg, $saturation: 80%, $lightness: 6%),
         "code-text-color": #657b83,
-        "link-color": #8a2be2,
-        "link-hover-color": shift-color(#8a2be2, $link-shade-percentage),
+        "link-color": $link-color,
+        "link-hover-color": shift-color($link-color, $link-shade-percentage),
+        "link-color-visited": link-color-visited($link-color),
         "note-block-border-left": #651fff,
         "color-admonition-title-background": rgba(101, 31, 255, 0.1),
         "color-admonition-title": var(--#{$prefix}note-block-border-left),
@@ -247,6 +249,7 @@ $dark-theme: map-merge(
         "code-text-color": #fdf6e3,
         "link-color": #3abef0,
         "link-hover-color": shift-color(#3abef0, $link-shade-percentage),
+        "link-color-visited": link-color-visited(#3abef0),
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
         "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1)
     ),
