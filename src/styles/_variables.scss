@@ -95,8 +95,6 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 $font-family-base: var(--#{$prefix}font-sans-serif);
 $font-family-code: var(--#{$prefix}font-monospace);
 
-$font-size-root: null;
-$enable-smooth-scroll: true;
 $font-size-base: 1rem; // Assumes the browser default, typically `16px`
 $h1-font-size: $font-size-base * 2.5;
 $h2-font-size: $font-size-base * 2;
@@ -122,12 +120,6 @@ $headings-font-weight: 700;
 $headings-margin-bottom: $spacer * 0.5;
 $headings-line-height: 1.2;
 $headings-color: null;
-
-$hr-margin-y: $spacer;
-$hr-color: inherit;
-$hr-border-width: $border-width;
-$hr-border-color: null; // Allows for inherited colors
-$hr-opacity: 0.25;
 
 $legend-margin-bottom: 0.5rem;
 $legend-font-size: 1.5rem;

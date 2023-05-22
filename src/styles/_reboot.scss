@@ -21,18 +21,12 @@
 
 // Root
 //
-// Ability to the value of the root font sizes, affecting the value of `rem`.
-// null by default, thus nothing is generated.
+// Enable smooth scrolling if the prefers-reduced-motion media query
+// doesn't match.
 
 :root {
-    @if $font-size-root != null {
-        @include font-size(var(--#{$prefix}root-font-size));
-    }
-
-    @if $enable-smooth-scroll {
-        @media (prefers-reduced-motion: no-preference) {
-            scroll-behavior: smooth;
-        }
+    @media (prefers-reduced-motion: no-preference) {
+        scroll-behavior: smooth;
     }
 }
 
@@ -43,7 +37,6 @@
 // 3. Prevent adjustments of font size after orientation changes in iOS.
 // 4. Change the default tap highlight to be completely transparent in iOS.
 
-// scss-docs-start reboot-body-rules
 body {
     margin: 0; // 1
     font-family: var(--#{$prefix}body-font-family);
@@ -56,18 +49,17 @@ body {
     -webkit-text-size-adjust: 100%; // 3
     -webkit-tap-highlight-color: rgba($black, 0); // 4
 }
-// scss-docs-end reboot-body-rules
 
 // Content grouping
 //
 // 1. Reset Firefox's gray color
 
 hr {
-    margin: $hr-margin-y 0;
-    color: $hr-color; // 1
+    margin: $spacer 0;
+    color: inherit; // 1
     border: 0;
-    border-top: $hr-border-width solid $hr-border-color;
-    opacity: $hr-opacity;
+    border-top: $border-width solid null;
+    opacity: 0.25;
 }
 
 // Typography
