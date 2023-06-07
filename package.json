@@ -34,7 +34,6 @@
         "gatsby-plugin-image": "^3",
         "gatsby-plugin-manifest": "^5",
         "gatsby-plugin-mdx": "^5",
-        "gatsby-plugin-offline": "^6",
         "gatsby-plugin-postcss": "^6",
         "gatsby-plugin-react-helmet": "^6",
         "gatsby-plugin-sass": "^6",
