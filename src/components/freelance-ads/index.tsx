@@ -33,7 +33,6 @@ const FreelanceAds = () => {
         var time = now.getTime();
         var expireTime = time + NUM_DAYS_HIDE * 24 * 3600 * 1000;
         now.setTime(expireTime);
-        console.log(expireTime);
         document.cookie =
             "hideFreelanceAd=true;expires=" + now.toUTCString() + ";path=/";
         setIsVisible(false);
@@ -44,7 +43,6 @@ const FreelanceAds = () => {
             {isClient && (
                 <>
                     {transitions((style, item) => {
-                        console.log(style, item);
                         return (
                             <>
                                 {item && (
