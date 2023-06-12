@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+
+.freelanceAd {
+    display: none;
+    position: sticky;
+    bottom: 30px;
+    left: 30px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: fit-content;
+
+    padding: 1.5rem;
+
+    max-width: 40vw;
+    max-height: 10vh;
+    background-color: var(--#{$prefix}body-bg);
+    border: 2px solid var(--#{$prefix}border-color);
+    border-radius: 1rem;
+    box-shadow: 0 1px 5px 0 var(--#{$prefix}box-shadow-default);
+
+    // start displaying from tab screen
+    @media (min-width: 900px) {
+        display: flex;
+        max-width: 60vw;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+
+    // this is the close button for the popup
+    .closeButton {
+        cursor: pointer;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--#{$prefix}body-color);
+        margin-left: 0.5rem;
+    }
+}

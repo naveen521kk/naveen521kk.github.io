@@ -224,7 +224,9 @@ $light-theme: map-merge(
         "color-admonition-title-background": rgba($secondary, 0.1),
         "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(0, 0, 0, 0.05),
-        "color-admonition-box-shadow-2": rgba(0, 0, 0, 0.1)
+        "color-admonition-box-shadow-2": rgba(0, 0, 0, 0.1),
+        "box-shadow-default": rgba(0, 0, 0, 0.5),
+
     ),
     $header-gradient-light
 );
@@ -248,7 +250,8 @@ $dark-theme: map-merge(
         "color-admonition-title-background": rgba(101, 31, 255, 0.1),
         "color-admonition-title": var(--#{$prefix}block-border-left),
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
-        "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1)
+        "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1),
+        "box-shadow-default": rgba(255, 255, 255, 0.5),
     ),
     $header-gradient-dark
 );

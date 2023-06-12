@@ -3,6 +3,7 @@ import React from "react";
 import {ThemeProvider} from "./ThemeContext";
 import {WindowSizeProvider} from "./WindowSizeContext";
 import {useReducedMotion, Globals} from "@react-spring/web";
+import FreelanceAds from "./freelance-ads";
 
 function App({children}) {
     const reducedMotion = useReducedMotion();
@@ -20,7 +21,10 @@ function App({children}) {
 
     return (
         <WindowSizeProvider>
-            <ThemeProvider>{children}</ThemeProvider>
+            <ThemeProvider>
+                {children}
+                <FreelanceAds />
+            </ThemeProvider>
         </WindowSizeProvider>
     );
 }
