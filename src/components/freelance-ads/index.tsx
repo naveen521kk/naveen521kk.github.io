@@ -14,7 +14,7 @@ const FreelanceAds = () => {
         from: {opacity: 0},
         enter: {opacity: 1},
         leave: {opacity: 0},
-        config: {duration: 1500}
+        config: {duration: 1000}
     });
 
     React.useEffect(() => {
