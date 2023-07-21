@@ -226,7 +226,10 @@ $light-theme: map-merge(
         "color-admonition-box-shadow-1": rgba(0, 0, 0, 0.05),
         "color-admonition-box-shadow-2": rgba(0, 0, 0, 0.1),
         "box-shadow-default": rgba(0, 0, 0, 0.5),
-
+        "tag-background-color": rgba($primary, 0.1),
+        "tag-text-color": $primary,
+        "color-subtle-floating": hsl(210deg, 22%, 95%),
+        "color-secondary-heading": $gray-700,
     ),
     $header-gradient-light
 );
@@ -252,6 +255,11 @@ $dark-theme: map-merge(
         "color-admonition-box-shadow-1": rgba(255, 255, 255, 0.05),
         "color-admonition-box-shadow-2": rgba(255, 255, 255, 0.1),
         "box-shadow-default": rgba(255, 255, 255, 0.5),
+        "tag-background-color": rgba(101, 31, 255, 0.1),
+        "tag-text-color": #651fff,
+        "color-subtle-floating": hsl(210deg, 22%, 15%),
+        "color-secondary-heading": $gray-500,
     ),
     $header-gradient-dark
 );
+

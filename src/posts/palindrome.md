@@ -6,6 +6,7 @@ date: 2021-12-25T16:59:01+05:30
 draft: false
 description: "The article explain on finding the algorithm, flowchart, pseudocode and implementation of checking whether a given number is a palindrome in C and Python."
 image: "/assets/palindrome/banner.png"
+tags: ["algorithm","flowchart","pseudocode","c","python","palindrome"]
 ---
 
 Given a number, write a algorithm, flowchart, pseudocode to check if it is palindrome or not. 

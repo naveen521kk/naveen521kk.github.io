@@ -1,12 +1,12 @@
 import * as React from "react";
-import {graphql} from "gatsby";
+import {graphql, Link} from "gatsby";
 
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld";
 import NavBar from "../components/header.tsx";
 import BgPhoto from "../components/bgphoto.jsx";
-import ScrollProgressBar from "../components/scroll-progress-bar"
-import * as Posts from "../styles/posts-style.module.scss";
+import ScrollProgressBar from "../components/scroll-progress-bar";
+import * as styles from "../styles/posts-style.module.scss";
 import "../styles/posts.scss";
 
 const BlogPostTemplate = ({data, location, children}) => {
@@ -14,6 +14,7 @@ const BlogPostTemplate = ({data, location, children}) => {
 
     const {mdx} = data;
     const {frontmatter} = mdx;
+    const {tags} = frontmatter;
     const json_ld_data = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -52,8 +53,8 @@ const BlogPostTemplate = ({data, location, children}) => {
                 ) : (
                     <div />
                 )}
-                <div className={Posts.outer_class}>
-                    <div className={Posts.core_blog_post + " blog-post"}>
+                <div className={styles.outer_class}>
+                    <div className={styles.core_blog_post + " blog-post"}>
                         <header>
                             <h1 className="py-2" itemProp="headline">
                                 {frontmatter.title}
@@ -65,6 +66,16 @@ const BlogPostTemplate = ({data, location, children}) => {
                                       frontmatter.updated_date
                                     : ""}
                             </small>
+                            {/* tags section */}
+                            <div className={styles.tagSection}>
+                                {tags.map(tag => (
+                                    <Link to={`/tags/${tag}`}>
+                                        <span key={tag} className={styles.tag}>
+                                            {tag}
+                                        </span>
+                                    </Link>
+                                ))}
+                            </div>
                         </header>
                         <section
                             className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
@@ -119,6 +130,7 @@ export const pageQuery = graphql`
                 title
                 description
                 image
+                tags
             }
         }
     }

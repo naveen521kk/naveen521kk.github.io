@@ -5,6 +5,7 @@ date: 2021-07-11T00:56:01+05:30
 draft: false
 description: "I created my Logo using Bezier curves with the help of PyCairo."
 image: "/images/banner.png"
+tags: ["python","cairo","logo","bezier","svg"]
 ---
 
 I created a *new logo* today, it was some Python and other things I learned while developing Manim.

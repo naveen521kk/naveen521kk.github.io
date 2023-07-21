@@ -1,0 +1,73 @@
+@import "../../styles/variables";
+
+.item {
+    background: var(--#{$prefix}tag-background-color);
+    padding: 32px;
+    border-radius: 8px;
+
+    @media (max-width: 563px) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .article {
+        .postLink {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: var(--color-text);
+        }
+
+        .primaryTitle {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-size: calc(1.375rem);
+            font-weight: 600;
+        }
+
+        .secondaryTitle {
+            color: var(--#{$prefix}color-secondary-heading);
+            font-weight: 500;
+            font-size: calc(1.0625rem);
+        }
+
+        .excerpt {
+            font-size: 1rem;
+            margin-top: 16px;
+        }
+
+        .size16 {
+            min-width: 16px;
+            min-height: 16px;
+        }
+
+        .readMore {
+            position: relative;
+            display: inline-flex;
+            -moz-box-align: center;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        &:hover {
+            .primaryTitle {
+                color: var(--#{$prefix}link-color);
+            }
+            .icon {
+                opacity: 1;
+            }
+        }
+
+        .icon {
+            position: relative;
+            margin-left: 8px;
+            opacity: 0;
+
+            .svgRightIcon {
+                stroke: var(--#{$prefix}link-color);
+            }
+        }
+    }
+}

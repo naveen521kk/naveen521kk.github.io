@@ -6,6 +6,7 @@ updated_date: 2022-10-01T00:00:01+05:30
 draft: false
 description: "The article explains how to install Manim (the community edition) and configuring with Visual Studio Code."
 image: "/assets/manim-vscode/banner.png"
+tags: ["manim","python","vscode"]
 ---
 
 import NoteBlock from "../components/note-block.jsx";

@@ -14,14 +14,16 @@
     }
 }
 
-.blog-post-content h1,
-h2,
-h3,
-h4,
-h5,
-img {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+.blog-post-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    img {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
 }
 // Default is better
 // .blog-post-content a {

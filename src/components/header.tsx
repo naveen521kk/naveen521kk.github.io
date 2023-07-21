@@ -41,7 +41,11 @@ const NavBar = () => {
     const isMobile = windowSize <= 640;
     if (!isMobile) {
         return (
-            <Headroom>
+            <Headroom
+                style={{
+                    zIndex: 1000
+                }}
+            >
                 <header className={header.header}>
                     <nav className={header.main_nav}>
                         <div className={header.logo_theme_toggler_div}>
@@ -52,10 +56,14 @@ const NavBar = () => {
                         </div>
                         <ul id="menu" className={header.menu_item}>
                             <li>
-                                <Link to="/projects" title="Projects">Projects</Link>
+                                <Link to="/projects" title="Projects">
+                                    Projects
+                                </Link>
                             </li>
                             <li>
-                                <Link to="/posts" title="Blog Posts">Blog</Link>
+                                <Link to="/posts" title="Blog Posts">
+                                    Blog
+                                </Link>
                             </li>
                             {/* <li><Link to="/posts">About Me</Link></li> */}
                         </ul>

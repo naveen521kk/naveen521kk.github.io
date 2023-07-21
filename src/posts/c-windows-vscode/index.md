@@ -5,6 +5,7 @@ date: 2022-04-07T10:55:01+05:30
 draft: false
 description: "The article explains how to setup a C development environment on Windows with GCC as compiler and Visual Studio Code as IDE."
 image: "/assets/c-install/banner.png"
+tags: ["c","windows","gcc","msys2","vscode"]
 ---
 
 In this post, I'm sharing my experience to set up a C development environment on Windows. I'm installing [GCC](https://gcc.gnu.org/) from the [MSYS2](https://msys2.org) project and using [Visual Studio Code](https://code.visualstudio.com/) as my IDE.

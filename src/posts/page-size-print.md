@@ -6,6 +6,7 @@ updated_date: 2022-12-27T10:55:01+05:30
 draft: false
 description: "The article explains how to set the page size when using the print from html page feature in browser."
 image: "/assets/page-size-print/banner.png"
+tags: ["html","css","print","media-query"]
 ---
 
 Recently, in a project I was working on, I was given the task to setup a page which the user

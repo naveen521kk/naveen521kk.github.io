@@ -1,11 +1,25 @@
+import type {CreatePagesArgs, CreateNodeArgs} from "gatsby";
 const path = require(`path`);
 const {createFilePath} = require(`gatsby-source-filesystem`);
 
-exports.createPages = async ({graphql, actions, reporter}) => {
+interface PostNode {
+    id: string;
+    frontmatter: {
+        draft: boolean;
+        slug: string;
+        tags: string[];
+    };
+    internal: {
+        contentFilePath: string;
+    };
+}
+
+exports.createPages = async ({graphql, actions, reporter}: CreatePagesArgs) => {
     const {createPage} = actions;
 
-    // Define a template for blog post
+    // Define a template for blog post and tags
     const blogPost = path.resolve(`./src/templates/blog-post.js`);
+    const tagTemplate = path.resolve(`./src/templates/tags-list.tsx`);
 
     // Get all markdown blog posts sorted by date
     const result = await graphql(
@@ -17,6 +31,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
                         frontmatter {
                             draft
                             slug
+                            tags
                         }
                         internal {
                             contentFilePath
@@ -35,7 +50,8 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         return;
     }
 
-    const posts = result.data.allMdx.nodes;
+    const posts = (result.data as any).allMdx.nodes as PostNode[];
+    const tags: string[] = [];
 
     // Create blog posts pages
     // But only if there's at least one markdown file found at "posts/" (defined in gatsby-config.js)
@@ -58,15 +74,34 @@ exports.createPages = async ({graphql, actions, reporter}) => {
                     nextPostId
                 }
             });
+            if (post.frontmatter.tags) {
+                post.frontmatter.tags.forEach((tag: string) => {
+                    if (!tags.includes(tag)) {
+                        tags.push(tag);
+                    }
+                });
+            }
         });
     }
+
+    // Create tag pages
+    tags.forEach(tag => {
+        createPage({
+            path: `/tags/${tag}/`,
+            component: tagTemplate,
+            context: {
+                tag,
+                tagName: tag
+            }
+        });
+    });
 };
 
-exports.onCreateNode = ({node, actions, getNode}) => {
+exports.onCreateNode = ({node, actions, getNode}: CreateNodeArgs) => {
     const {createNodeField} = actions;
 
     if (node.internal.type === `Mdx`) {
-        const value = node.frontmatter.slug;
+        const value: string = (node.frontmatter as any).slug;
         createNodeField({
             name: `slug`,
             node,
