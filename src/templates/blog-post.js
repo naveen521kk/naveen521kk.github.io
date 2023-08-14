@@ -69,7 +69,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                             {/* tags section */}
                             <div className={styles.tagSection}>
                                 {tags.map(tag => (
-                                    <Link to={`/tags/${tag}`}>
+                                    <Link to={`/tags/${tag}`} key={tag}>
                                         <span key={tag} className={styles.tag}>
                                             {tag}
                                         </span>
