@@ -75,6 +75,8 @@ const FreelanceAds = () => {
                                                         onClick={
                                                             hideFreeLanceAd
                                                         }
+                                                        aria-label="Close"
+                                                        role="presentation"
                                                     >
                                                         <CloseIcon />
                                                     </button>
