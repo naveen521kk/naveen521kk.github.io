@@ -23,7 +23,7 @@ function App({children}) {
         <WindowSizeProvider>
             <ThemeProvider>
                 {children}
-                <FreelanceAds />
+                {/* <FreelanceAds /> */}
             </ThemeProvider>
         </WindowSizeProvider>
     );
