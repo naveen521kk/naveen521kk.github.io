@@ -4,7 +4,6 @@ import Headroom from "react-headroom";
 import * as header from "../styles/header.module.scss";
 import {DarkModeToggler} from "./ThemeToggler";
 import {ThemeContext} from "./ThemeContext";
-import {WindowSizeContext} from "./WindowSizeContext";
 import {HomeIcon, BookmarkIcon, ProjectsIcon} from "./icons";
 
 const NavLogo = () => {
@@ -37,10 +36,8 @@ const NavLogo = () => {
 };
 
 const NavBar = () => {
-    const {windowSize} = React.useContext(WindowSizeContext);
-    const isMobile = windowSize <= 640;
-    if (!isMobile) {
-        return (
+    return (
+        <>
             <Headroom
                 style={{
                     zIndex: 1000
@@ -70,35 +67,19 @@ const NavBar = () => {
                     </nav>
                 </header>
             </Headroom>
-        );
-    }
-    return (
-        <>
-            <Headroom>
-                <header className={header.header}>
-                    <nav className={header.main_nav}>
-                        <div className={header.logo_theme_toggler_div_mobile}>
-                            <NavLogo />
-                            <div className={header.theme_toggler_div}>
-                                <DarkModeToggler />
-                            </div>
-                        </div>
-                    </nav>
-                </header>
-            </Headroom>
-            <header className={header.header + " " + header.header_mobile}>
-                <nav className={header.main_nav_mobile}>
-                    <ul id="menu" className={header.menu_item_mobile}>
-                        <li className={header.menu_item_inner_mobile}>
+            <header className={header.header + " " + header.bottom_nav}>
+                <nav className={header.bottom_main_nav}>
+                    <ul id="menu" className={header.bottom_menu_item}>
+                        <li className={header.bottom_menu_item_inner}>
                             <HomeIcon />
                             <Link to="/">Home</Link>
                         </li>
-                        <li className={header.menu_item_inner_mobile}>
+                        <li className={header.bottom_menu_item_inner}>
                             <BookmarkIcon />
                             <Link to="/posts">Blog</Link>
                         </li>
                         {/* <li><Link to="/about">About Me</Link></li> */}
-                        <li className={header.menu_item_inner_mobile}>
+                        <li className={header.bottom_menu_item_inner}>
                             <ProjectsIcon />
                             <Link to="/projects">Projects</Link>
                         </li>
