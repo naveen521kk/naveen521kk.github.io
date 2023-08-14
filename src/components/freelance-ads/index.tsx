@@ -76,7 +76,6 @@ const FreelanceAds = () => {
                                                             hideFreeLanceAd
                                                         }
                                                         aria-label="Close"
-                                                        role="presentation"
                                                     >
                                                         <CloseIcon />
                                                     </button>
