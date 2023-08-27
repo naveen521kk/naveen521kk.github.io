@@ -86,3 +86,12 @@
     background-color: var(--#{$prefix}tag-background-color);
     color: var(--#{$prefix}tag-color);
 }
+
+.giscusComment {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+
+    @media (min-width: 768px) {
+        margin-bottom: 2rem;
+    }
+}
