@@ -1,4 +1,154 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Naveen M K's website RSS Feed]]></title><description><![CDATA[Naveen M K: I'm a student currently interested in web development and other cool stuff. I usually write about various projects I'm working on and stuff that's interesting. I also contribute to various open source projects.]]></description><link>https://www.naveenmk.me</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 14 Aug 2023 07:36:18 GMT</lastBuildDate><item><title><![CDATA[Interesting XOR property — Finding unique number in an array]]></title><description><![CDATA[Recently, while learning about the XOR operation, I came across an interesting property of XOR operation. The property is as follows: XOR…]]></description><link>https://www.naveenmk.me/blog/xor-unique-number-array</link><guid isPermaLink="false">https://www.naveenmk.me/blog/xor-unique-number-array</guid><pubDate>Sat, 18 Feb 2023 05:25:01 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Naveen M K's website RSS Feed]]></title><description><![CDATA[Naveen M K: I'm a student currently interested in web development and other cool stuff. I usually write about various projects I'm working on and stuff that's interesting. I also contribute to various open source projects.]]></description><link>https://www.naveenmk.me</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Aug 2023 17:58:51 GMT</lastBuildDate><item><title><![CDATA[Tips and Tricks for Using Weasyprint to Generate PDFs]]></title><description><![CDATA[Weasyprint if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to…]]></description><link>https://www.naveenmk.me/blog/weasyprint</link><guid isPermaLink="false">https://www.naveenmk.me/blog/weasyprint</guid><pubDate>Sat, 26 Aug 2023 18:30:00 GMT</pubDate><content:encoded>
+Weasyprint if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to use.
+
+In this post, I&apos;m writing about the things I learned when I was using Weasyprint on a project. Hope that this will help someone!
+
+## Setting page size
+
+Using the `@page` property of CSS one can set the page size. The default page size is A4. But if you want to change it, you can do it like this:
+
+```css
+@page {
+    size: A3 landscape;
+}
+```
+
+See the [MDN docs for @page rules&apos;s size property](https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size) for more information about the values that can be used.
+
+## Setting page margins
+
+Similar to setting page size, you can set the page margins using the `@page` property.
+
+```css
+@page {
+    margin: 1cm;
+}
+```
+
+## Page breaks
+
+You can set page breaks using the `page-break-before` and `page-break-after` properties. I usually define a class called `.page-break` and use it like this:
+
+```html
+&lt;style&gt;
+    .page-break {
+        page-break-after: always;
+    }
+&lt;/style&gt;
+&lt;div class=&quot;page-break&quot;&gt;&lt;/div&gt;
+```
+
+You can use the `page-break-before` and `page-break-after` properties directly on the element you want to break the page before or after.
+
+If you&apos;ve some content that you want to keep together, you can use the `page-break-inside` property.
+
+```css
+.page-break-inside {
+    page-break-inside: avoid;
+}
+```
+
+See the [MDN docs for page-break-inside](https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-inside) for more information.
+
+## Displaying page numbers
+
+I was generating a report and I wanted to display the page numbers on the bottom of the page. I used the `content` property of CSS to do this.
+
+```css
+@page {
+    @bottom-center {
+        content: counter(page);
+    }
+}
+```
+
+The `counter` function is used to display the page number. The `page` is a counter that is incremented for each page. You can also use the `counter` function to display the total number of pages.
+
+```css
+@page {
+    @bottom-center {
+        content: counter(page) &quot; of &quot; counter(pages);
+    }
+}
+```
+
+See the [MDN docs for counter function](https://developer.mozilla.org/en-US/docs/Web/CSS/counter) for more information.
+
+## Displaying headers and footers
+
+While you can use the `@page` property to display headers/footer which contains text displaying something like a logo (an SVG Image) was tricky. I was asked to display the logo of my university at the top of each page. Here&apos;s some code that I used to do this.
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        header {
+            position: running(header);
+            /* height of the header */
+            height: 4cm;
+        }
+
+        @page {
+            size: A4;
+            /* Add margin for the header */
+            margin-top: 4cm;
+
+            @top-center {
+                content: element(header);
+            }
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;!-- set the height to match the header height --&gt;
+        &lt;img src=&quot;header.svg&quot; style=&quot;height: 4cm&quot; /&gt;
+    &lt;/header&gt;
+    &lt;h1&gt;Page 1&lt;/h1&gt;
+    &lt;div class=&quot;page-break&quot;&gt;&lt;/div&gt;
+    &lt;h1&gt;Page 2&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+You could add anything you would like to display in the header inside the `header` element. Similarly, you can change the `@top-center` to `@bottom-center` to display the footer.
+
+## Displaying long tables
+
+If you&apos;ve a long table that spans multiple pages, you can use the `table-header` and `table-footer` properties to display the table header and footer on each page.
+
+```css
+thead {
+    display: table-header-group;
+}
+tfoot {
+    display: table-footer-group;
+}
+```
+
+## Disabling word wrapping
+
+If you&apos;ve a long word that you don&apos;t want to wrap, you can use the `white-space` property to do this.
+
+```css
+.long-word {
+    white-space: nowrap;
+}
+```
+
+For me, I had a table with a column that contained a long word. I used the `white-space` property to disable word wrapping for that column, YMMV.
+
+## That&apos;s all
+
+That&apos;s all for now. I&apos;ll update this post if I learn something new. If you&apos;ve any questions, feel free to ask me on [twitter](https://twitter.com/naveen521kk) or open a new [discussion](https://github.com/naveen521kk/naveen521kk.github.io/discussions).
+</content:encoded></item><item><title><![CDATA[Interesting XOR property — Finding unique number in an array]]></title><description><![CDATA[Recently, while learning about the XOR operation, I came across an interesting property of XOR operation. The property is as follows: XOR…]]></description><link>https://www.naveenmk.me/blog/xor-unique-number-array</link><guid isPermaLink="false">https://www.naveenmk.me/blog/xor-unique-number-array</guid><pubDate>Sat, 18 Feb 2023 05:25:01 GMT</pubDate><content:encoded>
 import { XOROpsDisplay, XORTruthTable } from &quot;./xor-ops.tsx&quot;;
 
 Recently, while learning about the XOR operation, I came across an interesting property of XOR operation. The property is as follows:
