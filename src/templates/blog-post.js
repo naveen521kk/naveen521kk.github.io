@@ -6,6 +6,7 @@ import {JsonLd} from "../components/json_ld";
 import NavBar from "../components/header.tsx";
 import BgPhoto from "../components/bgphoto.jsx";
 import ScrollProgressBar from "../components/scroll-progress-bar";
+import GiscusComment from "../components/giscus";
 import * as styles from "../styles/posts-style.module.scss";
 import "../styles/posts.scss";
 
@@ -87,6 +88,9 @@ const BlogPostTemplate = ({data, location, children}) => {
                     </div>
                 </div>
             </article>
+            <div className={styles.outer_class + " " + styles.giscusComment}>
+                <GiscusComment />
+            </div>
             <ScrollProgressBar />
             {/* <nav className="blog-post-nav">
                 <ul
