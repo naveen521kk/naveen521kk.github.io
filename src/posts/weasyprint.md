@@ -8,7 +8,7 @@ image: "/assets/weasyprint/banner.png"
 tags: ["weasyprint","pdf","html","css"]
 ---
 
-Weasyprint if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to use.
+Weasyprint, if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to use.
 
 In this post, I'm writing about the things I learned when I was using Weasyprint on a project. Hope that this will help someone!
 
