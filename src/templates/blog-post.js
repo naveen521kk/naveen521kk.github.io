@@ -41,6 +41,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                 description={frontmatter.description}
                 image={frontmatter.image}
                 article={true}
+                isGiscusEnabled={true}
             />
             <JsonLd data={json_ld_data} />
             <NavBar />

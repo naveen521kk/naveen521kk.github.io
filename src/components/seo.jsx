@@ -4,7 +4,14 @@ import {Helmet} from "react-helmet";
 import {useLocation} from "@reach/router";
 import {useStaticQuery, graphql} from "gatsby";
 
-const SEO = ({title, description, image, article, canonical}) => {
+const SEO = ({
+    title,
+    description,
+    image,
+    article,
+    canonical,
+    isGiscusEnabled
+}) => {
     const {pathname} = useLocation();
     const {site} = useStaticQuery(query);
 
@@ -30,7 +37,9 @@ const SEO = ({title, description, image, article, canonical}) => {
 
             {seo.url && <meta property="og:url" content={seo.url} />}
             {seo.url && <link rel="canonical" href={seo.canonical} />}
-
+            {seo.url && isGiscusEnabled && (
+                <meta name="giscus:backlink" content={seo.url} />
+            )}
             {(article ? true : null) && (
                 <meta property="og:type" content="article" />
             )}
