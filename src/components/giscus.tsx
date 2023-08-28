@@ -28,7 +28,7 @@ export default function GiscusComment() {
             repoId="MDEwOlJlcG9zaXRvcnkyOTU2NjY0ODk="
             category="Announcements"
             categoryId="DIC_kwDOEZ-DOc4CWtyY"
-            mapping="pathname"
+            mapping="title"
             strict="1"
             reactionsEnabled="1"
             emitMetadata="0"
