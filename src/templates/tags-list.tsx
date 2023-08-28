@@ -2,7 +2,7 @@ import * as React from "react";
 import {graphql, Link} from "gatsby";
 
 import SEO from "../components/seo";
-import NavBar from "../components/header.tsx";
+import NavBar from "../components/header";
 import PostItem from "../components/post-item/post-item";
 import * as styles from "../styles/tags.module.scss";
 import "../styles/posts.scss";
