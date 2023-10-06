@@ -4,7 +4,6 @@ import {graphql, Link} from "gatsby";
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld";
 import NavBar from "../components/header.tsx";
-import BgPhoto from "../components/bgphoto.jsx";
 import ScrollProgressBar from "../components/scroll-progress-bar";
 import GiscusComment from "../components/giscus";
 import * as styles from "../styles/posts-style.module.scss";
@@ -14,7 +13,7 @@ const BlogPostTemplate = ({data, location, children}) => {
     // const {previous, next} = data;
 
     const {mdx} = data;
-    const {frontmatter} = mdx;
+    const {frontmatter, tableOfContents} = mdx;
     const {tags} = frontmatter;
     const json_ld_data = {
         "@context": "https://schema.org",
@@ -50,42 +49,55 @@ const BlogPostTemplate = ({data, location, children}) => {
                 itemScope
                 itemType="http://schema.org/Article"
             >
-                {frontmatter.image ? (
-                    <BgPhoto img_loc={frontmatter.image} />
-                ) : (
-                    <div />
-                )}
-                <div className={styles.outer_class}>
-                    <div className={styles.core_blog_post + " blog-post"}>
-                        <header>
-                            <h1 className="py-2" itemProp="headline">
-                                {frontmatter.title}
-                            </h1>
-                            <small>
-                                Published on {frontmatter.date}
-                                {frontmatter.updated_date
-                                    ? " · Updated on " +
-                                      frontmatter.updated_date
-                                    : ""}
-                            </small>
-                            {/* tags section */}
-                            <div className={styles.tagSection}>
-                                {tags.map(tag => (
-                                    <Link to={`/tags/${tag}`} key={tag}>
-                                        <span key={tag} className={styles.tag}>
-                                            {tag}
-                                        </span>
-                                    </Link>
-                                ))}
-                            </div>
-                        </header>
-                        <section
-                            className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
-                            id="blog-start"
-                            itemProp="articleBody"
-                        >
-                            {children}
-                        </section>
+                <div className={styles.twoSection}>
+                    <aside>
+                        <nav>
+                            <h2 className={styles.tocTitle}>
+                                Table of Contents
+                            </h2>
+                            {tableOfContents.items && tableOfContents.items.map((item, index) => (
+                                <a href={item.url} className={styles.tocLinks}>{item.title}</a>
+                            ))}
+                        </nav>
+                    </aside>
+                    <div className={styles.outer_class}>
+                        <div className={styles.core_blog_post + " blog-post"}>
+                            <header>
+                                <h1 className="py-2" itemProp="headline">
+                                    {frontmatter.title}
+                                </h1>
+                                <small>
+                                    Published on {frontmatter.date}
+                                    {frontmatter.updated_date
+                                        ? " · Updated on " +
+                                          frontmatter.updated_date
+                                        : ""}
+                                </small>
+                                {/* tags section */}
+                                <div className={styles.tagSection}>
+                                    {tags.map(tag => (
+                                        <Link to={`/tags/${tag}`} key={tag}>
+                                            <span
+                                                key={tag}
+                                                className={styles.tag}
+                                            >
+                                                {tag}
+                                            </span>
+                                        </Link>
+                                    ))}
+                                </div>
+                                <img src={frontmatter.image} alt={
+                                    frontmatter.title + " image"
+                                } className={styles.headerImage}/>
+                            </header>
+                            <section
+                                className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
+                                id="blog-start"
+                                itemProp="articleBody"
+                            >
+                                {children}
+                            </section>
+                        </div>
                     </div>
                 </div>
             </article>
@@ -137,6 +149,7 @@ export const pageQuery = graphql`
                 image
                 tags
             }
+            tableOfContents
         }
     }
 `;
