@@ -62,6 +62,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                                     <a
                                         href={item.url}
                                         className={styles.tocLinks}
+                                        key={index}
                                     >
                                         {item.title}
                                     </a>
