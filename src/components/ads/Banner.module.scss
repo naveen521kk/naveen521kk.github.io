@@ -1,3 +1,15 @@
+@import "../../styles/variables";
+
 .container {
-    margin-bottom: 1rem;
+    position: relative;
+    display: block;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    // explicitely hightlight this is an ad
+    border: 1px dashed var(--#{$prefix}ad-border-color);
+    padding: 12px;
+    border-radius: 12px;
+
+    min-height: 126px;
 }

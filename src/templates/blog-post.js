@@ -103,20 +103,21 @@ const BlogPostTemplate = ({data, location, children}) => {
                                         </Link>
                                     ))}
                                 </div>
+                                <Banner
+                                    className="adsbygoogle"
+                                    style={{display: "block"}}
+                                    client="ca-pub-7183740147103241"
+                                    slot="8700645384"
+                                    format="auto"
+                                    responsive="true"
+                                />
                                 <img
                                     src={frontmatter.image}
                                     alt={frontmatter.title + " image"}
                                     className={styles.headerImage}
                                 />
                             </header>
-                            <Banner
-                                className="adsbygoogle"
-                                style={{display: "block"}}
-                                client="ca-pub-7183740147103241"
-                                slot="8700645384"
-                                format="auto"
-                                responsive="true"
-                            />
+
                             <section
                                 className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
                                 id="blog-start"

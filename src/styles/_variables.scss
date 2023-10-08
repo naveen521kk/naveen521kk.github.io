@@ -230,6 +230,7 @@ $light-theme: map-merge(
         "tag-text-color": $primary,
         "color-subtle-floating": hsl(210deg, 22%, 95%),
         "color-secondary-heading": $gray-700,
+        "ad-border-color": rgba($body-color, 0.2),
     ),
     $header-gradient-light
 );
@@ -259,6 +260,7 @@ $dark-theme: map-merge(
         "tag-text-color": #651fff,
         "color-subtle-floating": hsl(210deg, 22%, 15%),
         "color-secondary-heading": $gray-500,
+        "ad-border-color": rgba($gray-100, 0.2),
     ),
     $header-gradient-dark
 );
