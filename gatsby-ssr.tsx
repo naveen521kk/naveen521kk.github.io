@@ -1,6 +1,15 @@
 import React from "react";
 import {minify} from "terser";
 
+const HeadComponents = [
+    <script
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7183740147103241"
+        crossOrigin="anonymous"
+        async
+        key="adsense"
+    />
+];
+
 const MagicScriptTag = () => {
     const codeToRunOnClient = `
   (function() {
@@ -29,7 +38,12 @@ const MagicScriptTag = () => {
     // eslint-disable-next-line react/no-danger
     return <script dangerouslySetInnerHTML={{__html: minified.code!}} />;
 };
-export const onRenderBody = ({setPreBodyComponents, setHtmlAttributes}) => {
+export const onRenderBody = ({
+    setPreBodyComponents,
+    setHtmlAttributes,
+    setHeadComponents
+}) => {
     setPreBodyComponents(<MagicScriptTag key="unique" />);
     setHtmlAttributes({lang: "en-gb"});
+    setHeadComponents(HeadComponents);
 };

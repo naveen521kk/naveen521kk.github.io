@@ -9,6 +9,8 @@ import GiscusComment from "../components/giscus";
 import * as styles from "../styles/posts-style.module.scss";
 import "../styles/posts.scss";
 
+import Banner from "../components/ads/banner-ad";
+
 const BlogPostTemplate = ({data, location, children}) => {
     // const {previous, next} = data;
 
@@ -55,10 +57,24 @@ const BlogPostTemplate = ({data, location, children}) => {
                             <h2 className={styles.tocTitle}>
                                 Table of Contents
                             </h2>
-                            {tableOfContents.items && tableOfContents.items.map((item, index) => (
-                                <a href={item.url} className={styles.tocLinks}>{item.title}</a>
-                            ))}
+                            {tableOfContents.items &&
+                                tableOfContents.items.map((item, index) => (
+                                    <a
+                                        href={item.url}
+                                        className={styles.tocLinks}
+                                    >
+                                        {item.title}
+                                    </a>
+                                ))}
                         </nav>
+                        <Banner
+                            className="adsbygoogle"
+                            style={{display: "block"}}
+                            client="ca-pub-7183740147103241"
+                            slot="6635102288"
+                            format="auto"
+                            responsive="true"
+                        />
                     </aside>
                     <div className={styles.outer_class}>
                         <div className={styles.core_blog_post + " blog-post"}>
@@ -86,9 +102,11 @@ const BlogPostTemplate = ({data, location, children}) => {
                                         </Link>
                                     ))}
                                 </div>
-                                <img src={frontmatter.image} alt={
-                                    frontmatter.title + " image"
-                                } className={styles.headerImage}/>
+                                <img
+                                    src={frontmatter.image}
+                                    alt={frontmatter.title + " image"}
+                                    className={styles.headerImage}
+                                />
                             </header>
                             <section
                                 className="flex flex-col blog-post-content pt-3 mx-auto justify-center"
