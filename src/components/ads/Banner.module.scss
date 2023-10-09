@@ -3,13 +3,20 @@
 .container {
     position: relative;
     display: block;
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     // explicitely hightlight this is an ad
     border: 1px dashed var(--#{$prefix}ad-border-color);
-    padding: 12px;
-    border-radius: 12px;
+    padding: 2px;
+    border-radius: 2px;
 
     min-height: 126px;
+
+    @media (min-width: 768px) {
+        padding: 12px;
+        border-radius: 12px;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
 }
