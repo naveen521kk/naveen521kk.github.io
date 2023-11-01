@@ -10,6 +10,7 @@ tags: ["manim","python","vscode"]
 ---
 
 import NoteBlock from "../components/note-block.jsx";
+import { InArticleAds } from "../components/ads/in-article-ads.tsx";
 
 ## Installing Manim
 
@@ -52,6 +53,9 @@ Follow the instruction in the [Installation Page](https://docs.manim.community/e
 
 If you followed the steps correctly you should see the version of manim when running `manim --version` in that terminal. Just don't close the terminal yet, that will be used in the next steps.
 
+<InArticleAds.First />
+
+
 ### Initializing a Manim project
 To initialize a manim project run:
 ```shell
@@ -75,7 +79,7 @@ You would need to `cd` into `<project-name>` directory before continuing next st
 cd <project-name>
 ```
 
-
+<InArticleAds.Second />
 
 ## Configuring Visual Studio Code
 

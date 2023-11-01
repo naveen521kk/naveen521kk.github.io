@@ -8,6 +8,8 @@ image: "/assets/weasyprint/banner.png"
 tags: ["weasyprint","pdf","html","css"]
 ---
 
+import { InArticleAds } from "../components/ads/in-article-ads.tsx";
+
 Weasyprint, if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to use.
 
 In this post, I'm writing about the things I learned when I was using Weasyprint on a project. Hope that this will help someone!
@@ -23,6 +25,10 @@ Using the `@page` property of CSS one can set the page size. The default page si
 ```
 
 See the [MDN docs for @page rules's size property](https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size) for more information about the values that can be used.
+
+
+<InArticleAds.First />
+
 
 ## Setting page margins
 
@@ -82,6 +88,9 @@ The `counter` function is used to display the page number. The `page` is a count
 ```
 
 See the [MDN docs for counter function](https://developer.mozilla.org/en-US/docs/Web/CSS/counter) for more information.
+
+<InArticleAds.Second />
+
 
 ## Displaying headers and footers
 

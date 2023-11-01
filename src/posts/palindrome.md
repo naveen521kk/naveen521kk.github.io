@@ -9,6 +9,8 @@ image: "/assets/palindrome/banner.png"
 tags: ["algorithm","flowchart","pseudocode","c","python","palindrome"]
 ---
 
+import { InArticleAds } from "../components/ads/in-article-ads.tsx";
+
 Given a number, write a algorithm, flowchart, pseudocode to check if it is palindrome or not. 
 
 A string is said to be palindrome if reverse of the string is same as string. For example, `1221` is palindrome, but `1223` is not palindrome.
@@ -36,6 +38,8 @@ We will follow a method where we get each numbers using mathematical operations.
 
 5. After the loop ends, check whether `s == t`(whether the original number is same as reversed number).
 6. If `s == t`, display that `n` palindrome, else display `n` is not a palindrome.
+
+<InArticleAds.First />
 
 ## Flowchart
 
@@ -71,6 +75,8 @@ ELSE
 ENDIF
 END
 ```
+
+<InArticleAds.Second />
 
 ## Implementation
 
