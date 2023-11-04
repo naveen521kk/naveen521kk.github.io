@@ -14,21 +14,21 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v3
-              with:
-                  path: functions
-                  ref: main
 
             - name: Setup NodeJS
               uses: actions/setup-node@v3
               with:
                   node-version: "18"
                   cache: "npm"
+                  cache-dependency-path: functions/package-lock.json
 
             - name: Install Dependencies
+              working-directory: ./functions
               run: |
                   npm ci
 
             - name: Deploy
+              working-directory: ./functions
               env:
                   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
               run: npm run deploy
