@@ -30,8 +30,9 @@ router.get("/api/get-article-hits", async ({query}, env) => {
     )
         .bind(slug)
         .run();
-    if (insertRes.results.length === 1) return new Response("1");
-
+    if (insertRes.results.length === 1) {
+        return new Response("1");
+    }
 });
 
 router.all("*", () => new Response("404, not found!", {status: 404}));
