@@ -2,9 +2,20 @@ import {Router} from "itty-router";
 
 const router = Router();
 
-router.get("/api/get-article-hits", async ({query}, env) => {
+const corsHeaders = {
+    "Access-Control-Allow-Origin": "https://www.naveenmk.me",
+    "Access-Control-Allow-Methods": "GET",
+    "Access-Control-Max-Age": "86400"
+};
+
+router.get("/api/get-article-hits", async ({query, method}, env) => {
+	// handle CORS preflight request
+	if (method === "OPTIONS") {
+		return new Response(null, {headers: corsHeaders});
+	}
+
     if (!query || !query.slug)
-        return Response.json({error: "slug is required"}, {status: 400});
+        return Response.json({error: "slug is required"}, {status: 400, headers: corsHeaders});
 
     // get the slug from the query string
     const slug = decodeURIComponent(query.slug);
@@ -21,7 +32,7 @@ router.get("/api/get-article-hits", async ({query}, env) => {
         )
             .bind(slug)
             .run();
-        return Response.json({hits: (results[0]["count"] as number) + 1});
+        return Response.json({hits: (results[0]["count"] as number) + 1}, {headers: corsHeaders});
     }
 
     // the slug is not in the database, add it
@@ -31,7 +42,7 @@ router.get("/api/get-article-hits", async ({query}, env) => {
         .bind(slug)
         .run();
     if (insertRes.results.length === 1) {
-        return Response.json({hits: 1});
+        return Response.json({hits: 1}, {headers: corsHeaders});
     }
 });
 
