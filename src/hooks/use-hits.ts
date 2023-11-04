@@ -7,7 +7,7 @@ export default function useHits(slug: string) {
         // Register the article as seen!
         if (process.env.NODE_ENV === "production") {
             // Fetch the # of hits
-            fetch(`http://127.0.0.1:8787//api/get-article-hits?slug=${slug}`)
+            fetch(`https://api.syrusdark.cc/api/get-article-hits?slug=${slug}`)
                 .then(res => res.json())
                 .then(json => {
                     if (typeof json.hits === "number") {
