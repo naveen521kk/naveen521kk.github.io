@@ -1,6 +1,9 @@
 name = "functions"
 main = "src/index.ts"
 compatibility_date = "2023-10-30"
+routes = [
+	{ pattern = "api.syrusdark.cc", custom_domain = true }
+]
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
@@ -49,3 +52,8 @@ compatibility_date = "2023-10-30"
 # [[migrations]]
 # tag = "v1"
 # new_classes = ["MyDurableObject"]
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "main-website-api"
+database_id = "c8bb7d86-947c-4a47-a84b-e77bcc72aa79"

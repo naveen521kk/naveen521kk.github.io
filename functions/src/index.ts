@@ -1,32 +1,41 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
+import {Router} from "itty-router";
+
+const router = Router();
+
+router.get("/api/get-article-hits", async ({query}, env) => {
+    if (!query || !query.slug)
+        return new Response("slug is required", {status: 400});
+    // get the slug from the query string
+    const slug = decodeURIComponent(query.slug);
+    // first see if we can find the slug in the database
+    const {results} = await env.DB.prepare(
+        "SELECT * FROM Visits WHERE slug = ?"
+    )
+        .bind(slug)
+        .all();
+    if (results.length === 1) {
+        await env.DB.prepare(
+            "UPDATE Visits SET count = count + 1 WHERE slug = ?"
+        )
+            .bind(slug)
+            .run();
+        return new Response(((results[0]["count"] as number) + 1).toString());
+    }
+    // the slug is not in the database, add it
+    const insertRes = await env.DB.prepare(
+        "INSERT INTO Visits (slug) VALUES (?)"
+    )
+        .bind(slug)
+        .run();
+    if (insertRes.results.length === 1) return new Response("1");
+});
+
+router.all("*", () => new Response("404, not found!", {status: 404}));
 
 export interface Env {
-	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
-	// MY_KV_NAMESPACE: KVNamespace;
-	//
-	// Example binding to Durable Object. Learn more at https://developers.cloudflare.com/workers/runtime-apis/durable-objects/
-	// MY_DURABLE_OBJECT: DurableObjectNamespace;
-	//
-	// Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
-	// MY_BUCKET: R2Bucket;
-	//
-	// Example binding to a Service. Learn more at https://developers.cloudflare.com/workers/runtime-apis/service-bindings/
-	// MY_SERVICE: Fetcher;
-	//
-	// Example binding to a Queue. Learn more at https://developers.cloudflare.com/queues/javascript-apis/
-	// MY_QUEUE: Queue;
+    DB: D1Database;
 }
 
 export default {
-	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		return new Response('Hello World!');
-	},
+    fetch: router.handle
 };
