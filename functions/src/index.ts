@@ -5,8 +5,10 @@ const router = Router();
 router.get("/api/get-article-hits", async ({query}, env) => {
     if (!query || !query.slug)
         return new Response("slug is required", {status: 400});
+
     // get the slug from the query string
     const slug = decodeURIComponent(query.slug);
+
     // first see if we can find the slug in the database
     const {results} = await env.DB.prepare(
         "SELECT * FROM Visits WHERE slug = ?"
@@ -21,6 +23,7 @@ router.get("/api/get-article-hits", async ({query}, env) => {
             .run();
         return new Response(((results[0]["count"] as number) + 1).toString());
     }
+
     // the slug is not in the database, add it
     const insertRes = await env.DB.prepare(
         "INSERT INTO Visits (slug) VALUES (?)"
@@ -28,6 +31,7 @@ router.get("/api/get-article-hits", async ({query}, env) => {
         .bind(slug)
         .run();
     if (insertRes.results.length === 1) return new Response("1");
+
 });
 
 router.all("*", () => new Response("404, not found!", {status: 404}));
