@@ -8,14 +8,29 @@ const corsHeaders = {
     "Access-Control-Max-Age": "86400"
 };
 
-router.get("/api/get-article-hits", async ({query, method}, env) => {
-	// handle CORS preflight request
-	if (method === "OPTIONS") {
-		return new Response(null, {headers: corsHeaders});
-	}
+router.get("/api/get-article-hits", async ({query, method, headers}, env) => {
+    // handle CORS preflight request
+    if (method === "OPTIONS") {
+        return new Response(null, {headers: corsHeaders});
+    }
 
     if (!query || !query.slug)
-        return Response.json({error: "slug is required"}, {status: 400, headers: corsHeaders});
+        return Response.json(
+            {error: "slug is required"},
+            {status: 400, headers: corsHeaders}
+        );
+
+    // get orgin from headers
+    const origin: string | null = headers.get("origin");
+    if (
+        env.ENVIRONMENT === "production" &&
+        (!origin || new URL(origin).hostname !== "www.naveenmk.me")
+    ) {
+        return Response.json(
+            {error: "unauthorized"},
+            {status: 401, headers: corsHeaders}
+        );
+    }
 
     // get the slug from the query string
     const slug = decodeURIComponent(query.slug);
@@ -32,7 +47,10 @@ router.get("/api/get-article-hits", async ({query, method}, env) => {
         )
             .bind(slug)
             .run();
-        return Response.json({hits: (results[0]["count"] as number) + 1}, {headers: corsHeaders});
+        return Response.json(
+            {hits: (results[0]["count"] as number) + 1},
+            {headers: corsHeaders}
+        );
     }
 
     // the slug is not in the database, add it

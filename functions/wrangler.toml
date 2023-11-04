@@ -4,6 +4,14 @@ compatibility_date = "2023-10-30"
 routes = [
 	{ pattern = "api.syrusdark.cc", custom_domain = true }
 ]
+vars = { ENVIRONMENT = "dev"}
+
+[env.staging]
+vars = { ENVIRONMENT = "staging" }
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
