@@ -1,6 +1,7 @@
 import * as React from "react";
 import {graphql, Link} from "gatsby";
 
+import useHits from "../hooks/use-hits";
 import SEO from "../components/seo";
 import {JsonLd} from "../components/json_ld";
 import NavBar from "../components/header.tsx";
@@ -34,6 +35,7 @@ const BlogPostTemplate = ({data, location, children}) => {
         copyrightYear: new Date().getFullYear(),
         copyrightHolder: "Naveen M K"
     };
+    const hits = useHits(frontmatter.slug);
 
     return (
         <div>
