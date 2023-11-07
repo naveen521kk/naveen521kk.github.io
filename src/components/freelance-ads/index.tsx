@@ -6,6 +6,12 @@ import {useTransition, animated} from "@react-spring/web";
 
 const NUM_DAYS_HIDE = 3;
 
+declare global {
+    interface Window {
+        gtag: any;
+    }
+}
+
 const FreelanceAds = () => {
     const [isClient, setIsClient] = React.useState(false);
     const [isVisibile, setIsVisible] = React.useState(false);
@@ -36,6 +42,13 @@ const FreelanceAds = () => {
         document.cookie =
             "hideFreelanceAd=true;expires=" + now.toUTCString() + ";path=/";
         setIsVisible(false);
+
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", "close_freelance_ad", {
+                event_category: "engagement",
+                event_label: "freelance_ad"
+            });
+        }
     };
 
     return (
@@ -64,6 +77,26 @@ const FreelanceAds = () => {
                                                             href="https://www.fiverr.com/webwizardnk"
                                                             target="_blank"
                                                             rel="noopener noreferrer"
+                                                            onClick={() => {
+                                                                if (
+                                                                    typeof window !==
+                                                                        "undefined" &&
+                                                                    window.gtag
+                                                                ) {
+                                                                    window.gtag(
+                                                                        "event",
+                                                                        "open_freelance_ad",
+                                                                        {
+                                                                            event_category:
+                                                                                "engagement",
+                                                                            event_label:
+                                                                                "freelance_ad"
+                                                                        }
+                                                                    );
+                                                                }
+
+                                                                hideFreeLanceAd();
+                                                            }}
                                                         >
                                                             Check it out!
                                                         </a>
