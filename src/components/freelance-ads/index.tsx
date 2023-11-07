@@ -3,6 +3,7 @@ import {CloseIcon} from "../icons";
 import {createPortal} from "react-dom";
 import * as styles from "./freelance-ads.module.scss";
 import {useTransition, animated} from "@react-spring/web";
+import {addEvent} from "../../api";
 
 const NUM_DAYS_HIDE = 3;
 
@@ -34,6 +35,19 @@ const FreelanceAds = () => {
         }
     }, []);
 
+    React.useEffect(() => {
+        if (!isVisibile) {
+            return;
+        }
+        if (typeof window !== "undefined" && window.gtag) {
+            window.gtag("event", "show_freelance_ad", {
+                event_category: "engagement",
+                event_label: "freelance_ad"
+            });
+        }
+        addEvent(`show_freelance_ad`);
+    }, [isVisibile]);
+
     const hideFreeLanceAd = () => {
         var now = new Date();
         var time = now.getTime();
@@ -49,6 +63,8 @@ const FreelanceAds = () => {
                 event_label: "freelance_ad"
             });
         }
+
+        addEvent(`close_freelance_ad`);
     };
 
     return (
@@ -94,6 +110,9 @@ const FreelanceAds = () => {
                                                                         }
                                                                     );
                                                                 }
+                                                                addEvent(
+                                                                    `open_freelance_ad`
+                                                                );
 
                                                                 hideFreeLanceAd();
                                                             }}

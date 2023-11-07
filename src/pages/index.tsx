@@ -5,6 +5,7 @@ import SEO from "../components/seo.jsx";
 // import {StaticImage} from "gatsby-plugin-image";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
 import Mastodon from "../components/icon/Mastodon";
+import { addEvent } from "../api";
 
 declare global {
     interface Window {
@@ -34,6 +35,7 @@ const SocialLink = ({
                         event_label: title
                     });
                 }
+                addEvent(`open_social_link_${title}`);
             }}
         >
             {children}

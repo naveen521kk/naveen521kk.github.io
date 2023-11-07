@@ -1,7 +1,14 @@
-DROP TABLE IF EXISTS Visits;
-CREATE TABLE IF NOT EXISTS Visits (
-    slug TEXT PRIMARY KEY,
+-- DROP TABLE IF EXISTS Visits;
+-- CREATE TABLE IF NOT EXISTS Visits (
+--     slug TEXT PRIMARY KEY,
+--     count INTEGER NOT NULL DEFAULT 0,
+--     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );
+-- INSERT INTO Visits (slug, count) VALUES ('/', 0);
+
+CREATE TABLE IF NOT EXISTS Events (
+    event_name TEXT PRIMARY KEY,
     count INTEGER NOT NULL DEFAULT 0,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-INSERT INTO Visits (slug, count) VALUES ('/', 0);
+INSERT INTO Events (event_name, count) VALUES ('/', 0);

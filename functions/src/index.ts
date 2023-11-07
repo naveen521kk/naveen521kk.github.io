@@ -69,6 +69,73 @@ router.get("/api/get-article-hits", async ({query, method, headers}: CustomReque
     }
 });
 
+router.get(
+    "/api/add-event",
+    async ({query, method, headers}: CustomRequest, env) => {
+
+        // CREATE TABLE IF NOT EXISTS Events (
+        //     event_name TEXT PRIMARY KEY,
+        //     count INTEGER NOT NULL DEFAULT 0,
+        //     params TEXT,
+        //     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+        // );
+
+        // handle CORS preflight request
+        if (method === "OPTIONS") {
+            return new Response(null, {headers: corsHeaders});
+        }
+
+        if (!query || !query.event_name)
+            return Response.json(
+                {error: "event_name is required"},
+                {status: 400, headers: corsHeaders}
+            );
+
+        // get orgin from headers
+        const origin: string | null = headers.get("origin");
+        if (
+            env.ENVIRONMENT === "production" &&
+            (!origin || new URL(origin).hostname !== "www.naveenmk.me")
+        ) {
+            return Response.json(
+                {error: "unauthorized"},
+                {status: 401, headers: corsHeaders}
+            );
+        }
+
+        // get the event_name from the query string
+        const event_name = decodeURIComponent(query.event_name);
+
+        // first see if we can find the event_name in the database
+        const {results} = await env.DB.prepare(
+            "SELECT * FROM Events WHERE event_name = ?"
+        )
+            .bind(event_name)
+            .all();
+        if (results.length === 1) {
+            await env.DB.prepare(
+                "UPDATE Events SET count = count + 1 WHERE event_name = ?"
+            )
+                .bind(event_name)
+                .run();
+            return Response.json(
+                {message: "success"},
+                {headers: corsHeaders}
+            );
+        }
+
+        // the event_name is not in the database, add it
+        const insertRes = await env.DB.prepare(
+            "INSERT INTO Events (event_name) VALUES (?)"
+        )
+            .bind(event_name)
+            .run();
+        if (insertRes.results.length === 1) {
+            return Response.json({message: "success"}, {headers: corsHeaders});
+        }
+    }
+);
+
 router.all("*", () => new Response("404, not found!", {status: 404}));
 
 export interface Env {
