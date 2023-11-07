@@ -6,6 +6,12 @@ import SEO from "../components/seo.jsx";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
 import Mastodon from "../components/icon/Mastodon";
 
+declare global {
+    interface Window {
+        gtag: any;
+    }
+}
+
 const SocialLink = ({
     href,
     title,
@@ -21,6 +27,14 @@ const SocialLink = ({
             target="_blank"
             rel="noopener noreferrer me"
             title={title}
+            onClick={() => {
+                if (typeof window !== "undefined" && window.gtag) {
+                    window.gtag("event", "open_social_link", {
+                        event_category: "engagement",
+                        event_label: title
+                    });
+                }
+            }}
         >
             {children}
         </a>
