@@ -1,4 +1,5 @@
 import {Router} from "itty-router";
+import type {Request} from "itty-router";
 
 const router = Router();
 
@@ -8,7 +9,11 @@ const corsHeaders = {
     "Access-Control-Max-Age": "86400"
 };
 
-router.get("/api/get-article-hits", async ({query, method, headers}, env) => {
+interface CustomRequest extends Request {
+    headers: Headers;
+}
+
+router.get("/api/get-article-hits", async ({query, method, headers}: CustomRequest, env) => {
     // handle CORS preflight request
     if (method === "OPTIONS") {
         return new Response(null, {headers: corsHeaders});
