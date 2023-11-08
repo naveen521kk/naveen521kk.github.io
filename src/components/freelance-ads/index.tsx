@@ -90,7 +90,7 @@ const FreelanceAds = () => {
                                                         Psst... I do freelance
                                                         on Fiverr.{" "}
                                                         <a
-                                                            href="https://tinyurl.com/webwizardnk"
+                                                            href="https://www.fiverr.com/webwizardnk?utm_source=naveenmk.me"
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             onClick={() => {
