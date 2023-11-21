@@ -1,4 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Naveen M K's website RSS Feed]]></title><description><![CDATA[Naveen M K: I'm a student currently interested in web development and other cool stuff. I usually write about various projects I'm working on and stuff that's interesting. I also contribute to various open source projects.]]></description><link>https://www.naveenmk.me</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 08 Nov 2023 17:43:17 GMT</lastBuildDate><item><title><![CDATA[Tips and Tricks for Using Weasyprint to Generate PDFs]]></title><description><![CDATA[Weasyprint, if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to…]]></description><link>https://www.naveenmk.me/blog/weasyprint</link><guid isPermaLink="false">https://www.naveenmk.me/blog/weasyprint</guid><pubDate>Sat, 26 Aug 2023 18:30:00 GMT</pubDate><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Naveen M K's website RSS Feed]]></title><description><![CDATA[Naveen M K: I'm a student currently interested in web development and other cool stuff. I usually write about various projects I'm working on and stuff that's interesting. I also contribute to various open source projects.]]></description><link>https://www.naveenmk.me</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Nov 2023 16:00:31 GMT</lastBuildDate><item><title><![CDATA[Adding interactive Code Blocks to Manim Documentation — Manim Binder]]></title><description><![CDATA[You can view the project live on the Manim Documentation. Project’s Background
+
+Manim is a powerful animation engine for explanatory math…]]></description><link>https://www.naveenmk.me/projects/manim-binder</link><guid isPermaLink="false">https://www.naveenmk.me/projects/manim-binder</guid><pubDate>Mon, 20 Nov 2023 18:30:00 GMT</pubDate><content:encoded>
+You can view the project live on the
+[Manim Documentation](https://docs.manim.community/en/stable/examples.html).
+
+## Project&apos;s Background
+
+[Manim](https://manim.community) is a powerful animation engine for explanatory
+math videos. Currently, one of the biggest challenges for newcomers is the
+learning curve. The documentation lacks interactivity (the ability to run code
+directly from the documentation), which makes it difficult for users to experiment
+with the code and understand the underlying concepts.
+
+The goal is clear: Manim users should be able to try out the examples directly
+from the documentation.
+
+## Project Features
+
+The key feature of this project is a button to make the example interactive in
+the documentation. Clicking this button opens a code editor below the example code,
+allowing users to experiment with the code. There also exists a run button below the
+editor. With a simple click, users can execute their code, visualize the output,
+and iterate on their animations effortlessly.
+
+This feature significantly improves the learning experience, allowing users to
+interactively explore Manim without leaving the documentation. It bridges the
+gap between theoretical understanding and practical application, making the onboarding
+process smoother for newcomers.
+
+## Project Details
+
+**GitHub Repository:** [Manim Binder](https://github.com/naveen521kk/manim-binder)
+
+**Pull Request:** https://github.com/ManimCommunity/manim/pull/3427
+
+The project’s core functionality is implemented in TypeScript and compiled into
+a minified JavaScript file using Webpack. This file is then included in the Manim
+repository, ensuring seamless integration. The approach not only maintains the
+cleanliness of the Manim codebase but also allows for efficient updates and
+maintenance.
+
+Being an open-source project, Manim Binder is licensed under the 
+[MIT License](https://github.com/naveen521kk/manim-binder/blob/main/LICENSE),
+encouraging collaboration and use in other projects. This flexibility empowers
+the broader community to adopt and adapt the interactive documentation feature
+for their needs.
+
+The inspiration for this project stems from the
+[Juniper](https://github.com/ines/juniper) project and the
+documentation of [spaCy](https://spacy.io/).
+
+The project leverages the Binder API to enable this interactivity, where
+users run Manim code in a Jupyter kernel. It not only simplifies the execution
+process but also ensures consistency across different user environments.
+
+## Conclusion
+
+This project is to make Manim easy to use without the friction for the users
+to install Manim. The interactive code blocks embedded in the documentation
+empower users to experiment, learn, and create without problem.
+</content:encoded></item><item><title><![CDATA[Tips and Tricks for Using Weasyprint to Generate PDFs]]></title><description><![CDATA[Weasyprint, if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to…]]></description><link>https://www.naveenmk.me/blog/weasyprint</link><guid isPermaLink="false">https://www.naveenmk.me/blog/weasyprint</guid><pubDate>Sat, 26 Aug 2023 18:30:00 GMT</pubDate><content:encoded>
 import { InArticleAds } from &quot;../components/ads/in-article-ads.tsx&quot;;
 
 Weasyprint, if you’ve not known before is a wonderful tool to generate PDFs from HTML and CSS. It’s a Python library and it’s very easy to use.
