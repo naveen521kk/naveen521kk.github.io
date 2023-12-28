@@ -5,6 +5,7 @@ import SEO from "../components/seo.jsx";
 // import {StaticImage} from "gatsby-plugin-image";
 import {Mail, GitHub, Twitter, Gitlab} from "react-feather";
 import Mastodon from "../components/icon/Mastodon";
+import Threads from "../components/icon/Threads";
 import { addEvent } from "../api";
 
 declare global {
@@ -97,6 +98,12 @@ const IndexPage = () => {
                         title="Mastodon"
                     >
                         <Mastodon />
+                    </SocialLink>
+                    <SocialLink
+                        href="https://threads.net/@naveen521kk"
+                        title="Threads"
+                    >
+                        <Threads />
                     </SocialLink>
                 </div>
                 {/* <StaticImage
