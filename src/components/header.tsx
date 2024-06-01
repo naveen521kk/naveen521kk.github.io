@@ -53,9 +53,9 @@ const NavBar = () => {
                         </div>
                         <ul id="menu" className={header.menu_item}>
                             <li>
-                                <Link to="/projects" title="Projects">
+                                <a href="https://projects.naveenmk.me/" title="Projects" target="_blank" rel="noopener noreferrer">
                                     Projects
-                                </Link>
+                                </a>
                             </li>
                             <li>
                                 <Link to="/posts" title="Blog Posts">
