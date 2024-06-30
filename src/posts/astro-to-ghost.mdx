@@ -1,0 +1,200 @@
+---
+slug: "/blog/porting-astro-website-to-ghost"
+title: "Migrating an Astro Website to Ghost: A Comprehensive Guide"
+date: 2024-06-30T00:00:00+05:30
+updated_date: 2024-06-30T00:00:00+05:30
+draft: false
+description: "Step-by-step guide to migrate your Astro website to Ghost CMS,
+enabling content management and creation within Ghost. Perfect for developers
+looking to switch their Astro site to a headless CMS."
+image: "/assets/astro-to-ghost/banner.png"
+tags: ["astro", "ghost", "react", "javascript", "css", "html"]
+---
+
+import NoteBlock from "../components/note-block.jsx";
+import { InArticleAds } from "../components/ads/in-article-ads.tsx";
+
+Recently, I undertook a project to convert an Astro website to Ghost. The task
+involved building a Ghost theme based on the existing Astro website and enabling
+users to create new blog posts and pages.
+
+This post is not about using Ghost as a Headless CMS; we are porting a website
+entirely to Ghost.
+
+In this blog post, I'll describe my techniques to achieve this conversion.
+
+<NoteBlock title="Promotion">
+    You can contact me if you'd like assistance with a similar project. You can
+    find my email on my [Github Profile](https://github.com/naveen521kk).
+</NoteBlock>
+
+## Setting up a Ghost Development Environment
+
+Follow these guides to set up your Ghost development environment:
+
+- [Ghost Local Installation](https://ghost.org/docs/install/local/)
+- [Ghost Starter Theme Development Guide](https://github.com/TryGhost/Starter?tab=readme-ov-file#development-guide)
+
+I was working on Windows, so I had to set up Ghost on WSL because `ln` doesn’t
+work natively on Windows, and I didn't bother to find the equivalent.
+
+After the setup, you'll have a working Ghost website with a barebones theme.
+Any changes made to the theme will reflect directly on the website.
+
+<InArticleAds.First />
+
+## Ghost Route Configuration
+
+Refer to the documentation at: [Ghost Themes Routing](https://ghost.org/docs/themes/routing/)
+
+This project required a landing page that doesn’t list posts on the homepage. So, I created a `home.hbs` file that inherited from `default.hbs`. To make the homepage render from `home.hbs`, I created the following `routes.yaml` file and uploaded it as specified in the documentation.
+
+```yaml
+routes:
+  /: home
+
+```
+
+I also wanted the `/posts` page to list blog posts and for all blog post URLs to be prefixed with `/blog`. My final `routes.yaml` file looked like this:
+
+```yaml
+routes:
+  /: home
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    template: index
+
+```
+
+The template files we edited were:
+
+- `default.hbs`: The main template file containing the header and footer HTML code
+- `index.hbs`: Used for displaying posts
+- `home.hbs`: Used for the homepage contents
+- `post.hbs`: Used for individual posts
+- `page.hbs`: Used for individual pages (a copy of `post.hbs`)
+
+## Migrating Styles
+
+I started by migrating the necessary styles for the entire site. I copied the
+production builds of the CSS files into the assets directory (`assets/css`).
+You can find the CSS files to copy from either the browser inspect panel or the
+build directory of Astro. Then, I added the following to `assets/js/index.js`:
+
+```jsx
+import "../css/css-file-1.css";
+import "../css/css-file-2.css";
+
+```
+
+The bundler configured in the theme would now include the necessary CSS.
+
+There were some inline styles (created using the `<style is:inline>` tags option
+in Astro) which I handled later.
+
+
+## Migrating HTML Layouts
+
+This part was straightforward. I simply copy-pasted the HTML from the
+browser’s inspect panel. Most things worked out without any issues.
+However, React components, animations, and other JavaScript-reliant features
+didn't work initially.
+
+I did the same for the post listing page (`index.hbs`) and post rendering
+pages (`post.hbs` and `page.hbs`) -- without breaking the template present
+in there for rendering posts dynamically. This gave an overall structure to the
+website. Combined with the styles from the previous step, the site started
+to take shape.
+
+## Migrating JavaScript
+
+This project had some plain JavaScript files for animations.
+
+I copied the JavaScript files from the source code into the `assets/js`
+directory. Next, I converted them into functions by wrapping all the code in a
+function like this:
+
+```jsx
+export default function someFunction() {
+  // code previously in the file
+}
+
+```
+
+I then imported and called those functions in `assets/js/index.js`. This made
+most animations and features like the mobile navbar work.
+
+<InArticleAds.Second />
+
+
+## Migration React Components
+
+For this, I created a small project using the [Vite](https://vitejs.dev/) - React + TypeScript template. I copied the components from the Astro website into this project. Then, I modified `src/main.tsx` as follows:
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { NavigationItem } from './navigation-menu';
+
+ReactDOM.createRoot(document.getElementById("navigation-menu-dropdown")!).render(
+  <React.StrictMode>
+    <NavigationItem />
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(
+  document.getElementById("navigation-menu-dropdown-mobile")!
+).render(
+  <React.StrictMode>
+    <NavigationItem />
+  </React.StrictMode>
+);
+
+```
+
+Here, `NavigationItem` is the component I ported, and it needed to be rendered in two places. I marked those two places (in `default.hbs` in my case) with a div with an ID like this:
+
+```html
+<div id="navigation-menu-dropdown"></div>
+
+```
+
+I configured Vite to generate a single JS file with everything needed. This meant I could include the generated file using a script tag in the HTML, and things would work. Here’s my `vite.config.ts` file:
+
+```jsx
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// <https://vitejs.dev/config/>
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        dir: 'dist',
+        entryFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].min.[ext]',
+      },
+    },
+  },
+});
+
+```
+
+Next, I ran `npm run build` and copied the JS file in `dist/assets` directory to the theme's `assets/js` directory. I also renamed it as required (`dropdown.min.js`).
+
+In the `default.hbs` file, I added the following line before the closing of the `<body>` tag:
+
+```html
+<script type="module" crossorigin src="/assets/js/dropdown.min.js"></script>
+
+```
+
+This made the dropdown in the navbar work as expected.
+
+## Conclusion
+
+This process completed the majority of the homepage. Some parts, like the blog post listing and individual blog posts/pages, required manual attention for styles and animations.
+
+That’s a wrap for this post. I hope you found it useful.
