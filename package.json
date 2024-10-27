@@ -60,7 +60,8 @@
         "remark-gfm": "^1.0.0",
         "rfs": "^9.0.6",
         "sass": "^1.35.1",
-        "terser": "4.8.1"
+        "terser": "4.8.1",
+        "webpack": "^5.85.1"
     },
     "devDependencies": {
         "@types/node": "^18.11.10",
