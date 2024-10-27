@@ -48,7 +48,7 @@ router.get("/api/get-article-hits", async ({query, method, headers}: CustomReque
         .all();
     if (results.length === 1) {
         await env.DB.prepare(
-            "UPDATE Visits SET count = count + 1 WHERE slug = ?"
+            "UPDATE Visits SET count = count + 1, updated_at = CURRENT_TIMESTAMP WHERE slug = ?"
         )
             .bind(slug)
             .run();
@@ -60,7 +60,7 @@ router.get("/api/get-article-hits", async ({query, method, headers}: CustomReque
 
     // the slug is not in the database, add it
     const insertRes = await env.DB.prepare(
-        "INSERT INTO Visits (slug) VALUES (?)"
+        "INSERT INTO Visits (slug, updated_at) VALUES (?, CURRENT_TIMESTAMP)"
     )
         .bind(slug)
         .run();
@@ -114,7 +114,7 @@ router.get(
             .all();
         if (results.length === 1) {
             await env.DB.prepare(
-                "UPDATE Events SET count = count + 1 WHERE event_name = ?"
+                "UPDATE Events SET count = count + 1, updated_at = CURRENT_TIMESTAMP WHERE event_name = ?"
             )
                 .bind(event_name)
                 .run();
@@ -126,7 +126,7 @@ router.get(
 
         // the event_name is not in the database, add it
         const insertRes = await env.DB.prepare(
-            "INSERT INTO Events (event_name) VALUES (?)"
+            "INSERT INTO Events (event_name, updated_at) VALUES (?, CURRENT_TIMESTAMP)"
         )
             .bind(event_name)
             .run();
