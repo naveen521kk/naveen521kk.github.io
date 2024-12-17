@@ -12,6 +12,10 @@ tags: ["manim","python","vscode"]
 import NoteBlock from "../components/note-block.jsx";
 import { InArticleAds } from "../components/ads/in-article-ads.tsx";
 
+<NoteBlock title="Important">
+    Using [uv](https://docs.astral.sh/uv/#getting-started) is a better way to install Manim and VSCode automatically recognizes it. See official documentation for [here](https://docs.manim.community/en/latest/installation/uv.html) for how to use it.
+</NoteBlock>
+
 ## Installing Manim
 
 Follow the instruction in the [Installation Page](https://docs.manim.community/en/stable/installation.html#installing-manim-locally) on the official documentation. After installing Manim get back here for configuring the virtual environment. In my case, I use Windows; I used chocolatey to install Manim (`choco install manimce`). 
