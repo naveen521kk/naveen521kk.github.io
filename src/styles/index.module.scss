@@ -22,6 +22,10 @@
         text-decoration: none;
         color: inherit;
         margin-inline-end: 12px;
+
+        &:visited {
+            color: inherit;
+        }
     }
 }
 
