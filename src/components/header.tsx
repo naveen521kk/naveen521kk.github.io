@@ -9,7 +9,7 @@ import {HomeIcon, BookmarkIcon, ProjectsIcon} from "./icons";
 const NavLogo = () => {
     const {colorMode} = React.useContext(ThemeContext);
     return (
-        <div className={header.logo_div}>
+        <div className={header.logo_div} data-testid="navbar-logo">
             {colorMode === "dark" ? (
                 <img
                     src="/logo-dark.svg"

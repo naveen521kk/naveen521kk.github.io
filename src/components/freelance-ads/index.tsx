@@ -83,6 +83,7 @@ const FreelanceAds = () => {
                                                         styles.freelanceAd
                                                     }
                                                     style={style}
+                                                    id="freelance-ad"
                                                 >
                                                     <span
                                                         className={styles.text}
@@ -128,6 +129,7 @@ const FreelanceAds = () => {
                                                             hideFreeLanceAd
                                                         }
                                                         aria-label="Close"
+                                                        title="Close"
                                                     >
                                                         <CloseIcon />
                                                     </button>

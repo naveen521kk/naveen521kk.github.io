@@ -19,7 +19,7 @@ const DarkModeToggler = () => {
                 content={<span className="tippy-text">Turn on the light</span>}
             >
                 <button
-                    id="theme-toggle-dark"
+                    id="theme-toggler"
                     aria-label="Turn on the light"
                     className={DarkThemeStyle.theme_toggle_button}
                     onClick={changeTheme}
@@ -32,7 +32,7 @@ const DarkModeToggler = () => {
     return (
         <Tippy content={<span className="tippy-text">Turn off the light</span>}>
             <button
-                id="theme-toggle-light"
+                id="theme-toggler"
                 aria-label="Turn off the light"
                 className={DarkThemeStyle.theme_toggle_button}
                 onClick={changeTheme}
