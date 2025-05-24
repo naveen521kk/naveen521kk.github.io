@@ -243,7 +243,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "pytest-playwright", specifier = ">=0.7.0" },
-    { name = "pytz" },
+    { name = "pytz", specifier = ">=2025.2" },
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "requests", specifier = ">=2.32.3" },
 ]
