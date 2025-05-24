@@ -55,7 +55,7 @@ const BlogPostTemplate = ({data, location, children}) => {
             >
                 <div className={styles.twoSection}>
                     <aside>
-                        <nav>
+                        <nav id="toc">
                             <h2 className={styles.tocTitle}>
                                 Table of Contents
                             </h2>
@@ -82,10 +82,10 @@ const BlogPostTemplate = ({data, location, children}) => {
                     <div className={styles.outer_class}>
                         <div className={styles.core_blog_post + " blog-post"}>
                             <header>
-                                <h1 className="py-2" itemProp="headline">
+                                <h1 className="py-2" itemProp="headline" data-testid="blog-title">
                                     {frontmatter.title}
                                 </h1>
-                                <small>
+                                <small data-testid="blog-date">
                                     Published on {frontmatter.date}
                                     {frontmatter.updated_date
                                         ? " · Updated on " +
@@ -93,7 +93,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                                         : ""}
                                 </small>
                                 {/* tags section */}
-                                <div className={styles.tagSection}>
+                                <div className={styles.tagSection} data-testid="blog-tags">
                                     {tags.map(tag => (
                                         <Link to={`/tags/${tag}`} key={tag}>
                                             <span
@@ -117,6 +117,9 @@ const BlogPostTemplate = ({data, location, children}) => {
                                     src={frontmatter.image}
                                     alt={frontmatter.title + " image"}
                                     className={styles.headerImage}
+                                    itemProp="image"
+                                    data-testid="blog-header-image"
+                                    loading="lazy"
                                 />
                             </header>
 
@@ -139,7 +142,7 @@ const BlogPostTemplate = ({data, location, children}) => {
                     </div>
                 </div>
             </article>
-            <div className={styles.outer_class + " " + styles.giscusComment}>
+            <div className={styles.outer_class + " " + styles.giscusComment} id="giscus-comments">
                 <GiscusComment />
             </div>
             <ScrollProgressBar />
