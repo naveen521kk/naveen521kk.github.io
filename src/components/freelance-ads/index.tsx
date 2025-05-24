@@ -39,6 +39,10 @@ const FreelanceAds = () => {
         if (!isVisibile) {
             return;
         }
+        // if there is cookie unit_test=true, do not log the event
+        if (document.cookie.indexOf("unit_test=true") !== -1) {
+            return;
+        }
         if (typeof window !== "undefined" && window.gtag) {
             window.gtag("event", "show_freelance_ad", {
                 event_category: "engagement",
