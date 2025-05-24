@@ -33,7 +33,7 @@ jobs:
             - name: Install Playwright
               working-directory: tests
               run: |
-                  uv run playwright install --with-deps
+                  uv run playwright install chromium --with-deps
             - name: Run tests
               working-directory: tests
               run: uv run pytest
