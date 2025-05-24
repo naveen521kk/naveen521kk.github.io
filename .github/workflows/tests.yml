@@ -35,5 +35,7 @@ jobs:
               run: |
                   uv run playwright install chromium --with-deps
             - name: Run tests
+              env:
+                PYTEST_ADDOPTS: "--color=yes"
               working-directory: tests
               run: uv run pytest
