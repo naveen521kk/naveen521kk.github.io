@@ -1,0 +1,17 @@
+[project]
+name = "tests"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest-playwright>=0.7.0",
+    "pytz>=2025.2",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+]
+
+# pytest add options for display
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-v -s --tb=short -ra"
