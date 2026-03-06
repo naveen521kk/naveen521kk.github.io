@@ -1,0 +1,241 @@
+---
+slug: "/blog/encrypted-email-using-gpg/"
+title: "Sending an Encrypted Email Using GPG"
+date: 2026-03-06T00:00:00+05:30
+updated_date: 2026-03-06T00:00:00+05:30
+draft: false
+description: "Learn how to securely contact me using GPG encryption. This guide explains how 
+to encrypt emails with a public key from GitHub and set up GPG for your own secure communication."
+image: "/images/banner.png"
+tags: ["gpg", "encryption", "email", "security", "privacy"]
+---
+
+import NoteBlock from "../components/note-block.jsx";
+
+There are times when you may want to send something privately — maybe security, credentials,
+or sensitive information.
+
+To make sure **only the person who intends to read your message**, you can encrypt your email
+using **GPG (GNU Privacy Guard)**.
+
+GPG uses **public-key encryption**. In simple terms:
+
+-   I publish a **public key** that anyone can use to encrypt a message.
+-   Only I have the **private key** that can decrypt it.
+
+So even if someone intercepts the email, they **cannot read it**.
+
+This guide shows:
+
+1. How to send me an encrypted email
+2. How you can set up the same system yourself
+
+---
+
+## 1. Download My Public Key
+
+You can get my public key here from either of these links:
+
+-   https://github.com/naveen521kk.gpg
+-   http://naveenmk.me/naveen521kk.gpg
+
+Download it:
+
+```bash
+curl https://github.com/naveen521kk.gpg -o naveen521kk.asc
+```
+
+Or just open the link and save the file.
+
+---
+
+## 2. Import the Key into GPG
+
+Install GPG if you don't already have it.
+
+### Mac
+
+```bash
+brew install gnupg
+```
+
+### Ubuntu / Linux
+
+```bash
+sudo apt install gnupg
+```
+
+### Windows
+
+Install **Gpg4win**
+
+[https://gpg4win.org](https://gpg4win.org)
+
+<NoteBlock>
+For windows, [Git for Windows](https://git-scm.com/install/windows) also comes with gpg, so you can use that if you have git installed.
+You would need to run those commands in git bash in this case.
+</NoteBlock>
+
+---
+
+Now import my key:
+
+```bash
+gpg --import naveen521kk.asc
+```
+
+You should see something like:
+
+```
+gpg: key BDBXXX: public key "Naveen ... <email>" imported
+```
+
+---
+
+## 3. Write Your Message
+
+Create a file with the message you want to send.
+
+Example:
+
+```bash
+nano message.txt
+```
+
+Example message:
+
+```
+Hi Naveen,
+
+I wanted to report a security issue I found.
+
+Thanks!
+```
+
+---
+
+## 4. Encrypt the Message
+
+Now encrypt the message using my public key.
+
+```bash
+gpg --encrypt --armor -r naveen message.txt
+```
+
+This will create:
+
+```
+message.txt.asc
+```
+
+The file will look like this:
+
+```
+-----BEGIN PGP MESSAGE-----
+
+hQIMA5....
+....
+-----END PGP MESSAGE-----
+```
+
+Only my private key can decrypt it.
+
+---
+
+## 5. Send the Email
+
+Now send me the encrypted text via email.
+
+You can either:
+
+-   attach the `.asc` file
+-   or paste the encrypted block directly into the email body
+
+Even if the email provider reads your message, **they will only see encrypted text**.
+
+---
+
+## How I Decrypt It
+
+When I receive the message, I run:
+
+```bash
+gpg --decrypt message.txt.asc
+```
+
+Since I have the private key, I can read the original message.
+
+---
+
+## Setting This Up For Yourself
+
+If you'd like people to securely contact you too, here's how to do it.
+
+### 1. Generate a Key
+
+Run:
+
+```bash
+gpg --full-generate-key
+```
+
+Choose:
+
+```
+RSA and RSA
+4096 bits
+```
+
+Enter your name and email.
+
+---
+
+### 2. Export Your Public Key
+
+```bash
+gpg --armor --export your@email.com > publickey.asc
+```
+
+---
+
+### 3. Publish It
+
+You can publish your key in many ways:
+
+-   GitHub
+
+```
+https://github.com/<username>.gpg
+```
+
+-   your website
+-   key servers
+
+Example:
+
+```
+https://github.com/yourusername.gpg
+```
+
+Now anyone can encrypt messages to you.
+
+---
+
+## Why Use GPG?
+
+Benefits:
+
+-   End-to-end encryption
+-   Works with normal email
+-   Protects sensitive communication
+-   Open standard used worldwide
+
+---
+
+That's all there is to it. Once you have GPG installed and the recipient's public key imported, encrypting messages becomes quick and straightforward.
+
+If you ever need to send me something sensitive, feel free to follow the steps above and email the encrypted message. Since it is encrypted with my public key, only my private key can decrypt it, ensuring that the contents remain private.
+
+If you're a developer or someone who values privacy, setting up GPG for yourself is worth considering. Publishing your public key allows others to securely share information with you without relying on third-party platforms or trusting email providers with sensitive content.
+
+Secure communication doesn't have to be complicated — sometimes a few simple tools are all it takes.
