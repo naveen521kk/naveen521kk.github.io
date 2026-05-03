@@ -20,5 +20,16 @@ export const InArticleAds = {
             client="ca-pub-7183740147103241"
             slot="3138917231"
         />
+    ),
+    Third: () => (
+        <>
+            <Banner
+                style={{display: "block", textAlign: "center"}}
+                layout="in-article"
+                format="fluid"
+                client="ca-pub-7183740147103241"
+                slot="1437363452"
+            />
+        </>
     )
 };
