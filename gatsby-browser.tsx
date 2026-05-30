@@ -4,6 +4,7 @@ import "./src/styles/global.css";
 // import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 // import "prismjs/plugins/command-line/prism-command-line.css";
 import "./src/styles/global.scss";
+import "./node_modules/lite-youtube-embed/src/lite-yt-embed.js"
 import React from "react";
 
 import App from "./src/components/App";
