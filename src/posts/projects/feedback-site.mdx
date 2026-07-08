@@ -1,0 +1,79 @@
+---
+slug: "/projects/feedback-site"
+title: "How I Built and Deployed a Secure and Scalable Feedback Site for My College"
+date: 2024-02-20T00:00:00+05:30
+draft: false
+description: "In this blog post, I share my experience of creating a feedback site for my college using Next.js, FastAPI, and Docker. I explain the key features, the authentication and security mechanism, and the deployment and hosting process of this project."
+image: "/assets/manim-binder/banner.png"
+tags: ["python", "fastapi", "nextjs", "mysql", "project"]
+---
+
+# How I Built and Deployed a Secure and Scalable Feedback Site for My College
+
+## Context
+
+My college had an old feedback site which was outdated, slow, and hard to maintain. The Dean, who is in charge of handling feedback, wanted to replace it with a new feedback site that would enhance the quality of teaching and learning in the college. He assigned me and [Pranav](https://www.linkedin.com/in/pranavraj1103/) the task of developing a new feedback site. It allows students to submit feedback about the professors. It also generates reports on the performance of the departments and teachers. The new feedback site should be secure, scalable, and easy to use. It should also provide valuable insights for the stakeholders.
+
+In this blog post, I will share the details of my project, the tech stack I used, the key features I implemented, the authentication and security mechanism I added, and the deployment and hosting process I followed.
+
+## The Problem Statement
+
+The objective was to develop a feedback site facilitating user feedback submission, admin monitoring, and performance calculation. The site would have the following requirements:
+
+-   Users (students) should be able to submit feedback on courses and teachers.
+-   Admins (Dean) should be able to monitor the feedback data, filter it by various criteria, and generate reports on the performance of the departments and teachers.
+-   The site should be secure, scalable, and easy to use.
+
+## The Tech Stack
+
+To build the feedback site, I chose the following tech stack:
+
+-   **Next.js**: A React framework that enables server-side rendering, static site generation, and API routes. I used Next.js to create the front-end of the site, using React components and Material-UI for the UI design.
+-   **FastAPI**: A modern Python web framework that offers high performance, easy development, and automatic documentation. I used FastAPI to create the back-end of the site, using MySQL as the database and Pydantic for data validation.
+-   **Docker**: A platform that allows to build, run, and share applications using containers. I used Docker to containerize the front-end and back-end of the site, and to deploy them on a cloud server.
+
+## The Key Features
+
+The feedback site has the following key features:
+
+-   **Seamless feedback submission**: Users can submit feedback on various aspects of the college, such as courses, teachers, facilities, etc. The feedback form is dynamic and adapts to the user's role and department. The feedback data is validated and stored in the database. (Insert screenshot of feedback form here)
+-   **Comprehensive monitoring by admin and HOD**: Admins can monitor the feedback data, filter it by various criteria, such as department, course, teacher, rating, etc. They can also view the feedback statistics, such as average rating, number of feedbacks, etc. They can also generate reports on the performance of the college, departments, and teachers, in PDF or Excel format. (Insert screenshot of admin dashboard here)
+-   **Performance calculation and report generation**: The site calculates the performance of the college, departments, and teachers, based on the feedback data, using a weighted average formula. The performance score is displayed on a scale of 1 to 5, with 5 being the best. The site also generates reports on the performance, which include the performance score, the feedback summary, and the feedback comments. The reports can be downloaded in PDF or Excel format. (Insert screenshot of performance report here)
+
+## The Authentication and Security
+
+The site also has an authentication and security mechanism that protects the site from unauthorized access and actions. I used the following technologies and techniques to implement this feature:
+
+-   **JWT**: JSON Web Token is a standard for securely transmitting information between parties as a JSON object. I used JWT to create and verify tokens for the users, and to store the user's role and department in the token payload. The tokens are sent in the HTTP headers for each request, and are validated by the back-end before processing the request.
+-   **bcrypt**: A library that provides a secure way to hash and compare passwords. I used bcrypt to hash the user's passwords before storing them in the database, and to compare the hashed passwords when the user logs in.
+-   **HTTPS**: Hypertext Transfer Protocol Secure is a protocol that ensures secure communication over a computer network. I used HTTPS to encrypt the data in transit between the front-end and the back-end, and to prevent man-in-the-middle attacks.
+-   **CORS**: Cross-Origin Resource Sharing is a mechanism that allows restricted resources on a web page to be requested from another domain. I used CORS to allow only the front-end domain to access the back-end API, and to block any other requests from unauthorized domains.
+
+## The Deployment and Hosting
+
+The final step of the project was to deploy and host the site on a cloud server. I followed the following steps to achieve this:
+
+-   **Setting up the in-house server**: I used an in-house server provided by the college, and installed Ubuntu as the operating system. I configured the network settings, the firewall rules, and the SSH access for the server.
+-   **Installing Docker**: I installed Docker on the server, and verified that it was working properly. I also installed docker-compose, a tool that allows to define and run multiple containers using a YAML file.
+-   **Running the site**: I copied the front-end and back-end code, the Dockerfiles, and the docker-compose file to the server. I also set up the environment variables, such as the database credentials, the JWT secret key, and the HTTPS certificates. I then ran the docker-compose command to build and run the site using the containers. I verified that the site was running correctly and was accessible from the browser.
+
+## The Challenges and Learnings
+
+Building the feedback site was a rewarding experience, as I learned a lot of new skills and technologies, and also faced some challenges along the way. Some of the challenges and learnings were:
+
+-   **Designing the database schema**: One of the challenges was to design the database schema that would store the feedback data and the performance data. I had to consider the relationships between the entities, such as users, departments, courses, teachers, etc. I also had to ensure the data integrity and consistency. I learned how to use MySQL Workbench to create the database schema and to perform CRUD operations on the data. (Insert screenshot of database schema here)
+-   **Creating the API routes**: Another challenge was to create the API routes that would handle the requests and responses between the front-end and the back-end. I had to define the parameters, the data models, the validation rules, and the response formats for each API route. I learned how to use FastAPI to create the API routes and to document them using Swagger UI. (Insert screenshot of Swagger UI here)
+-   **Containerizing and deploying the application**: The final challenge was to containerize and deploy the application on a cloud server. I had to create the Dockerfiles and the docker-compose file that would define the services, the dependencies, and the configurations for the front-end and the back-end. I also had to set up the environment variables, the network settings, and the port mappings. I learned how to use Docker to build, run, and share the application using containers. (Insert screenshot of docker-compose file here)
+
+## The Future Scope
+
+The feedback site is a successful project that is used across the college by the students, faculty, and admins. However, it can be improved and extended in the future. Some of the possible enhancements are:
+
+-   **Adding more feedback categories and criteria**: The site currently allows users to submit feedback on courses, teachers, and facilities. A possible enhancement would be to add more feedback categories and criteria, such as events, clubs, extracurricular activities, etc. This would provide more comprehensive feedback data and more insights for the stakeholders.
+-   **Adding more performance metrics and visualizations**: The site currently calculates and displays the performance score based on a weighted average formula. A possible enhancement would be to add more performance metrics and visualizations, such as histograms, pie charts, bar charts, etc. This would provide more detailed and interactive feedback analysis and reports.
+
+## The Conclusion
+
+The feedback site is a project that I built and deployed for my college, SJCE, that facilitates user feedback submission, admin monitoring, and performance calculation. I used a tech stack comprising Next.js, FastAPI, React, Material-UI, MySQL, and Docker, ensuring a robust and scalable solution. I also added an authentication and security mechanism using JWT, bcrypt, HTTPS, and CORS, ensuring a secure and protected site. The site has key features such as seamless feedback submission, comprehensive monitoring by admin and HOD, performance calculation and report generation to provide valuable insights for stakeholders. The site is a successful project that is used across the college, and can be improved and extended in the future.
+
+I hope you enjoyed reading this blog post and learned something from it. If you have any questions, comments, or feedback, please feel free to contact me. Thank you for your time and attention. 😊
